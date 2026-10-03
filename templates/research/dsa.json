@@ -1,0 +1,918 @@
+{
+  "id": "dsa",
+  "title": "Programming, DS & Algorithms",
+  "weightage": "~11-18 marks per paper (2024-2026 DA papers; roughly 4-6 one-mark + 4-6 two-mark questions incl. 3-5 Python code-tracing questions)",
+  "summary": "High-yield, mostly tracing-based section: predict the output of Python snippets (recursion, closures, mutable defaults, list aliasing), simulate sorts/searches/traversals, and reason about simple complexity. Depth is modest but accuracy on code tracing decides the marks.",
+  "notesGuide": "1) Base course: NPTEL 'Programming, DS & Algorithms using Python' (nptel.ac.in/courses/106106145) - download the lecture slides/transcripts from the course page and keep one page of notes per week. 2) Download MIT 6.006 Spring 2020 lecture-note PDFs (OCW 'Lecture Notes' page) for sorting, hashing, BFS/DFS and Dijkstra, and Open Data Structures (ods-python.pdf) chapters 2-3 (array/linked structures), 5 (hashing), 6 (BSTs), 12 (graphs). 3) For Python, build a 'traps sheet' from the official docs: mutable default args (Tutorial 4.8.1), closures/scoping (Execution Model), list aliasing vs copy, slicing with negative steps, integer vs float division, dict/set ordering, string immutability - write each trap as a 3-line snippet + output. 4) Make a one-page 'algorithm card' table: for each search/sort - best/avg/worst time, space, stable?, in-place?, #swaps/#comparisons pattern, behaviour on sorted/reverse input. 5) Hand-trace every DA PYQ snippet on paper first, then confirm on pythontutor.com; log mistakes in an error notebook and revise it weekly.",
+  "resources": [
+    {
+      "title": "NPTEL: Programming, Data Structures and Algorithms using Python (Madhavan Mukund, CMI)",
+      "url": "https://nptel.ac.in/courses/106106145",
+      "type": "course",
+      "source": "NPTEL",
+      "note": "Closest match to the DA syllabus: Python basics through sorting, searching, linked lists, BSTs, graphs. Watch at 1.5x; do the weekly assignments.",
+      "free": true
+    },
+    {
+      "title": "The Python Tutorial (official)",
+      "url": "https://docs.python.org/3/tutorial/index.html",
+      "type": "website",
+      "source": "Python Software Foundation",
+      "note": "Authoritative reference for exact semantics (slicing, mutability, scoping) that output-prediction questions test.",
+      "free": true
+    },
+    {
+      "title": "CS50's Introduction to Programming with Python (CS50P)",
+      "url": "https://cs50.harvard.edu/python/",
+      "type": "course",
+      "source": "Harvard CS50",
+      "note": "Free full course with lectures + problem sets; ideal if you are new to Python.",
+      "free": true
+    },
+    {
+      "title": "Python Tutor (code visualizer)",
+      "url": "https://pythontutor.com/",
+      "type": "practice",
+      "source": "pythontutor.com",
+      "note": "Paste every PYQ snippet here and step through frames/heap to see aliasing, recursion and closures.",
+      "free": true
+    },
+    {
+      "title": "Abdul Bari - Algorithms playlist",
+      "url": "https://www.youtube.com/playlist?list=PLDN4rrl48XKpZkf03iYFl-O29szjTrs_O",
+      "type": "video",
+      "source": "YouTube (Abdul Bari)",
+      "note": "Best visual explanations of asymptotics, recurrences, merge/quick sort, BFS/DFS, Dijkstra. Watch only syllabus videos.",
+      "free": true
+    },
+    {
+      "title": "MIT 6.006 Introduction to Algorithms (Spring 2020) - OCW",
+      "url": "https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/",
+      "type": "course",
+      "source": "MIT OpenCourseWare",
+      "note": "Rigorous lectures, notes and problem sets; uses Python. Use for depth on sorting, hashing, BFS/DFS, shortest paths.",
+      "free": true
+    },
+    {
+      "title": "MIT 6.006 Lecture Notes (PDFs)",
+      "url": "https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/pages/lecture-notes/",
+      "type": "notes",
+      "source": "MIT OpenCourseWare",
+      "note": "Concise, printable notes per lecture - good base for your own short notes.",
+      "free": true
+    },
+    {
+      "title": "Open Data Structures (Python edition, PDF) - Pat Morin",
+      "url": "https://opendatastructures.org/ods-python.pdf",
+      "type": "book",
+      "source": "opendatastructures.org",
+      "note": "Free textbook: array stacks/queues, linked lists, hash tables, BSTs, graphs with Python pseudocode.",
+      "free": true
+    },
+    {
+      "title": "VisuAlgo",
+      "url": "https://visualgo.net/en",
+      "type": "practice",
+      "source": "visualgo.net (NUS)",
+      "note": "Animated visualizations + quiz mode for every data structure in the syllabus.",
+      "free": true
+    },
+    {
+      "title": "USFCA Data Structure Visualizations (David Galles)",
+      "url": "https://www.cs.usfca.edu/~galles/visualization/Algorithms.html",
+      "type": "practice",
+      "source": "University of San Francisco",
+      "note": "Step-through animations: stacks, queues, BST, hashing (open/closed), sorts, BFS/DFS, Dijkstra.",
+      "free": true
+    },
+    {
+      "title": "Python Programming FAQ",
+      "url": "https://docs.python.org/3/faq/programming.html",
+      "type": "website",
+      "source": "Python Software Foundation",
+      "note": "Covers classic traps: shared mutable defaults, closures capturing variables, UnboundLocalError, copying lists.",
+      "free": true
+    },
+    {
+      "title": "Algorithms - Jeff Erickson (free textbook)",
+      "url": "https://jeffe.cs.illinois.edu/teaching/algorithms/",
+      "type": "book",
+      "source": "UIUC",
+      "note": "Excellent chapters on recursion, divide & conquer, graph search and shortest paths; free PDF.",
+      "free": true
+    },
+    {
+      "title": "Programming, DS & Algorithms for GATE DA 2027 (blog)",
+      "url": "https://www.piyushwairale.com/blog/programming-data-structures-and-algorithms-for-gate-da-2027",
+      "type": "website",
+      "source": "Piyush Wairale",
+      "note": "DA-specific syllabus breakdown and preparation strategy from a well-known DA educator.",
+      "free": true
+    },
+    {
+      "title": "Python & DSA for GATE DA 2027: PYQs, books, what to skip",
+      "url": "https://themlhub.ai/blog/python-dsa-gate-da",
+      "type": "website",
+      "source": "The ML Hub",
+      "note": "DA-focused guide on question style (output prediction) and scope.",
+      "free": true
+    }
+  ],
+  "pyqs": [
+    {
+      "title": "GATE DA 2024 - all questions (tag gate-ds-ai-2024)",
+      "url": "https://gateoverflow.in/tag/gate-ds-ai-2024",
+      "source": "GATE Overflow",
+      "note": "Full DA 2024 paper with solutions; filter the programming/DS/algo questions."
+    },
+    {
+      "title": "GATE DA 2025 - all questions (tag gateda-2025)",
+      "url": "https://gateoverflow.in/tag/gateda-2025",
+      "source": "GATE Overflow",
+      "note": "Full DA 2025 paper with discussion."
+    },
+    {
+      "title": "GATE DA 2026 - all questions (tag gateda-2026)",
+      "url": "https://gateoverflow.in/tag/gateda-2026",
+      "source": "GATE Overflow",
+      "note": "Full DA 2026 paper with discussion."
+    },
+    {
+      "title": "GATE DA 2026 official question paper (PDF)",
+      "url": "https://gate2027.iitm.ac.in/static/doc/download/2026/QPs/DA.pdf",
+      "source": "IIT Madras (GATE 2027 site)",
+      "note": "Official paper; answer key at /static/doc/download/2026/Keys/DA_Keys.pdf."
+    },
+    {
+      "title": "GATE DA 2025 official question paper (PDF)",
+      "url": "https://gate2027.iitm.ac.in/static/doc/download/2025/DA2025.pdf",
+      "source": "IIT Madras (GATE 2027 site)",
+      "note": "Official paper."
+    },
+    {
+      "title": "GATE DA 2024 official question paper (PDF)",
+      "url": "https://gate2027.iitm.ac.in/static/doc/download/2024/DA24S1.pdf",
+      "source": "IIT Madras (GATE 2027 site)",
+      "note": "Official paper."
+    },
+    {
+      "title": "GATE 2027 download page (all papers + keys)",
+      "url": "https://gate2027.iitm.ac.in/download",
+      "source": "IIT Madras",
+      "note": "Official source of all past papers and answer keys."
+    },
+    {
+      "title": "ExamSIDE - GATE DA PYQs chapter-wise (all subjects)",
+      "url": "https://questions.examside.com/past-years/gate/gate-da",
+      "source": "ExamSIDE",
+      "note": "Chapter-wise DA PYQs with solutions; see Python Programming, Data Structures, Algorithms sections."
+    },
+    {
+      "title": "Programming in Python (category)",
+      "url": "https://gateoverflow.in/questions/programming-in-c/programming/programming-in-python",
+      "source": "GATE Overflow",
+      "note": "All Python questions on GO incl. DA PYQs and practice; the main Python output-prediction bank."
+    },
+    {
+      "title": "Data Structures (category)",
+      "url": "https://gateoverflow.in/questions/programming-in-c/data-structures",
+      "source": "GATE Overflow",
+      "note": "All CSE + DA data-structures questions; CSE PYQs (1987-2026) are excellent extra practice."
+    },
+    {
+      "title": "Algorithms (category)",
+      "url": "https://gateoverflow.in/questions/algorithms",
+      "source": "GATE Overflow",
+      "note": "CSE + DA algorithms bank; stick to sorting/searching/graph tags for DA scope."
+    },
+    {
+      "title": "GO Classes Python & DSA practice questions",
+      "url": "https://gateoverflow.in/tag/goclasses-python-%26-dsa-practice-questions",
+      "source": "GATE Overflow / GO Classes",
+      "note": "DA-style Python output-prediction and DSA practice set written for GATE DA."
+    }
+  ],
+  "topics": [
+    {
+      "id": "python-core",
+      "title": "Python Fundamentals & Built-in Data Types",
+      "subtopics": [
+        "Variables, dynamic typing, int/float/bool/str, operators (//, %, **), precedence",
+        "Strings: indexing, slicing (negative steps), immutability, methods",
+        "Lists, tuples, sets, dicts: methods, comprehensions, iteration order",
+        "Mutability, aliasing, shallow vs deep copy, is vs ==",
+        "Control flow: if/elif, for/while, range, break/continue, else on loops"
+      ],
+      "estHours": 12,
+      "priority": "high",
+      "tips": "Most DA Python questions are 'what does this print' - practise tracing by hand under time pressure, then verify on Python Tutor. Watch for list aliasing (a=b) and methods that return None (sort, append).",
+      "resources": [
+        {
+          "title": "The Python Tutorial (official)",
+          "url": "https://docs.python.org/3/tutorial/index.html",
+          "type": "website",
+          "source": "Python Software Foundation",
+          "note": "Authoritative reference for exact semantics (slicing, mutability, scoping) that output-prediction questions test.",
+          "free": true
+        },
+        {
+          "title": "Python Tutorial ch.5 - Data Structures",
+          "url": "https://docs.python.org/3/tutorial/datastructures.html",
+          "type": "website",
+          "source": "Python Software Foundation",
+          "note": "Lists as stacks/queues, deque, tuples, sets, dicts, comprehensions - read fully.",
+          "free": true
+        },
+        {
+          "title": "Built-in Types (str, list, dict, set operations)",
+          "url": "https://docs.python.org/3/library/stdtypes.html",
+          "type": "website",
+          "source": "Python Software Foundation",
+          "note": "Lookup table for method return values (e.g. list.sort() returns None, slicing semantics).",
+          "free": true
+        },
+        {
+          "title": "CS50's Introduction to Programming with Python (CS50P)",
+          "url": "https://cs50.harvard.edu/python/",
+          "type": "course",
+          "source": "Harvard CS50",
+          "note": "Free full course with lectures + problem sets; ideal if you are new to Python.",
+          "free": true
+        },
+        {
+          "title": "Python Tutor (code visualizer)",
+          "url": "https://pythontutor.com/",
+          "type": "practice",
+          "source": "pythontutor.com",
+          "note": "Paste every PYQ snippet here and step through frames/heap to see aliasing, recursion and closures.",
+          "free": true
+        }
+      ],
+      "pyqs": [
+        {
+          "title": "ExamSIDE - GATE DA Python Programming PYQs",
+          "url": "https://questions.examside.com/past-years/gate/gate-da/python-programming/python-programming",
+          "source": "ExamSIDE",
+          "note": "Chapter-wise DA PYQs with solutions."
+        },
+        {
+          "title": "Programming in Python (category)",
+          "url": "https://gateoverflow.in/questions/programming-in-c/programming/programming-in-python",
+          "source": "GATE Overflow",
+          "note": "All Python questions on GO incl. DA PYQs and practice; the main Python output-prediction bank."
+        },
+        {
+          "title": "Tag: programming-in-python",
+          "url": "https://gateoverflow.in/tag/programming-in-python",
+          "source": "GATE Overflow",
+          "note": "GATE Overflow tag page (CSE + DA questions with community solutions). Cloudflare-protected: opens fine in a browser."
+        },
+        {
+          "title": "GO Classes Python & DSA practice questions",
+          "url": "https://gateoverflow.in/tag/goclasses-python-%26-dsa-practice-questions",
+          "source": "GATE Overflow / GO Classes",
+          "note": "DA-style Python output-prediction and DSA practice set written for GATE DA."
+        }
+      ]
+    },
+    {
+      "id": "python-functions",
+      "title": "Functions, Scope, Recursion & Classes in Python",
+      "subtopics": [
+        "Function definition, return values, positional/keyword/default args",
+        "Mutable default argument pitfall",
+        "Scope (LEGB), global/nonlocal, nested functions and closures",
+        "Recursion tracing and recursion trees",
+        "Classes & objects basics (used to build linked lists/trees)"
+      ],
+      "estHours": 10,
+      "priority": "high",
+      "tips": "DA 2026 asked mutable-default (lst=[]) and closure questions; DA 2024/2025 had recursive functions on dicts/lists - draw the call stack for every recursive call.",
+      "resources": [
+        {
+          "title": "Python Tutorial ch.4 - More Control Flow Tools (functions, default args)",
+          "url": "https://docs.python.org/3/tutorial/controlflow.html",
+          "type": "website",
+          "source": "Python Software Foundation",
+          "note": "Section 'Default Argument Values' explains why a mutable default (lst=[]) is shared across calls - tested in GATE DA 2026.",
+          "free": true
+        },
+        {
+          "title": "Python Language Reference - Execution model (scopes & name binding)",
+          "url": "https://docs.python.org/3/reference/executionmodel.html",
+          "type": "website",
+          "source": "Python Software Foundation",
+          "note": "Precise LEGB/closure rules for nested-function questions (e.g. DA 2026 outer/inner closure question).",
+          "free": true
+        },
+        {
+          "title": "Python Programming FAQ",
+          "url": "https://docs.python.org/3/faq/programming.html",
+          "type": "website",
+          "source": "Python Software Foundation",
+          "note": "Covers classic traps: shared mutable defaults, closures capturing variables, UnboundLocalError, copying lists.",
+          "free": true
+        },
+        {
+          "title": "Python Tutor (code visualizer)",
+          "url": "https://pythontutor.com/",
+          "type": "practice",
+          "source": "pythontutor.com",
+          "note": "Paste every PYQ snippet here and step through frames/heap to see aliasing, recursion and closures.",
+          "free": true
+        },
+        {
+          "title": "NPTEL: Programming, Data Structures and Algorithms using Python (Madhavan Mukund, CMI)",
+          "url": "https://nptel.ac.in/courses/106106145",
+          "type": "course",
+          "source": "NPTEL",
+          "note": "Closest match to the DA syllabus: Python basics through sorting, searching, linked lists, BSTs, graphs. Watch at 1.5x; do the weekly assignments.",
+          "free": true
+        }
+      ],
+      "pyqs": [
+        {
+          "title": "ExamSIDE - GATE DA Python Programming PYQs",
+          "url": "https://questions.examside.com/past-years/gate/gate-da/python-programming/python-programming",
+          "source": "ExamSIDE",
+          "note": "Chapter-wise DA PYQs with solutions."
+        },
+        {
+          "title": "Programming in Python (category)",
+          "url": "https://gateoverflow.in/questions/programming-in-c/programming/programming-in-python",
+          "source": "GATE Overflow",
+          "note": "All Python questions on GO incl. DA PYQs and practice; the main Python output-prediction bank."
+        },
+        {
+          "title": "Tag: recursion",
+          "url": "https://gateoverflow.in/tag/recursion",
+          "source": "GATE Overflow",
+          "note": "GATE Overflow tag page (CSE + DA questions with community solutions). Cloudflare-protected: opens fine in a browser."
+        },
+        {
+          "title": "GO Classes Python & DSA practice questions",
+          "url": "https://gateoverflow.in/tag/goclasses-python-%26-dsa-practice-questions",
+          "source": "GATE Overflow / GO Classes",
+          "note": "DA-style Python output-prediction and DSA practice set written for GATE DA."
+        }
+      ]
+    },
+    {
+      "id": "complexity",
+      "title": "Asymptotic Analysis & Recurrences",
+      "subtopics": [
+        "Big-O, Omega, Theta",
+        "Counting loop iterations / comparisons",
+        "Recurrence relations: substitution, recursion tree, Master theorem",
+        "Best/average/worst case"
+      ],
+      "estHours": 5,
+      "priority": "medium",
+      "tips": "Not named explicitly in the DA syllabus but needed to answer comparison-count questions (e.g. DA 2024 max comparisons in search). Master theorem covers merge sort and binary search.",
+      "resources": [
+        {
+          "title": "Abdul Bari - Algorithms playlist",
+          "url": "https://www.youtube.com/playlist?list=PLDN4rrl48XKpZkf03iYFl-O29szjTrs_O",
+          "type": "video",
+          "source": "YouTube (Abdul Bari)",
+          "note": "Best visual explanations of asymptotics, recurrences, merge/quick sort, BFS/DFS, Dijkstra. Watch only syllabus videos.",
+          "free": true
+        },
+        {
+          "title": "MIT 6.006 Lecture Notes (PDFs)",
+          "url": "https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/pages/lecture-notes/",
+          "type": "notes",
+          "source": "MIT OpenCourseWare",
+          "note": "Concise, printable notes per lecture - good base for your own short notes.",
+          "free": true
+        },
+        {
+          "title": "Algorithms - Jeff Erickson (free textbook)",
+          "url": "https://jeffe.cs.illinois.edu/teaching/algorithms/",
+          "type": "book",
+          "source": "UIUC",
+          "note": "Excellent chapters on recursion, divide & conquer, graph search and shortest paths; free PDF.",
+          "free": true
+        }
+      ],
+      "pyqs": [
+        {
+          "title": "ExamSIDE - DA Complexity Analysis PYQs",
+          "url": "https://questions.examside.com/past-years/gate/gate-da/algorithms/complexity-analysis-and-asymptotic-notations",
+          "source": "ExamSIDE",
+          "note": "DA questions on asymptotics."
+        },
+        {
+          "title": "Tag: divide-and-conquer",
+          "url": "https://gateoverflow.in/tag/divide-and-conquer",
+          "source": "GATE Overflow",
+          "note": "GATE Overflow tag page (CSE + DA questions with community solutions). Cloudflare-protected: opens fine in a browser."
+        }
+      ]
+    },
+    {
+      "id": "stacks-queues-linked-lists",
+      "title": "Stacks, Queues, Deques & Linked Lists",
+      "subtopics": [
+        "Stack ADT: push/pop, applications (expression evaluation, balanced parentheses, recursion)",
+        "Queue, circular queue, deque operations",
+        "Implementing stack/queue with Python list and collections.deque",
+        "Singly/doubly linked lists: insert, delete, reverse, traversal in Python classes",
+        "Time complexity of operations on array vs linked list"
+      ],
+      "estHours": 8,
+      "priority": "high",
+      "tips": "DA 2024 had a deque operation-sequence question - simulate operations step by step in a table. Know which operations are O(1) vs O(n) on arrays vs linked lists.",
+      "resources": [
+        {
+          "title": "VisuAlgo - Linked List, Stack, Queue, Deque",
+          "url": "https://visualgo.net/en/list",
+          "type": "practice",
+          "source": "visualgo.net",
+          "note": "Animate each operation; use the e-Lecture quiz.",
+          "free": true
+        },
+        {
+          "title": "Open Data Structures (Python edition, PDF) - Pat Morin",
+          "url": "https://opendatastructures.org/ods-python.pdf",
+          "type": "book",
+          "source": "opendatastructures.org",
+          "note": "Free textbook: array stacks/queues, linked lists, hash tables, BSTs, graphs with Python pseudocode.",
+          "free": true
+        },
+        {
+          "title": "collections module (deque, Counter, defaultdict)",
+          "url": "https://docs.python.org/3/library/collections.html",
+          "type": "website",
+          "source": "Python Software Foundation",
+          "note": "deque is the idiomatic Python queue/deque; know its O(1) ends.",
+          "free": true
+        },
+        {
+          "title": "NPTEL: Programming, Data Structures and Algorithms using Python (Madhavan Mukund, CMI)",
+          "url": "https://nptel.ac.in/courses/106106145",
+          "type": "course",
+          "source": "NPTEL",
+          "note": "Closest match to the DA syllabus: Python basics through sorting, searching, linked lists, BSTs, graphs. Watch at 1.5x; do the weekly assignments.",
+          "free": true
+        },
+        {
+          "title": "USFCA Data Structure Visualizations (David Galles)",
+          "url": "https://www.cs.usfca.edu/~galles/visualization/Algorithms.html",
+          "type": "practice",
+          "source": "University of San Francisco",
+          "note": "Step-through animations: stacks, queues, BST, hashing (open/closed), sorts, BFS/DFS, Dijkstra.",
+          "free": true
+        }
+      ],
+      "pyqs": [
+        {
+          "title": "ExamSIDE - DA Stacks and Queues PYQs",
+          "url": "https://questions.examside.com/past-years/gate/gate-da/data-structures/stacks-and-queues",
+          "source": "ExamSIDE",
+          "note": "DA-specific PYQs."
+        },
+        {
+          "title": "Tag: stack",
+          "url": "https://gateoverflow.in/tag/stack",
+          "source": "GATE Overflow",
+          "note": "GATE Overflow tag page (CSE + DA questions with community solutions). Cloudflare-protected: opens fine in a browser."
+        },
+        {
+          "title": "Tag: queue",
+          "url": "https://gateoverflow.in/tag/queue",
+          "source": "GATE Overflow",
+          "note": "GATE Overflow tag page (CSE + DA questions with community solutions). Cloudflare-protected: opens fine in a browser."
+        },
+        {
+          "title": "Tag: linked-list",
+          "url": "https://gateoverflow.in/tag/linked-list",
+          "source": "GATE Overflow",
+          "note": "GATE Overflow tag page (CSE + DA questions with community solutions). Cloudflare-protected: opens fine in a browser."
+        }
+      ]
+    },
+    {
+      "id": "trees",
+      "title": "Trees, Binary Trees & Binary Search Trees",
+      "subtopics": [
+        "Tree terminology: height, depth, internal/leaf nodes, full/complete binary trees",
+        "Relations between nodes, leaves and height",
+        "Traversals: preorder, inorder, postorder, level-order; reconstructing a tree from two traversals",
+        "BST insert/search/delete, inorder gives sorted order",
+        "Heaps/priority queues (basic awareness)"
+      ],
+      "estHours": 8,
+      "priority": "high",
+      "tips": "DA 2024 asked traversal and height/leaf/internal-node relations on full binary trees; DA 2026 asked rebuilding a tree from preorder+inorder. Memorise n = 2i+1 for full binary trees and practise rebuilding trees from preorder+inorder.",
+      "resources": [
+        {
+          "title": "VisuAlgo - BST/AVL",
+          "url": "https://visualgo.net/en/bst",
+          "type": "practice",
+          "source": "visualgo.net",
+          "note": "Insert/delete/traverse animations.",
+          "free": true
+        },
+        {
+          "title": "Open Data Structures (Python edition, PDF) - Pat Morin",
+          "url": "https://opendatastructures.org/ods-python.pdf",
+          "type": "book",
+          "source": "opendatastructures.org",
+          "note": "Free textbook: array stacks/queues, linked lists, hash tables, BSTs, graphs with Python pseudocode.",
+          "free": true
+        },
+        {
+          "title": "Abdul Bari - Algorithms playlist",
+          "url": "https://www.youtube.com/playlist?list=PLDN4rrl48XKpZkf03iYFl-O29szjTrs_O",
+          "type": "video",
+          "source": "YouTube (Abdul Bari)",
+          "note": "Best visual explanations of asymptotics, recurrences, merge/quick sort, BFS/DFS, Dijkstra. Watch only syllabus videos.",
+          "free": true
+        },
+        {
+          "title": "MIT 6.006 Lecture Notes (PDFs)",
+          "url": "https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/pages/lecture-notes/",
+          "type": "notes",
+          "source": "MIT OpenCourseWare",
+          "note": "Concise, printable notes per lecture - good base for your own short notes.",
+          "free": true
+        }
+      ],
+      "pyqs": [
+        {
+          "title": "ExamSIDE - DA Trees PYQs",
+          "url": "https://questions.examside.com/past-years/gate/gate-da/data-structures/trees",
+          "source": "ExamSIDE",
+          "note": "DA-specific tree questions."
+        },
+        {
+          "title": "Tag: binary-tree",
+          "url": "https://gateoverflow.in/tag/binary-tree",
+          "source": "GATE Overflow",
+          "note": "GATE Overflow tag page (CSE + DA questions with community solutions). Cloudflare-protected: opens fine in a browser."
+        },
+        {
+          "title": "Tag: tree-traversal",
+          "url": "https://gateoverflow.in/tag/tree-traversal",
+          "source": "GATE Overflow",
+          "note": "GATE Overflow tag page (CSE + DA questions with community solutions). Cloudflare-protected: opens fine in a browser."
+        },
+        {
+          "title": "Tag: binary-search-tree",
+          "url": "https://gateoverflow.in/tag/binary-search-tree",
+          "source": "GATE Overflow",
+          "note": "GATE Overflow tag page (CSE + DA questions with community solutions). Cloudflare-protected: opens fine in a browser."
+        }
+      ]
+    },
+    {
+      "id": "hash-tables",
+      "title": "Hash Tables",
+      "subtopics": [
+        "Hash functions, load factor",
+        "Collision resolution: chaining, open addressing (linear/quadratic probing, double hashing)",
+        "Expected probes for successful/unsuccessful search under uniform hashing",
+        "Python dict/set as hash tables"
+      ],
+      "estHours": 5,
+      "priority": "medium",
+      "tips": "DA 2024 asked expected probes with uniform hashing (1/(1-alpha) for unsuccessful search) and DA 2025 had a linear-probing question - learn both formulas and practise insertion traces.",
+      "resources": [
+        {
+          "title": "VisuAlgo - Hash Table",
+          "url": "https://visualgo.net/en/hashtable",
+          "type": "practice",
+          "source": "visualgo.net",
+          "note": "Chaining and open addressing animations.",
+          "free": true
+        },
+        {
+          "title": "MIT 6.006 Lecture Notes (PDFs)",
+          "url": "https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/pages/lecture-notes/",
+          "type": "notes",
+          "source": "MIT OpenCourseWare",
+          "note": "Concise, printable notes per lecture - good base for your own short notes.",
+          "free": true
+        },
+        {
+          "title": "Open Data Structures (Python edition, PDF) - Pat Morin",
+          "url": "https://opendatastructures.org/ods-python.pdf",
+          "type": "book",
+          "source": "opendatastructures.org",
+          "note": "Free textbook: array stacks/queues, linked lists, hash tables, BSTs, graphs with Python pseudocode.",
+          "free": true
+        },
+        {
+          "title": "USFCA Data Structure Visualizations (David Galles)",
+          "url": "https://www.cs.usfca.edu/~galles/visualization/Algorithms.html",
+          "type": "practice",
+          "source": "University of San Francisco",
+          "note": "Step-through animations: stacks, queues, BST, hashing (open/closed), sorts, BFS/DFS, Dijkstra.",
+          "free": true
+        }
+      ],
+      "pyqs": [
+        {
+          "title": "ExamSIDE - DA Hashing PYQs",
+          "url": "https://questions.examside.com/past-years/gate/gate-da/data-structures/hashing",
+          "source": "ExamSIDE",
+          "note": "DA-specific."
+        },
+        {
+          "title": "Tag: hashing",
+          "url": "https://gateoverflow.in/tag/hashing",
+          "source": "GATE Overflow",
+          "note": "GATE Overflow tag page (CSE + DA questions with community solutions). Cloudflare-protected: opens fine in a browser."
+        },
+        {
+          "title": "Tag: uniform-hashing",
+          "url": "https://gateoverflow.in/tag/uniform-hashing",
+          "source": "GATE Overflow",
+          "note": "GATE Overflow tag page (CSE + DA questions with community solutions). Cloudflare-protected: opens fine in a browser."
+        }
+      ]
+    },
+    {
+      "id": "search-basic-sorting",
+      "title": "Linear/Binary Search & Elementary Sorting",
+      "subtopics": [
+        "Linear search, binary search (iterative & recursive), number of comparisons",
+        "Selection sort, bubble sort (with early exit), insertion sort",
+        "Number of swaps/comparisons/passes, stability, in-place property",
+        "Behaviour on sorted, reverse-sorted and nearly-sorted inputs"
+      ],
+      "estHours": 7,
+      "priority": "high",
+      "tips": "Questions ask for exact counts (comparisons, swaps, passes) on a given array - trace on paper with a table. Insertion sort is best on nearly-sorted input; selection sort always does n-1 swaps at most.",
+      "resources": [
+        {
+          "title": "VisuAlgo - Sorting",
+          "url": "https://visualgo.net/en/sorting",
+          "type": "practice",
+          "source": "visualgo.net",
+          "note": "Step through bubble/selection/insertion/merge/quick sort.",
+          "free": true
+        },
+        {
+          "title": "Abdul Bari - Algorithms playlist",
+          "url": "https://www.youtube.com/playlist?list=PLDN4rrl48XKpZkf03iYFl-O29szjTrs_O",
+          "type": "video",
+          "source": "YouTube (Abdul Bari)",
+          "note": "Best visual explanations of asymptotics, recurrences, merge/quick sort, BFS/DFS, Dijkstra. Watch only syllabus videos.",
+          "free": true
+        },
+        {
+          "title": "NPTEL: Programming, Data Structures and Algorithms using Python (Madhavan Mukund, CMI)",
+          "url": "https://nptel.ac.in/courses/106106145",
+          "type": "course",
+          "source": "NPTEL",
+          "note": "Closest match to the DA syllabus: Python basics through sorting, searching, linked lists, BSTs, graphs. Watch at 1.5x; do the weekly assignments.",
+          "free": true
+        },
+        {
+          "title": "MIT 6.006 Lecture Notes (PDFs)",
+          "url": "https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/pages/lecture-notes/",
+          "type": "notes",
+          "source": "MIT OpenCourseWare",
+          "note": "Concise, printable notes per lecture - good base for your own short notes.",
+          "free": true
+        }
+      ],
+      "pyqs": [
+        {
+          "title": "ExamSIDE - DA Searching and Sorting PYQs",
+          "url": "https://questions.examside.com/past-years/gate/gate-da/algorithms/searching-and-sorting",
+          "source": "ExamSIDE",
+          "note": "DA-specific."
+        },
+        {
+          "title": "Tag: binary-search",
+          "url": "https://gateoverflow.in/tag/binary-search",
+          "source": "GATE Overflow",
+          "note": "GATE Overflow tag page (CSE + DA questions with community solutions). Cloudflare-protected: opens fine in a browser."
+        },
+        {
+          "title": "Tag: insertion-sort",
+          "url": "https://gateoverflow.in/tag/insertion-sort",
+          "source": "GATE Overflow",
+          "note": "GATE Overflow tag page (CSE + DA questions with community solutions). Cloudflare-protected: opens fine in a browser."
+        },
+        {
+          "title": "Tag: sorting",
+          "url": "https://gateoverflow.in/tag/sorting",
+          "source": "GATE Overflow",
+          "note": "GATE Overflow tag page (CSE + DA questions with community solutions). Cloudflare-protected: opens fine in a browser."
+        }
+      ]
+    },
+    {
+      "id": "divide-and-conquer",
+      "title": "Divide & Conquer: Merge Sort and Quicksort",
+      "subtopics": [
+        "Merge sort: merge procedure, recurrence T(n)=2T(n/2)+n, comparisons in merge",
+        "Quicksort: Lomuto/Hoare partition, pivot choice, best/worst/average case",
+        "Partition traces on given arrays",
+        "Stability and space usage"
+      ],
+      "estHours": 6,
+      "priority": "high",
+      "tips": "DA 2024 and 2026 both asked quicksort questions (partition trace / expected behaviour). Learn the exact partition scheme used in the question and the worst case on already-sorted input.",
+      "resources": [
+        {
+          "title": "Abdul Bari - Algorithms playlist",
+          "url": "https://www.youtube.com/playlist?list=PLDN4rrl48XKpZkf03iYFl-O29szjTrs_O",
+          "type": "video",
+          "source": "YouTube (Abdul Bari)",
+          "note": "Best visual explanations of asymptotics, recurrences, merge/quick sort, BFS/DFS, Dijkstra. Watch only syllabus videos.",
+          "free": true
+        },
+        {
+          "title": "MIT 6.006 Spring 2020 - lecture videos",
+          "url": "https://www.youtube.com/playlist?list=PLUl4u3cNGP63EdVPNLG3ToM6LaEUuStEY",
+          "type": "video",
+          "source": "YouTube (MIT OCW)",
+          "note": "Video companion to the OCW notes.",
+          "free": true
+        },
+        {
+          "title": "Algorithms - Jeff Erickson (free textbook)",
+          "url": "https://jeffe.cs.illinois.edu/teaching/algorithms/",
+          "type": "book",
+          "source": "UIUC",
+          "note": "Excellent chapters on recursion, divide & conquer, graph search and shortest paths; free PDF.",
+          "free": true
+        },
+        {
+          "title": "VisuAlgo - Sorting",
+          "url": "https://visualgo.net/en/sorting",
+          "type": "practice",
+          "source": "visualgo.net",
+          "note": "Merge sort and quicksort animations.",
+          "free": true
+        }
+      ],
+      "pyqs": [
+        {
+          "title": "ExamSIDE - DA Divide and Conquer PYQs",
+          "url": "https://questions.examside.com/past-years/gate/gate-da/algorithms/divide-and-conquer-method",
+          "source": "ExamSIDE",
+          "note": "DA-specific."
+        },
+        {
+          "title": "Tag: quick-sort",
+          "url": "https://gateoverflow.in/tag/quick-sort",
+          "source": "GATE Overflow",
+          "note": "GATE Overflow tag page (CSE + DA questions with community solutions). Cloudflare-protected: opens fine in a browser."
+        },
+        {
+          "title": "Tag: merge-sort",
+          "url": "https://gateoverflow.in/tag/merge-sort",
+          "source": "GATE Overflow",
+          "note": "GATE Overflow tag page (CSE + DA questions with community solutions). Cloudflare-protected: opens fine in a browser."
+        }
+      ]
+    },
+    {
+      "id": "graph-traversals",
+      "title": "Graph Theory Basics & Traversals (BFS/DFS)",
+      "subtopics": [
+        "Graph terminology, degree, paths, cycles, connectivity, DAGs, trees",
+        "Adjacency list vs matrix representations",
+        "BFS and DFS: order, discovery/finish times, BFS/DFS trees",
+        "Topological ordering of DAGs",
+        "Connected components, cycle detection"
+      ],
+      "estHours": 8,
+      "priority": "high",
+      "tips": "DA 2024 asked DFS on an undirected graph and valid topological orders of a DAG; DA 2026 had a directed-graph reasoning question. Practise listing all valid BFS/DFS/topological orders.",
+      "resources": [
+        {
+          "title": "VisuAlgo - Graph Traversal (DFS/BFS)",
+          "url": "https://visualgo.net/en/dfsbfs",
+          "type": "practice",
+          "source": "visualgo.net",
+          "note": "Also covers topological sort and SCC.",
+          "free": true
+        },
+        {
+          "title": "Abdul Bari - Algorithms playlist",
+          "url": "https://www.youtube.com/playlist?list=PLDN4rrl48XKpZkf03iYFl-O29szjTrs_O",
+          "type": "video",
+          "source": "YouTube (Abdul Bari)",
+          "note": "Best visual explanations of asymptotics, recurrences, merge/quick sort, BFS/DFS, Dijkstra. Watch only syllabus videos.",
+          "free": true
+        },
+        {
+          "title": "MIT 6.006 Lecture Notes (PDFs)",
+          "url": "https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/pages/lecture-notes/",
+          "type": "notes",
+          "source": "MIT OpenCourseWare",
+          "note": "Concise, printable notes per lecture - good base for your own short notes.",
+          "free": true
+        },
+        {
+          "title": "Algorithms - Jeff Erickson (free textbook)",
+          "url": "https://jeffe.cs.illinois.edu/teaching/algorithms/",
+          "type": "book",
+          "source": "UIUC",
+          "note": "Excellent chapters on recursion, divide & conquer, graph search and shortest paths; free PDF.",
+          "free": true
+        }
+      ],
+      "pyqs": [
+        {
+          "title": "ExamSIDE - DA Graph Theory PYQs",
+          "url": "https://questions.examside.com/past-years/gate/gate-da/discrete-mathematics/graph-theory",
+          "source": "ExamSIDE",
+          "note": "DA graph questions."
+        },
+        {
+          "title": "Tag: graph-search",
+          "url": "https://gateoverflow.in/tag/graph-search",
+          "source": "GATE Overflow",
+          "note": "GATE Overflow tag page (CSE + DA questions with community solutions). Cloudflare-protected: opens fine in a browser."
+        },
+        {
+          "title": "Tag: depth-first-search",
+          "url": "https://gateoverflow.in/tag/depth-first-search",
+          "source": "GATE Overflow",
+          "note": "GATE Overflow tag page (CSE + DA questions with community solutions). Cloudflare-protected: opens fine in a browser."
+        },
+        {
+          "title": "Tag: breadth-first-search",
+          "url": "https://gateoverflow.in/tag/breadth-first-search",
+          "source": "GATE Overflow",
+          "note": "GATE Overflow tag page (CSE + DA questions with community solutions). Cloudflare-protected: opens fine in a browser."
+        }
+      ]
+    },
+    {
+      "id": "shortest-paths",
+      "title": "Shortest Path Algorithms",
+      "subtopics": [
+        "BFS for unweighted shortest paths",
+        "Dijkstra's algorithm (non-negative weights), relaxation order",
+        "Bellman-Ford and negative edges (awareness)",
+        "Shortest paths in DAGs"
+      ],
+      "estHours": 5,
+      "priority": "medium",
+      "tips": "Trace Dijkstra with a table of tentative distances and the order vertices are finalised; know why it fails with negative edges.",
+      "resources": [
+        {
+          "title": "VisuAlgo - Single-Source Shortest Paths",
+          "url": "https://visualgo.net/en/sssp",
+          "type": "practice",
+          "source": "visualgo.net",
+          "note": "Dijkstra, BFS, Bellman-Ford, DAG SP animations.",
+          "free": true
+        },
+        {
+          "title": "Abdul Bari - Algorithms playlist",
+          "url": "https://www.youtube.com/playlist?list=PLDN4rrl48XKpZkf03iYFl-O29szjTrs_O",
+          "type": "video",
+          "source": "YouTube (Abdul Bari)",
+          "note": "Best visual explanations of asymptotics, recurrences, merge/quick sort, BFS/DFS, Dijkstra. Watch only syllabus videos.",
+          "free": true
+        },
+        {
+          "title": "MIT 6.006 Lecture Notes (PDFs)",
+          "url": "https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/pages/lecture-notes/",
+          "type": "notes",
+          "source": "MIT OpenCourseWare",
+          "note": "Concise, printable notes per lecture - good base for your own short notes.",
+          "free": true
+        },
+        {
+          "title": "Competitive Programmer's Handbook (CSES, PDF)",
+          "url": "https://cses.fi/book/book.pdf",
+          "type": "book",
+          "source": "CSES / Antti Laaksonen",
+          "note": "Compact chapters on sorting, binary search, graph traversal and shortest paths - optional deeper practice.",
+          "free": true
+        }
+      ],
+      "pyqs": [
+        {
+          "title": "Tag: dijkstras-algorithm",
+          "url": "https://gateoverflow.in/tag/dijkstras-algorithm",
+          "source": "GATE Overflow",
+          "note": "GATE Overflow tag page (CSE + DA questions with community solutions). Cloudflare-protected: opens fine in a browser."
+        },
+        {
+          "title": "Tag: shortest-path",
+          "url": "https://gateoverflow.in/tag/shortest-path",
+          "source": "GATE Overflow",
+          "note": "GATE Overflow tag page (CSE + DA questions with community solutions). Cloudflare-protected: opens fine in a browser."
+        },
+        {
+          "title": "GATE DA 2025 (tag gateda-2025)",
+          "url": "https://gateoverflow.in/tag/gateda-2025",
+          "source": "GATE Overflow",
+          "note": "Contains the 2025 directed-graph question (Q65)."
+        }
+      ]
+    }
+  ]
+}

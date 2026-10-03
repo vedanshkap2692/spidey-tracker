@@ -1,0 +1,482 @@
+{
+  "id": "calculus",
+  "title": "Calculus & Optimization",
+  "weightage": "3–6 marks",
+  "summary": "Single-variable calculus only: typically 2–4 questions on limits (L'Hospital/Taylor), continuity/differentiability of piecewise or |x| functions, and local/global extrema on intervals, often as MSQs about properties of f with f''>0.",
+  "notesGuide": "1) Print Paul's Online Math Notes Calculus I pages for Limits, Continuity, Definition of the Derivative, Critical Points, Min/Max Values, Finding Absolute Extrema, Shape of a Graph I & II and Optimization (each page also links a free PDF version and practice problems with solutions). 2) Download MIT 18.01 (Fall 2006) lecture notes and 18.01SC Unit 2 (Applications of Differentiation) and Unit 5 Part B (Taylor Series) session notes/problem sets. 3) Read MML book Ch 5.1 (Taylor series, differentiation) and Ch 7.1 (gradient descent / optimization) for the ML angle. 4) Make a 2-page sheet: standard limits (sin x/x, (1+x)^(1/x), (e^x-1)/x, ln(1+x)/x), Maclaurin series of e^x, sin, cos, ln(1+x), (1+x)^n to 3 terms, L'Hospital conditions, continuity vs differentiability checks (LHD/RHD), first/second-derivative tests, 'global extrema on [a,b] = check critical points AND endpoints', convexity facts (f''>0 => at most one critical point which is the global min). Add each PYQ trap.",
+  "resources": [
+    {
+      "title": "Paul's Online Math Notes - Calculus I",
+      "url": "https://tutorial.math.lamar.edu/Classes/CalcI/CalcI.aspx",
+      "type": "notes",
+      "source": "Lamar University (Paul Dawkins)",
+      "note": "Clear notes + worked examples + practice problems with solutions; downloadable PDFs. Covers the whole DA calculus syllabus.",
+      "free": true
+    },
+    {
+      "title": "3Blue1Brown - Essence of Calculus (playlist)",
+      "url": "https://www.youtube.com/playlist?list=PLZHQObOWTQDMsr9K-rj53DwVRMYO3t5Yr",
+      "type": "video",
+      "source": "3Blue1Brown (YouTube)",
+      "note": "Intuition for derivatives, limits, Taylor series (~3.5 hrs). Watch chapters 1–7 and 11.",
+      "free": true
+    },
+    {
+      "title": "Piyush Wairale - Calculus and Optimization | GATE Data Science & AI",
+      "url": "https://www.youtube.com/playlist?list=PLNxx5gyq8aLCxDU7kDaqY_w8pEiiNWczl",
+      "type": "video",
+      "source": "Piyush Wairale (YouTube)",
+      "note": "Free GATE-DA-specific playlist mapped to the exact syllabus.",
+      "free": true
+    },
+    {
+      "title": "MIT 18.01SC Single Variable Calculus",
+      "url": "https://ocw.mit.edu/courses/18-01sc-single-variable-calculus-fall-2010/",
+      "type": "course",
+      "source": "MIT OpenCourseWare",
+      "note": "Unit 1 (Differentiation), Unit 2 (Applications: max/min, optimization), Unit 5 Parts A–B (L'Hospital, Taylor series). Sessions include notes, problems, solutions.",
+      "free": true
+    },
+    {
+      "title": "MIT 18.01 (Fall 2006) - Lecture notes",
+      "url": "https://ocw.mit.edu/courses/18-01-single-variable-calculus-fall-2006/pages/lecture-notes/",
+      "type": "pdf",
+      "source": "MIT OpenCourseWare (David Jerison)",
+      "note": "Printable lecture-note PDFs.",
+      "free": true
+    },
+    {
+      "title": "MIT 18.01 (Fall 2006) - Video lectures",
+      "url": "https://ocw.mit.edu/courses/18-01-single-variable-calculus-fall-2006/video_galleries/video-lectures/",
+      "type": "video",
+      "source": "MIT OpenCourseWare",
+      "note": "Full lecture videos if you prefer a classroom course.",
+      "free": true
+    },
+    {
+      "title": "Mathematics for Machine Learning (free PDF)",
+      "url": "https://mml-book.github.io/book/mml-book.pdf",
+      "type": "book",
+      "source": "Deisenroth, Faisal & Ong",
+      "note": "Ch 5.1 (differentiation, Taylor series) and Ch 7.1 (optimization using gradient descent).",
+      "free": true
+    },
+    {
+      "title": "NPTEL - Essential Mathematics for Machine Learning (IIT Roorkee)",
+      "url": "https://nptel.ac.in/courses/111107137",
+      "type": "course",
+      "source": "NPTEL",
+      "note": "Calculus and optimization weeks for ML context.",
+      "free": true
+    },
+    {
+      "title": "Khan Academy - Differential Calculus",
+      "url": "https://www.khanacademy.org/math/differential-calculus",
+      "type": "website",
+      "source": "Khan Academy",
+      "note": "Practice exercises for limits, continuity, derivatives.",
+      "free": true
+    }
+  ],
+  "pyqs": [
+    {
+      "title": "GATE Overflow - Previous GATE questions in Calculus",
+      "url": "https://gateoverflow.in/questions/mathematics/calculus?sort=gate",
+      "source": "GATE Overflow",
+      "note": "All GATE PYQs in Calculus (CSE + DA)."
+    },
+    {
+      "title": "GATE Overflow - calculus-&-optimization tag (DA)",
+      "url": "https://gateoverflow.in/tag/calculus-%26-optimization",
+      "source": "GATE Overflow",
+      "note": "DA-syllabus-named tag with GO Classes DA practice and PYQs."
+    },
+    {
+      "title": "GATE DS&AI 2024 original paper",
+      "url": "https://gateoverflow.in/exam/665/gate-ds&ai-2024-original-paper",
+      "source": "GATE Overflow",
+      "note": "Calculus Qs: 5, 27, 50."
+    },
+    {
+      "title": "GATE Overflow - gate-ds-ai-2024 tag",
+      "url": "https://gateoverflow.in/tag/gate-ds-ai-2024",
+      "source": "GATE Overflow",
+      "note": "All DA 2024 questions."
+    },
+    {
+      "title": "GATE Overflow - gateda-2026 tag",
+      "url": "https://gateoverflow.in/tag/gateda-2026",
+      "source": "GATE Overflow",
+      "note": "All DA 2026 questions."
+    },
+    {
+      "title": "GATE Overflow PDF for GATE DA 2025 (free download)",
+      "url": "https://gateoverflow.in/blog/16488/gate-overflow-gate-2025-previous-year-questions-free-download",
+      "source": "GATE Overflow",
+      "note": "Free DA PYQ PDF."
+    }
+  ],
+  "topics": [
+    {
+      "id": "functions-limits",
+      "title": "Functions of a Single Variable & Limits",
+      "subtopics": [
+        "Domain, range, composition, even/odd, monotonic functions",
+        "Left/right limits",
+        "Indeterminate forms and L'Hospital's rule",
+        "Standard limits, limits at infinity",
+        "Using Taylor expansions to evaluate limits"
+      ],
+      "estHours": 5,
+      "priority": "high",
+      "tips": "Split ln of products into sums (e.g. ln((x^2+1)cos x) = ln(x^2+1)+ln cos x) and use series. Verify 0/0 or ∞/∞ before L'Hospital.",
+      "resources": [
+        {
+          "title": "Paul's Notes - Limits (intro)",
+          "url": "https://tutorial.math.lamar.edu/Classes/CalcI/LimitsIntro.aspx",
+          "type": "notes",
+          "source": "Lamar University",
+          "note": "",
+          "free": true
+        },
+        {
+          "title": "Paul's Notes - Computing Limits",
+          "url": "https://tutorial.math.lamar.edu/Classes/CalcI/ComputingLimits.aspx",
+          "type": "notes",
+          "source": "Lamar University",
+          "note": "",
+          "free": true
+        },
+        {
+          "title": "Paul's Notes - One-Sided Limits",
+          "url": "https://tutorial.math.lamar.edu/Classes/CalcI/OneSidedLimits.aspx",
+          "type": "notes",
+          "source": "Lamar University",
+          "note": "LHL/RHL for piecewise functions.",
+          "free": true
+        },
+        {
+          "title": "Paul's Notes - L'Hospital's Rule and Indeterminate Forms",
+          "url": "https://tutorial.math.lamar.edu/Classes/CalcI/LHospitalsRule.aspx",
+          "type": "notes",
+          "source": "Lamar University",
+          "note": "Most-used limit tool in GATE.",
+          "free": true
+        },
+        {
+          "title": "3Blue1Brown - Limits and the definition of derivatives",
+          "url": "https://www.3blue1brown.com/lessons/limits",
+          "type": "video",
+          "source": "3Blue1Brown",
+          "note": "Includes L'Hospital intuition.",
+          "free": true
+        }
+      ],
+      "pyqs": [
+        {
+          "title": "GATE DS&AI 2024 Q50 (limit of ln((x^2+1)cos x)/x^2)",
+          "url": "https://gateoverflow.in/422912/gate-ds&ai-2024-question-50",
+          "source": "GATE Overflow",
+          "note": "Answer 1/2."
+        },
+        {
+          "title": "GATE Overflow - limits tag",
+          "url": "https://gateoverflow.in/tag/limits",
+          "source": "GATE Overflow",
+          "note": "Large limits PYQ bank."
+        },
+        {
+          "title": "GATE CSE 2022 Q24 (limit)",
+          "url": "https://gateoverflow.in/371912/gate-cse-2022-question-24",
+          "source": "GATE Overflow",
+          "note": ""
+        }
+      ]
+    },
+    {
+      "id": "continuity-differentiability",
+      "title": "Continuity & Differentiability",
+      "subtopics": [
+        "Continuity at a point and on intervals",
+        "Types of discontinuity",
+        "Derivative from first principles",
+        "LHD/RHD; differentiability of |x|, max/min and piecewise functions",
+        "Differentiable => continuous (not conversely)",
+        "Rolle's & Mean Value Theorem"
+      ],
+      "estHours": 5,
+      "priority": "high",
+      "tips": "For piecewise f to be differentiable at the joint, match both values (continuity) and one-sided derivatives. |x - a| and max(f,g) are non-differentiable at corners.",
+      "resources": [
+        {
+          "title": "Paul's Notes - Continuity",
+          "url": "https://tutorial.math.lamar.edu/Classes/CalcI/Continuity.aspx",
+          "type": "notes",
+          "source": "Lamar University",
+          "note": "",
+          "free": true
+        },
+        {
+          "title": "Paul's Notes - The Definition of the Derivative",
+          "url": "https://tutorial.math.lamar.edu/Classes/CalcI/DefnOfDerivative.aspx",
+          "type": "notes",
+          "source": "Lamar University",
+          "note": "Includes differentiability vs continuity.",
+          "free": true
+        },
+        {
+          "title": "Paul's Notes - The Mean Value Theorem",
+          "url": "https://tutorial.math.lamar.edu/Classes/CalcI/MeanValueTheorem.aspx",
+          "type": "notes",
+          "source": "Lamar University",
+          "note": "Rolle/MVT.",
+          "free": true
+        },
+        {
+          "title": "MIT 18.01SC Unit 1 Part A: Definition and Basic Rules",
+          "url": "https://ocw.mit.edu/courses/18-01sc-single-variable-calculus-fall-2010/pages/1.-differentiation/part-a-definition-and-basic-rules/",
+          "type": "course",
+          "source": "MIT OpenCourseWare",
+          "note": "Sessions on derivative definition & continuity with problem sets.",
+          "free": true
+        },
+        {
+          "title": "3Blue1Brown - The paradox of the derivative",
+          "url": "https://www.3blue1brown.com/lessons/derivatives",
+          "type": "video",
+          "source": "3Blue1Brown",
+          "note": "",
+          "free": true
+        }
+      ],
+      "pyqs": [
+        {
+          "title": "GATE DS&AI 2024 Q27 (continuity & differentiability of piecewise f)",
+          "url": "https://gateoverflow.in/422935/gate-ds&ai-2024-question-27",
+          "source": "GATE Overflow",
+          "note": ""
+        },
+        {
+          "title": "GATE DA 2025 Q49 (derivative definition)",
+          "url": "https://gateoverflow.in/460973/gate-da-2025-question-49",
+          "source": "GATE Overflow",
+          "note": ""
+        },
+        {
+          "title": "GATE Overflow - continuity tag",
+          "url": "https://gateoverflow.in/tag/continuity",
+          "source": "GATE Overflow",
+          "note": ""
+        }
+      ]
+    },
+    {
+      "id": "taylor-series",
+      "title": "Taylor Series",
+      "subtopics": [
+        "Taylor/Maclaurin series of e^x, sin x, cos x, ln(1+x), (1+x)^n",
+        "Taylor polynomial approximation and remainder",
+        "First nonzero term of a series",
+        "Second-order Taylor approximation (link to Newton's method/optimization)"
+      ],
+      "estHours": 4,
+      "priority": "medium",
+      "tips": "Memorise the five standard Maclaurin series to 3–4 terms; most questions reduce to coefficient matching or using series in a limit.",
+      "resources": [
+        {
+          "title": "Paul's Notes - Taylor Series",
+          "url": "https://tutorial.math.lamar.edu/Classes/CalcII/TaylorSeries.aspx",
+          "type": "notes",
+          "source": "Lamar University",
+          "note": "Worked derivations of standard series.",
+          "free": true
+        },
+        {
+          "title": "3Blue1Brown - Taylor series",
+          "url": "https://www.3blue1brown.com/lessons/taylor-series",
+          "type": "video",
+          "source": "3Blue1Brown",
+          "note": "Best intuition.",
+          "free": true
+        },
+        {
+          "title": "MIT 18.01SC Unit 5 Part B: Taylor Series",
+          "url": "https://ocw.mit.edu/courses/18-01sc-single-variable-calculus-fall-2010/pages/unit-5-exploring-the-infinite/part-b-taylor-series/",
+          "type": "course",
+          "source": "MIT OpenCourseWare",
+          "note": "Sessions with problems & solutions.",
+          "free": true
+        },
+        {
+          "title": "Mathematics for Machine Learning - Sec 5.1 (Taylor series)",
+          "url": "https://mml-book.github.io/book/mml-book.pdf",
+          "type": "book",
+          "source": "mml-book.github.io",
+          "note": "ML perspective.",
+          "free": true
+        }
+      ],
+      "pyqs": [
+        {
+          "title": "GATE Overflow - taylor-series tag",
+          "url": "https://gateoverflow.in/tag/taylor-series",
+          "source": "GATE Overflow",
+          "note": "Taylor series PYQs."
+        },
+        {
+          "title": "GATE Overflow - Previous GATE questions in Calculus",
+          "url": "https://gateoverflow.in/questions/mathematics/calculus?sort=gate",
+          "source": "GATE Overflow",
+          "note": ""
+        }
+      ]
+    },
+    {
+      "id": "maxima-minima",
+      "title": "Maxima & Minima",
+      "subtopics": [
+        "Critical/stationary points",
+        "First-derivative test",
+        "Second-derivative test, inflection points",
+        "Local vs global extrema",
+        "Absolute extrema on closed intervals (endpoints!)",
+        "Convexity (f''>0) and uniqueness of minimum"
+      ],
+      "estHours": 5,
+      "priority": "high",
+      "tips": "On [a,b], always evaluate endpoints too. f''>0 everywhere means at most one critical point (a global min) but a minimum need not exist (e.g. e^x). Second-derivative test is inconclusive when f''=0.",
+      "resources": [
+        {
+          "title": "Paul's Notes - Critical Points",
+          "url": "https://tutorial.math.lamar.edu/Classes/CalcI/CriticalPoints.aspx",
+          "type": "notes",
+          "source": "Lamar University",
+          "note": "",
+          "free": true
+        },
+        {
+          "title": "Paul's Notes - Minimum and Maximum Values",
+          "url": "https://tutorial.math.lamar.edu/Classes/CalcI/MinMaxValues.aspx",
+          "type": "notes",
+          "source": "Lamar University",
+          "note": "",
+          "free": true
+        },
+        {
+          "title": "Paul's Notes - Finding Absolute Extrema",
+          "url": "https://tutorial.math.lamar.edu/Classes/CalcI/AbsExtrema.aspx",
+          "type": "notes",
+          "source": "Lamar University",
+          "note": "Closed-interval method.",
+          "free": true
+        },
+        {
+          "title": "Paul's Notes - The Shape of a Graph, Part II",
+          "url": "https://tutorial.math.lamar.edu/Classes/CalcI/ShapeofGraphPtII.aspx",
+          "type": "notes",
+          "source": "Lamar University",
+          "note": "Concavity & second-derivative test.",
+          "free": true
+        },
+        {
+          "title": "MIT 18.01SC Unit 2 Part A: Approximation and Curve Sketching",
+          "url": "https://ocw.mit.edu/courses/18-01sc-single-variable-calculus-fall-2010/pages/unit-2-applications-of-differentiation/part-a-approximation-and-curve-sketching/",
+          "type": "course",
+          "source": "MIT OpenCourseWare",
+          "note": "",
+          "free": true
+        }
+      ],
+      "pyqs": [
+        {
+          "title": "GATE Overflow - maxima-minima tag",
+          "url": "https://gateoverflow.in/tag/maxima-minima",
+          "source": "GATE Overflow",
+          "note": "Includes DA 2025 and CMI DS questions."
+        },
+        {
+          "title": "GATE DA 2025 Q41 (f''>0 properties)",
+          "url": "https://gateoverflow.in/460981/gate-da-2025-question-41",
+          "source": "GATE Overflow",
+          "note": ""
+        },
+        {
+          "title": "GATE DS&AI 2024 Q5 (second-derivative test)",
+          "url": "https://gateoverflow.in/422957/gate-ds&ai-2024-question-5",
+          "source": "GATE Overflow",
+          "note": ""
+        }
+      ]
+    },
+    {
+      "id": "single-variable-optimization",
+      "title": "Optimization Involving a Single Variable",
+      "subtopics": [
+        "Formulating an objective in one variable",
+        "Constrained to an interval",
+        "Applied optimization problems",
+        "Convex functions and global optimum",
+        "Intro to gradient descent / Newton's method in 1-D"
+      ],
+      "estHours": 4,
+      "priority": "medium",
+      "tips": "Reduce to f(x) on a domain, find critical points, compare with boundary values. For ML-flavoured questions, know that a gradient-descent step x - η f'(x) moves toward a minimum of a convex f for small η.",
+      "resources": [
+        {
+          "title": "Paul's Notes - Optimization",
+          "url": "https://tutorial.math.lamar.edu/Classes/CalcI/Optimization.aspx",
+          "type": "notes",
+          "source": "Lamar University",
+          "note": "",
+          "free": true
+        },
+        {
+          "title": "Paul's Notes - More Optimization Problems",
+          "url": "https://tutorial.math.lamar.edu/Classes/CalcI/MoreOptimization.aspx",
+          "type": "notes",
+          "source": "Lamar University",
+          "note": "Extra worked problems.",
+          "free": true
+        },
+        {
+          "title": "MIT 18.01SC Unit 2 Part B: Optimization, Related Rates and Newton's Method",
+          "url": "https://ocw.mit.edu/courses/18-01sc-single-variable-calculus-fall-2010/pages/unit-2-applications-of-differentiation/part-b-optimization-related-rates-and-newtons-method/",
+          "type": "course",
+          "source": "MIT OpenCourseWare",
+          "note": "",
+          "free": true
+        },
+        {
+          "title": "Mathematics for Machine Learning - Ch 7 (Continuous Optimization)",
+          "url": "https://mml-book.github.io/book/mml-book.pdf",
+          "type": "book",
+          "source": "mml-book.github.io",
+          "note": "Sec 7.1 gradient descent; 7.3 convexity.",
+          "free": true
+        },
+        {
+          "title": "Piyush Wairale - Calculus and Optimization (GATE DA)",
+          "url": "https://www.youtube.com/playlist?list=PLNxx5gyq8aLCxDU7kDaqY_w8pEiiNWczl",
+          "type": "video",
+          "source": "Piyush Wairale (YouTube)",
+          "note": "Optimization videos in the playlist.",
+          "free": true
+        }
+      ],
+      "pyqs": [
+        {
+          "title": "GATE Overflow - calculus-&-optimization tag",
+          "url": "https://gateoverflow.in/tag/calculus-%26-optimization",
+          "source": "GATE Overflow",
+          "note": "DA-specific practice & PYQs."
+        },
+        {
+          "title": "GATE Overflow - maxima-minima tag",
+          "url": "https://gateoverflow.in/tag/maxima-minima",
+          "source": "GATE Overflow",
+          "note": "Includes DA 2025 f(x)=x^3/3+7x^2/2+10x+133/2 on [-8,0]."
+        }
+      ]
+    }
+  ]
+}

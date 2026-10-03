@@ -1,0 +1,391 @@
+{
+  "exam": {
+    "name": "GATE 2027 — Data Science & Artificial Intelligence (DA)",
+    "organizingInstitute": "IIT Madras (confirmed: official GATE 2027 site states 'Organizing Institute: Indian Institute of Technology Madras'). Previous DA papers: 2024 IISc Bangalore, 2025 IIT Roorkee, 2026 IIT Guwahati.",
+    "expectedExamDate": "2027-02-14",
+    "expectedExamDateReason": "Official GATE 2027 exam days are 6, 7, 13, 14, 20 and 21 Feb 2027 (FN 9:30-12:30, AN 2:30-5:30); results 19 Mar 2027. The paper-wise schedule is not out yet (expected Dec 2026/Jan 2027). DA has been an afternoon paper on a weekend day: 3 Feb 2024 (Sat), 15 Feb 2025 (Sat), 15 Feb 2026 (Sun, AN). 14 Feb 2027 is a mid-window guess; plan to be exam-ready by 6 Feb 2027 and update this once IIT Madras releases the paper-wise schedule.",
+    "officialSite": "https://gate2027.iitm.ac.in/",
+    "importantDates": {
+      "registrationOpened": "2026-09-02",
+      "regularRegistrationCloses": "2026-10-05",
+      "extendedRegistrationCloses": "2026-10-12 (with late fee)",
+      "applicationCorrection": "2026-10-14 to 2026-10-21",
+      "cityAllotment": "2027-01-04",
+      "admitCard": "TBA",
+      "examDays": [
+        "2027-02-06",
+        "2027-02-07",
+        "2027-02-13",
+        "2027-02-14",
+        "2027-02-20",
+        "2027-02-21"
+      ],
+      "result": "2027-03-19",
+      "source": "https://gate2027.iitm.ac.in/important_dates (all dates liable to change)"
+    },
+    "pattern": "Computer-based test, 3 hours, 65 questions, 100 marks. General Aptitude: 10 questions = 15 marks; DA subject: 55 questions = 85 marks (DA has no separate Engineering Mathematics section). Questions are 1-mark or 2-mark; types MCQ, MSQ and NAT. Negative marking only for wrong MCQs: -1/3 for a 1-mark MCQ, -2/3 for a 2-mark MCQ. No negative marking for MSQ or NAT, and no partial marking in MSQ. Virtual calculator provided. Score valid 3 years. Source: https://gate2027.iitm.ac.in/question_paper_pattern",
+    "syllabusPdf": "https://gate2027.iitm.ac.in/static/doc/GATE2027_Syllabus/DA_GATE2027_Syllabus.pdf",
+    "gaSyllabusPdf": "https://gate2027.iitm.ac.in/static/doc/GATE2027_Syllabus/GA_GATE2027_Syllabus.pdf",
+    "syllabusNote": "The GATE 2027 DA syllabus (checked 2026-10-03) has 7 sections: Probability & Statistics; Linear Algebra; Calculus & Optimization (single-variable only); Programming, Data Structures & Algorithms (Python); Database Management & Warehousing; Machine Learning; AI. IIT Madras says it revised several syllabi for 2027, so compare against your study material."
+  },
+  "weightage": [
+    {
+      "subject": "Probability & Statistics",
+      "marks2024": 16,
+      "marks2025": 18,
+      "marks2026": 11,
+      "note": "2024: GeeksforGeeks DA 2024 analysis (10 Q). 2025: GeeksforGeeks DA 2025 analysis (12 Q). 2026: Piyush Wairale DA 2026 analysis (4x1 + 3x2). Highest-weighted subject in 2025."
+    },
+    {
+      "subject": "Linear Algebra",
+      "marks2024": 10,
+      "marks2025": 17,
+      "marks2026": 8,
+      "note": "GfG 2024 (6 Q), GfG 2025 (11 Q), Piyush Wairale 2026 (2x1 + 3x2). Varies a lot from year to year."
+    },
+    {
+      "subject": "Calculus & Optimization",
+      "marks2024": 8,
+      "marks2025": 8,
+      "marks2026": 9,
+      "note": "GfG 2024 (5 Q), GfG 2025 (5 Q), Piyush Wairale 2026 (3x1 + 3x2). Steady at about 8-9 marks."
+    },
+    {
+      "subject": "Programming DS & Algorithms",
+      "marks2024": 21,
+      "marks2025": 16,
+      "marks2026": 16,
+      "note": "GfG 2024 (13 Q), GfG 2025 (10 Q), Piyush Wairale 2026 (4x1 + 6x2). Consistently one of the top two subjects; mostly Python code tracing."
+    },
+    {
+      "subject": "DBMS & Data Warehousing",
+      "marks2024": 8,
+      "marks2025": 9,
+      "marks2026": 18,
+      "note": "GfG 2024 (6 Q), GfG 2025 (6 Q), Piyush Wairale 2026 (4x1 + 7x2). Jumped to the top subject in 2026 (B+ trees, SQL, relational algebra, normalization)."
+    },
+    {
+      "subject": "Machine Learning",
+      "marks2024": 11,
+      "marks2025": 14,
+      "marks2026": 16,
+      "note": "GfG 2024 (8 Q), GfG 2025 (9 Q), Piyush Wairale 2026 (4x1 + 6x2). Rising every year."
+    },
+    {
+      "subject": "Artificial Intelligence",
+      "marks2024": 11,
+      "marks2025": 3,
+      "marks2026": 8,
+      "note": "GfG 2024 (7 Q), GfG 2025 (2 Q), Piyush Wairale 2026 (4x1 + 2x2). Unpredictable, but search and Bayes-net inference come up repeatedly."
+    },
+    {
+      "subject": "General Aptitude",
+      "marks2024": 15,
+      "marks2025": 15,
+      "marks2026": 15,
+      "note": "Fixed by the exam pattern: 10 Q (5x1 + 5x2)."
+    }
+  ],
+  "weightageSources": "These are coaching-institute classifications, not official figures, and other analyses may split topics slightly differently. 2024: https://www.geeksforgeeks.org/gate-data-science-and-ai-paper-analysis-2024/ ; 2025: https://www.geeksforgeeks.org/gate-da-2025-paper-analysis/ ; 2026: https://www.piyushwairale.com/blog/gate-da-2026-question-paper-pyq-with-subject-wise-analysis-weightage ; cross-check: https://www.madeeasy.in/blog/gate-da-subject-wise-weightage . 2024 and 2025 subject marks add up to 85 + GA 15. The 2026 source's table adds up to 101 (86 + 15), so one 1-mark question is probably double-counted or misclassified: treat 2026 figures as +/-1.",
+  "papers": [
+    {
+      "title": "GATE DA 2024 question paper",
+      "url": "https://gate2027.iitm.ac.in/static/doc/download/2024/DA24S1.pdf",
+      "source": "Official GATE site (GATE 2027, IIT Madras download page)",
+      "note": "First-ever DA paper (organised by IISc, 3 Feb 2024)."
+    },
+    {
+      "title": "GATE DA 2024 final answer key",
+      "url": "https://gate2027.iitm.ac.in/static/doc/download/2024/DAFinalAnswerKey.pdf",
+      "source": "Official GATE site (IIT Madras)",
+      "note": ""
+    },
+    {
+      "title": "GATE DA 2025 question paper",
+      "url": "https://gate2027.iitm.ac.in/static/doc/download/2025/DA2025.pdf",
+      "source": "Official GATE site (IIT Madras)",
+      "note": "Organised by IIT Roorkee, 15 Feb 2025. Large PDF (~8 MB)."
+    },
+    {
+      "title": "GATE DA 2025 answer key",
+      "url": "https://gate2027.iitm.ac.in/static/doc/download/2025_Key/DA_Keys.pdf",
+      "source": "Official GATE site (IIT Madras)",
+      "note": ""
+    },
+    {
+      "title": "GATE DA 2026 question paper",
+      "url": "https://gate2027.iitm.ac.in/static/doc/download/2026/QPs/DA.pdf",
+      "source": "Official GATE site (IIT Madras)",
+      "note": "Organised by IIT Guwahati, 15 Feb 2026 (afternoon)."
+    },
+    {
+      "title": "GATE DA 2026 answer key",
+      "url": "https://gate2027.iitm.ac.in/static/doc/download/2026/Keys/DA_Keys.pdf",
+      "source": "Official GATE site (IIT Madras)",
+      "note": ""
+    },
+    {
+      "title": "Official download page (all papers 2021-2026, all branches)",
+      "url": "https://gate2027.iitm.ac.in/download",
+      "source": "Official GATE 2027 site",
+      "note": "The DA links above come from this page."
+    },
+    {
+      "title": "GATE Overflow - GATE DA 2024 (official paper) questions with solutions",
+      "url": "https://gateoverflow.in/tag/gate-ds-ai-2024",
+      "source": "GATE Overflow",
+      "note": "Each question has its own page with discussion, e.g. https://gateoverflow.in/422958/gate-ds&ai-2024-question-4"
+    },
+    {
+      "title": "GATE Overflow - GATE DA 2025 questions",
+      "url": "https://gateoverflow.in/tag/gateda-2025",
+      "source": "GATE Overflow",
+      "note": ""
+    },
+    {
+      "title": "GATE Overflow - GATE DA 2026 questions",
+      "url": "https://gateoverflow.in/tag/gateda-2026",
+      "source": "GATE Overflow",
+      "note": "e.g. https://gateoverflow.in/523166/gate-da-2026-question-48"
+    },
+    {
+      "title": "GATE Overflow - GATE DA 2024 official sample paper questions",
+      "url": "https://gateoverflow.in/tag/gateda-sample-paper-2024",
+      "source": "GATE Overflow",
+      "note": "IISc released a sample DA paper before the first DA exam; useful extra practice."
+    },
+    {
+      "title": "GATE Overflow PDF for GATE DA 2026 (compiled PYQs)",
+      "url": "https://github.com/GATEOverflow/GO-PDFs/releases/tag/gateda-2026",
+      "source": "GATE Overflow (GitHub releases)",
+      "note": "Free da.pdf: DA PYQs plus relevant CS/GA PYQs, with links to solutions. 2025 edition: https://github.com/GATEOverflow/GO-PDFs/releases/tag/gateda2025"
+    }
+  ],
+  "goDA": "GATE Overflow does not have a separate DA site; da.gateoverflow.in does not resolve. All DA questions are on the main CSE site, gateoverflow.in, filed under the usual subject categories (e.g. /artificial-intelligence, machine learning, databases) and tagged by exam. Year tags: (1) 'gate-ds-ai-2024' for the official 2024 paper (https://gateoverflow.in/tag/gate-ds-ai-2024), with questions titled 'GATE DS&AI 2024 | Question: N' (e.g. https://gateoverflow.in/422958/gate-ds&ai-2024-question-4, https://gateoverflow.in/422927/gate-ds&ai-2024-question-35); (2) 'gateda-2025' (https://gateoverflow.in/tag/gateda-2025); (3) 'gateda-2026' (https://gateoverflow.in/tag/gateda-2026), with questions titled 'GATE DA 2026 | Question: N' (e.g. https://gateoverflow.in/523166/gate-da-2026-question-48, https://gateoverflow.in/522847/gate-da-2026-question-15). Extra tags: 'gateda-sample-paper-2024' for the IISc sample paper (https://gateoverflow.in/tag/gateda-sample-paper-2024) and 'gate2024-da-memory-based' for memory-based 2024 questions posted before the official paper (https://gateoverflow.in/tag/gate2024-da-memory-based). Because the tag style changed after 2024, check both 'gate-ds-ai-YYYY' and 'gatedaYYYY'-style tags when looking for a given year; the 2027 tag will probably be 'gateda-2027'. General Aptitude questions live under https://gateoverflow.in/general-aptitude, with sub-categories verbal-aptitude, quantitative-aptitude, analytical-aptitude and spatial-aptitude. GO also publishes free compiled DA PYQ PDFs on GitHub (https://github.com/GATEOverflow/GO-PDFs/releases) and hosts the GO Classes DA test series at https://gateoverflow.in/exams (you sign in on gateoverflow.in to take the tests). Verification: gateoverflow.in sits behind a Cloudflare challenge, so these pages could not be loaded directly. Each URL was confirmed from search-engine results that index those exact pages.",
+  "mockTests": [
+    {
+      "title": "GO Classes GATE DA 2027 Test Series & Quizzes",
+      "url": "https://www.goclasses.in/courses/GATE-DA-Test-Series-67ee7736f8929a1eeb006923",
+      "source": "GO Classes",
+      "note": "About 73 topic-wise, subject-wise and full-length tests, taken on gateoverflow.in, with AI-generated feedback. Valid until 15 Mar 2027. Overview page: https://www.goclasses.in/s/pages/gate-da-test-series",
+      "free": false
+    },
+    {
+      "title": "GO Classes Free All India Mock Tests (AIMTs) for GATE CSE & DA",
+      "url": "https://www.goclasses.in/blog/announcing-go-classes-free-all-india-mock-tests-aimts-for-gate-cse-da-2026",
+      "source": "GO Classes",
+      "note": "2026 cycle: 5 free full-length DA mocks on Saturdays 2:30-5:30 PM (27 Dec 2025 to 24 Jan 2026), no enrolment needed. A similar 2027 cycle is likely in Dec 2026-Jan 2027; check the GO Classes blog.",
+      "free": true
+    },
+    {
+      "title": "GO Classes Test Series for GATE DA 2027 (on GATE Overflow)",
+      "url": "https://gateoverflow.in/exams?list=39&view=accesslists",
+      "source": "GATE Overflow",
+      "note": "The test list for the paid series above, on the GO exams platform.",
+      "free": false
+    },
+    {
+      "title": "NPTEL-GATE portal - weekly mock tests (IIT Madras)",
+      "url": "https://gate.nptel.ac.in/",
+      "source": "NPTEL / IIT Madras",
+      "note": "Free. GATE 2027 mock series runs every Sunday 2-5 PM from 16 Aug 2026; register by Friday 5 PM to take that Sunday's test. Also has PYQ video solutions. Check that DA is offered before relying on it.",
+      "free": true
+    },
+    {
+      "title": "Piyush Wairale - GATE DA 2027 Test Series",
+      "url": "https://www.piyushwairale.com/courses/GATE-DA-2027-Test-Series",
+      "source": "Piyush Wairale (IIT Madras alumnus)",
+      "note": "Paid DA-specific series with topic-wise and full-length mocks.",
+      "free": false
+    },
+    {
+      "title": "Piyush Wairale - Free GATE DA Mock Test Series",
+      "url": "https://www.piyushwairale.com/courses/Free-GATE-DA-2026-Mock-Test-Series-684c5d9bd9bc9d167932540b",
+      "source": "Piyush Wairale",
+      "note": "Free DA mocks (2026 edition, still useful).",
+      "free": true
+    },
+    {
+      "title": "MADE EASY - GATE 2027 Online Test Series (brochure, includes DS & AI)",
+      "url": "https://www.madeeasy.in/Uploads/image/2965imguf_GATE-2027-Online-Test-Series.pdf",
+      "source": "MADE EASY",
+      "note": "Paid branch-wise online test series; the brochure lists the DA schedule and fees.",
+      "free": false
+    },
+    {
+      "title": "Physics Wallah - GATE Online Test Series",
+      "url": "https://www.pw.live/gate/test-series",
+      "source": "Physics Wallah",
+      "note": "Paid branch-wise tests, including Data Science & AI.",
+      "free": false
+    }
+  ],
+  "generalResources": [
+    {
+      "title": "GATE 2027 official website",
+      "url": "https://gate2027.iitm.ac.in/",
+      "type": "website",
+      "source": "IIT Madras",
+      "note": "Dates, pattern, syllabus, past papers, notifications.",
+      "free": true
+    },
+    {
+      "title": "GATE 2027 DA syllabus (official PDF)",
+      "url": "https://gate2027.iitm.ac.in/static/doc/GATE2027_Syllabus/DA_GATE2027_Syllabus.pdf",
+      "type": "pdf",
+      "source": "IIT Madras",
+      "note": "Master checklist for the tracker.",
+      "free": true
+    },
+    {
+      "title": "Official DA question papers and keys 2024-2026",
+      "url": "https://gate2027.iitm.ac.in/download",
+      "type": "pdf",
+      "source": "IIT Madras",
+      "note": "Only 3 DA papers exist, so solve each one as a timed full-length mock.",
+      "free": true
+    },
+    {
+      "title": "GATE Overflow DA PYQ PDF (2026 edition)",
+      "url": "https://github.com/GATEOverflow/GO-PDFs/releases/tag/gateda-2026",
+      "type": "pdf",
+      "source": "GATE Overflow",
+      "note": "Compiled DA PYQs plus relevant GATE CSE questions by topic.",
+      "free": true
+    },
+    {
+      "title": "GO Classes - GATE DA Complete Course - FREE for All (intro video)",
+      "url": "https://www.youtube.com/watch?v=fCdhI6iDPy8",
+      "type": "video",
+      "source": "YouTube - GO Classes",
+      "note": "GO Classes' announcement of free access to its DA course; the course itself is on goclasses.in.",
+      "free": true
+    },
+    {
+      "title": "GO Classes - GATE DA Complete Course",
+      "url": "https://www.goclasses.in/courses/GATE-DA-Course",
+      "type": "course",
+      "source": "GO Classes",
+      "note": "Popular DA course (recorded lectures, weekly quizzes, Telegram doubt group). Check the page for current free vs paid access.",
+      "free": false
+    },
+    {
+      "title": "GO Classes - Linear Algebra playlist (GATE)",
+      "url": "https://www.youtube.com/playlist?list=PLIPZ2_p3RNHhGLQ1ZT37KLpBMAD90CM4_",
+      "type": "video",
+      "source": "YouTube - GO Classes",
+      "note": "Free linear algebra lectures that cover much of the DA LA syllabus.",
+      "free": true
+    },
+    {
+      "title": "Piyush Wairale - Machine Learning for GATE DA (playlist)",
+      "url": "https://www.youtube.com/playlist?list=PLNxx5gyq8aLBUPgb06wW58ZIE3cyc-Qwf",
+      "type": "video",
+      "source": "YouTube - Piyush Wairale IITM",
+      "note": "Free ML playlist built for the DA syllabus.",
+      "free": true
+    },
+    {
+      "title": "Piyush Wairale - Artificial Intelligence for GATE DA (playlist)",
+      "url": "https://www.youtube.com/playlist?list=PLNxx5gyq8aLB-RAQxfyScQLV6wHue-Gj6",
+      "type": "video",
+      "source": "YouTube - Piyush Wairale IITM",
+      "note": "Free AI playlist (search, logic, Bayesian networks).",
+      "free": true
+    },
+    {
+      "title": "Piyush Wairale YouTube channel",
+      "url": "https://www.youtube.com/@piyushwairaleiitm",
+      "type": "video",
+      "source": "YouTube",
+      "note": "DA-focused channel: PYQ solutions and subject playlists.",
+      "free": true
+    },
+    {
+      "title": "GATE Crash Course for Data Science & AI - Dheeraj Mishra",
+      "url": "https://www.youtube.com/playlist?list=PLO0ktRrdEKDeALj4SI9uVQawzqrgtBX0O",
+      "type": "video",
+      "source": "YouTube - Dheeraj Mishra",
+      "note": "Free live-streamed DA crash course.",
+      "free": true
+    },
+    {
+      "title": "GATE DA 2024 detailed video solutions",
+      "url": "https://www.youtube.com/playlist?list=PLSXsCU0AY7BUZdC0438HSnulq9jlsyQ-i",
+      "type": "video",
+      "source": "YouTube - Arihant Online Academy",
+      "note": "Question-by-question solutions to the 2024 DA paper.",
+      "free": true
+    },
+    {
+      "title": "NPTEL-GATE portal",
+      "url": "https://gate.nptel.ac.in/",
+      "type": "website",
+      "source": "NPTEL / IIT Madras",
+      "note": "Free GATE prep portal from the IITs and IISc: PYQ video solutions, classes, weekly mock tests.",
+      "free": true
+    },
+    {
+      "title": "r/GATEtard (Reddit)",
+      "url": "https://www.reddit.com/r/GATEtard/",
+      "type": "website",
+      "source": "Reddit",
+      "note": "Most active GATE aspirant subreddit, with many DA threads (resource lists, mock discussions, results).",
+      "free": true
+    },
+    {
+      "title": "Best GATE Telegram channels (curated list)",
+      "url": "https://www.sahildubey.com/2026/08/gate-telegram-channels.html",
+      "type": "website",
+      "source": "sahildubey.com",
+      "note": "Third-party list of GATE Telegram channels including CS/DA. Vet channels yourself and avoid pirated material.",
+      "free": true
+    },
+    {
+      "title": "How to prepare for GATE DA - by Paras Chopra (AIR 2)",
+      "url": "https://www.piyushwairale.com/blog/how-to-prepare-for-gate-da-exam-by-air-2",
+      "type": "website",
+      "source": "Piyush Wairale blog",
+      "note": "Topper strategy write-up.",
+      "free": true
+    },
+    {
+      "title": "How to crack GATE DA: topper roadmap by Abraham Varghese (AIR 6)",
+      "url": "https://brilliantpala.org/?p=32102",
+      "type": "website",
+      "source": "Brilliant Pala",
+      "note": "Topper interview: consistency (5-7 h/day), fundamentals, a structured roadmap.",
+      "free": true
+    },
+    {
+      "title": "GATE DA 2027 - complete 6-month preparation guide",
+      "url": "https://www.goclasses.in/blog/gate-da-2027-complete-6-months-preparation-guide-study-plan",
+      "type": "website",
+      "source": "GO Classes blog",
+      "note": "Month-by-month plan; revise each topic about every 15 days.",
+      "free": true
+    },
+    {
+      "title": "GATE DA 2026 question paper with subject-wise analysis",
+      "url": "https://www.piyushwairale.com/blog/gate-da-2026-question-paper-pyq-with-subject-wise-analysis-weightage",
+      "type": "website",
+      "source": "Piyush Wairale blog",
+      "note": "Latest weightage breakdown.",
+      "free": true
+    }
+  ],
+  "strategy": [
+    "Timeline (today 3 Oct 2026 to about 14 Feb 2027, ~19 weeks): Oct-Nov = finish first-pass learning; Dec = PYQs and subject tests plus first revision; Jan = full-length mocks and second revision; Feb = light revision only.",
+    "Oct 2026: finish or strengthen the maths core (Probability & Statistics, Linear Algebra, Calculus & Optimization, ~28-43 marks/yr) and PDSA in Python (16-21 marks/yr). Do 1 GA PYQ set (10 Q, 30 min) every 2-3 days throughout.",
+    "Nov 2026: Machine Learning (rising: 11 -> 14 -> 16) and DBMS & Warehousing (18 marks in 2026: B+ trees, SQL, relational algebra, normalization), then AI (search, logic, Bayes-net exact/approximate inference) by early December.",
+    "Make the 7 subjects plus GA the tracker's unit of work. Weight hours by the 3-year average marks: PDSA ~18, P&S ~15, ML ~14, DBMS ~12, LA ~12, AI ~7, Calculus ~8, GA 15.",
+    "Revise in spaced cycles: revisit each finished topic after ~1 week, ~15 days and ~1 month (GO Classes' 'every 15 days' rule). Keep a one-page formula/insight sheet and a mistake log per subject.",
+    "Use PYQs in two passes: (1) topic-wise right after finishing each topic (GATE Overflow tags gate-ds-ai-2024, gateda-2025, gateda-2026, plus related GATE CSE PYQs for DS/Algo, DBMS, Probability and LA); (2) the 3 official DA papers as timed full-length mocks in Dec-Jan, analysed line by line.",
+    "Mock cadence: 1 subject or topic test per week from Oct; 1 full-length mock per week from mid-Dec; 2-3 per week from mid-Jan to early Feb. Spend at least as long analysing each mock as taking it.",
+    "Free mocks to use: NPTEL-GATE Sunday mocks, GO Classes free AIMTs (Dec-Jan), Piyush Wairale's free DA mocks; add one paid series (GO Classes / Piyush Wairale / MADE EASY) if budget allows.",
+    "Exam technique: attempt GA first (about 20 min, target 12-15 marks), then 1-markers, then 2-markers. MSQ and NAT have no negative marking, so never leave them blank. Skip MCQs where you can't eliminate at least 2 options (-1/3 or -2/3). Practise with the GATE virtual calculator.",
+    "Code tracing is a large part of the paper: practise reading Python snippets (recursion, list/dict mutation, sorting passes, swap counts, tree traversals) on paper, without running them.",
+    "Final 2 weeks: no new topics. Re-read formula sheets and mistake logs, re-solve wrong PYQs and mock questions, and do 2 full mocks in the real 2:30-5:30 PM slot to set your body clock (DA has been an afternoon paper).",
+    "Admin: complete the application (extended deadline 12 Oct 2026, correction window 14-21 Oct), check the paper-wise schedule (Dec/Jan) and city allotment (4 Jan 2027), and download the admit card as soon as it is released."
+  ]
+}

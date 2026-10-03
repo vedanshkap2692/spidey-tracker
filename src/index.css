@@ -1,0 +1,160 @@
+@import 'tailwindcss';
+@import '@fontsource/bangers';
+@import '@fontsource-variable/inter';
+@import '@fontsource-variable/jetbrains-mono';
+
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+
+@theme static {
+  --font-sans: 'Inter Variable', ui-sans-serif, system-ui, sans-serif;
+  --font-comic: 'Bangers', 'Inter Variable', sans-serif;
+  --font-mono: 'JetBrains Mono Variable', ui-monospace, monospace;
+
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-surface-3: var(--surface-3);
+  --color-line: var(--line);
+  --color-ink: var(--ink);
+  --color-ink-2: var(--ink-2);
+  --color-ink-3: var(--ink-3);
+  --color-spidey: var(--spidey);
+  --color-spidey-2: var(--spidey-2);
+  --color-suit: var(--suit);
+  --color-suit-2: var(--suit-2);
+  --color-good: var(--good);
+  --color-warn: var(--warn);
+  --color-bad: var(--bad);
+}
+
+:root {
+  color-scheme: light;
+  --bg: #f4f2ec;
+  --surface: #ffffff;
+  --surface-2: #f7f6f2;
+  --surface-3: #ecebe5;
+  --line: rgba(20, 22, 43, 0.1);
+  --ink: #14162b;
+  --ink-2: #4a4d66;
+  --ink-3: #7b7e96;
+  --spidey: #d42a2a;
+  --spidey-2: #ff5a4f;
+  --suit: #1d4fbf;
+  --suit-2: #3a74e8;
+  --good: #108a4a;
+  --warn: #b97500;
+  --bad: #d42a2a;
+  --web: rgba(20, 22, 43, 0.06);
+  --heat-0: #ecebe5;
+  --heat-1: #f6c6c1;
+  --heat-2: #ec8a80;
+  --heat-3: #d94a40;
+  --heat-4: #9e1f1f;
+  /* subject identity (validated categorical order, light steps) */
+  --s1: #2a78d6; --s2: #eb6834; --s3: #1baf7a; --s4: #eda100;
+  --s5: #e87ba4; --s6: #008300; --s7: #4a3aa7; --s8: #e34948;
+  --shadow: 0 1px 2px rgba(20, 22, 43, 0.06), 0 8px 24px -12px rgba(20, 22, 43, 0.18);
+}
+
+[data-theme='dark'] {
+  color-scheme: dark;
+  --bg: #0a0c18;
+  --surface: #121527;
+  --surface-2: #171b31;
+  --surface-3: #1f243f;
+  --line: rgba(220, 225, 255, 0.09);
+  --ink: #eef0ff;
+  --ink-2: #b1b5d3;
+  --ink-3: #757a9c;
+  --spidey: #ff3b3b;
+  --spidey-2: #ff6d5a;
+  --suit: #3b7bff;
+  --suit-2: #6a9bff;
+  --good: #34d17e;
+  --warn: #f5b236;
+  --bad: #ff5d5d;
+  --web: rgba(200, 210, 255, 0.045);
+  --heat-0: #1a1e36;
+  --heat-1: #4a1c2a;
+  --heat-2: #8a2333;
+  --heat-3: #d0303a;
+  --heat-4: #ff6b5e;
+  --s1: #3987e5; --s2: #d95926; --s3: #199e70; --s4: #c98500;
+  --s5: #d55181; --s6: #008300; --s7: #9085e9; --s8: #e66767;
+  --shadow: 0 1px 0 rgba(255, 255, 255, 0.03) inset, 0 12px 32px -16px rgba(0, 0, 0, 0.7);
+}
+
+html, body, #root { height: 100%; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  overflow: hidden;
+}
+
+/* Faint spider-web texture behind everything */
+.web-bg {
+  background-color: var(--bg);
+  background-image:
+    radial-gradient(circle at 100% 0%, color-mix(in oklab, var(--spidey) 10%, transparent) 0, transparent 40%),
+    radial-gradient(circle at 0% 100%, color-mix(in oklab, var(--suit) 10%, transparent) 0, transparent 45%);
+}
+.web-lines {
+  position: absolute; inset: 0; pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='600' viewBox='0 0 600 600' fill='none' stroke='%23888' stroke-width='0.7'%3E%3Cg opacity='.55'%3E%3Cpath d='M600 0 L0 600 M600 0 L0 0 M600 0 L600 600 M600 0 L200 600 M600 0 L0 200 M600 0 L400 600 M600 0 L0 400'/%3E%3Cpath d='M480 0 Q520 40 600 120 M350 0 Q450 80 600 250 M220 0 Q380 120 600 380 M90 0 Q300 180 600 520 M0 60 Q260 260 540 600'/%3E%3C/g%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: top right;
+  background-size: 700px 700px;
+  opacity: 0.09;
+}
+[data-theme='light'] .web-lines { opacity: 0.12; }
+
+.halftone {
+  background-image: radial-gradient(color-mix(in oklab, var(--ink) 18%, transparent) 1px, transparent 1.4px);
+  background-size: 7px 7px;
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  box-shadow: var(--shadow);
+}
+
+.comic { font-family: var(--font-comic); letter-spacing: 0.04em; font-weight: 400; }
+.num { font-family: var(--font-mono); font-variant-numeric: tabular-nums; }
+
+.spidey-grad { background: linear-gradient(135deg, var(--spidey) 0%, #b3122a 45%, var(--suit) 100%); }
+.text-grad {
+  background: linear-gradient(90deg, var(--spidey-2), var(--spidey) 40%, var(--suit-2));
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+
+.scroll-y { overflow-y: auto; scrollbar-width: thin; scrollbar-color: var(--surface-3) transparent; }
+.drag { -webkit-app-region: drag; }
+.no-drag { -webkit-app-region: no-drag; }
+
+.focus-ring:focus-visible { outline: 2px solid var(--suit-2); outline-offset: 2px; }
+button { cursor: pointer; }
+button:disabled { cursor: not-allowed; opacity: .5; }
+
+/* Markdown preview */
+.md { line-height: 1.65; color: var(--ink); font-size: 14px; }
+.md h1, .md h2, .md h3 { font-weight: 700; margin: 1em 0 .4em; }
+.md h1 { font-size: 1.4em; } .md h2 { font-size: 1.2em; } .md h3 { font-size: 1.05em; }
+.md p, .md ul, .md ol { margin: .5em 0; }
+.md ul { list-style: disc; padding-left: 1.3em; } .md ol { list-style: decimal; padding-left: 1.3em; }
+.md code { font-family: var(--font-mono); font-size: .9em; background: var(--surface-3); padding: .1em .35em; border-radius: 6px; }
+.md pre { background: var(--surface-3); padding: 12px; border-radius: 10px; overflow-x: auto; }
+.md pre code { background: none; padding: 0; }
+.md a { color: var(--suit-2); text-decoration: underline; }
+.md blockquote { border-left: 3px solid var(--spidey); padding-left: 12px; color: var(--ink-2); }
+.md table { border-collapse: collapse; } .md td, .md th { border: 1px solid var(--line); padding: 4px 8px; }
+
+@keyframes dash { to { stroke-dashoffset: 0; } }
+@keyframes float { 0%, 100% { transform: translateY(0) } 50% { transform: translateY(-4px) } }
+.float { animation: float 4s ease-in-out infinite; }
+@keyframes swing { 0%, 100% { transform: rotate(-6deg) } 50% { transform: rotate(6deg) } }
+.swing { transform-origin: top center; animation: swing 3.2s ease-in-out infinite; }

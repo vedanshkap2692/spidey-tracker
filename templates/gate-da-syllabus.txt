@@ -1,0 +1,1113 @@
+# GATE DA 2027 — exhaustive topic checklist (master syllabus)
+# Format:  "# id | Subject"   "## Topic"   "### Group"   "- checklist item"
+# Edit this file and run `npm run seed` to regenerate templates/gate-da-2027.json.
+
+# ga | General Aptitude
+## Verbal Aptitude
+### Basic English grammar
+- Tenses
+- Articles
+- Adjectives
+- Prepositions
+- Conjunctions
+- Pronouns
+- Adverbs
+- Other parts of speech
+- Subject–verb agreement
+- Sentence structure
+- Basic grammatical correctness
+### Basic vocabulary
+- Word meanings
+- Synonyms / antonyms
+- Words in context
+- Idioms
+- Phrases
+- Contextual meaning
+### Reading comprehension
+- Main idea
+- Supporting details
+- Inference
+- Conclusion
+- Tone / context
+- Information retrieval
+### Narrative sequencing
+- Ordering sentences
+- Logical sequence
+- Paragraph organization
+## Quantitative Aptitude
+### Data interpretation
+- Tables
+- Bar graphs
+- Pie charts
+- Line / other graphs
+- 2D plots
+- 3D plots
+- Maps
+### Numerical computation
+- Arithmetic
+- Estimation
+- Ratios
+- Proportions
+- Percentages
+- Powers
+- Exponents
+- Logarithms
+- Permutations
+- Combinations
+- Series
+### Mensuration
+- Length
+- Area
+- Surface area
+- Volume
+### Geometry
+- Basic plane geometry
+- Basic solid geometry
+### Elementary statistics & probability
+- Mean
+- Median
+- Mode
+- Basic dispersion
+- Elementary probability
+## Analytical Aptitude
+- Deduction
+- Induction
+- Analogy
+- Numerical relations
+- Numerical reasoning
+- Logical reasoning
+- Pattern recognition
+- Relationship-based reasoning
+## Spatial Aptitude
+### Shape transformations
+- Translation
+- Rotation
+- Scaling
+- Mirroring / reflection
+### Assembling & grouping
+- Shape assembly
+- Shape grouping
+### Folding, cutting & patterns
+- Paper folding
+- Paper cutting
+- 2D patterns
+- 3D patterns
+
+# prob-stats | Probability & Statistics
+## Counting
+- Fundamental counting principle
+- Permutations
+- Combinations
+- Counting arrangements
+- Counting selections
+- Repetition
+- Restricted arrangements
+- Basic combinatorial counting
+## Probability Foundations
+### Sample space & events
+- Sample space
+- Outcomes
+- Events
+### Event operations
+- Union
+- Intersection
+- Complement
+- Difference
+### Axioms & rules
+- Probability axioms
+- Probability properties
+- Mutually exclusive events
+- Independent events
+- Conditional probability
+- Marginal probability
+- Joint probability
+- Total probability
+- Bayes theorem
+## Random Variables
+- Random variables
+- Discrete random variables
+- Continuous random variables
+- Probability mass function (PMF)
+- Probability density function (PDF)
+- Cumulative distribution function (CDF)
+- Conditional PMF
+- Conditional PDF
+- Marginal distributions
+- Joint distributions
+- Conditional distributions
+- Independence of random variables
+## Expectation & Moments
+- Mean / expected value
+- Conditional expectation
+- Variance
+- Conditional variance
+- Standard deviation
+- Covariance
+- Correlation
+- Relationships between covariance and correlation
+- Properties of expectation
+- Properties of variance
+## Descriptive Statistics
+- Mean
+- Median
+- Mode
+- Standard deviation
+- Variance
+- Covariance
+- Correlation
+## Discrete Distributions
+- Discrete uniform distribution
+- Bernoulli distribution
+- Binomial distribution
+- PMF calculations
+- Mean of distributions
+- Variance of distributions
+- Relationship between Bernoulli and Binomial
+## Continuous Distributions
+### Distributions
+- Continuous uniform distribution
+- Exponential distribution
+- Poisson distribution
+- Normal distribution
+- Standard normal distribution
+- t-distribution
+- Chi-squared distribution
+### Working with them
+- PDF
+- CDF
+- Distribution parameters
+- Mean and variance
+- Standardization
+- Probability calculations using CDFs
+## CDF / PDF Concepts
+- CDF construction
+- CDF ↔ PDF relationship
+- PDF validity
+- Probability from PDF
+- Probability from CDF
+- Conditional PDF
+- Marginalization
+- Joint → marginal distribution
+- Joint → conditional distribution
+## Central Limit Theorem
+- Sample mean
+- Sampling distribution
+- CLT
+- Normal approximation
+- Standard error
+- Approximation using standard normal
+## Confidence Intervals
+- Confidence interval concept
+- Confidence level
+- Sampling distribution
+- Known / unknown variance situations
+- Z-based confidence intervals
+- t-based confidence intervals
+## Hypothesis Testing
+### Framework
+- Null hypothesis
+- Alternative hypothesis
+- Test statistic
+- Critical region
+- Significance level
+- p-value
+- Type-I error
+- Type-II error
+### Tests
+- Z-test
+- t-test
+- Chi-squared test
+- Interpretation of test results
+
+# linear-algebra | Linear Algebra
+## Vectors
+- Vectors
+- Vector addition
+- Scalar multiplication
+- Linear combinations
+- Span
+- Linear dependence
+- Linear independence
+- Basis
+- Dimension
+## Vector Spaces
+- Vector space
+- Subspace
+- Column space
+- Row space
+- Null space
+- Basis of a space
+- Dimension of a space
+- Fundamental subspaces
+## Matrices
+### Operations
+- Matrix representation
+- Matrix addition
+- Scalar multiplication
+- Matrix multiplication
+- Transpose
+- Matrix inverse
+### Special matrices
+- Symmetric matrices
+- Skew-symmetric matrices
+- Identity matrix
+- Zero matrix
+- Diagonal matrices
+- Triangular matrices
+- Orthogonal matrices
+- Idempotent matrices
+- Projection matrices
+- Partition / block matrices
+- Properties of partition matrices
+## Matrix Properties
+- Rank
+- Nullity
+- Trace
+- Determinant
+- Invertibility
+- Full rank
+- Rank-deficient matrices
+- Rank of products
+- Rank relationships
+- Null space relationships
+## Systems of Linear Equations
+- Linear systems
+- Homogeneous systems
+- Non-homogeneous systems
+- Existence of solutions
+- Uniqueness
+- Infinite solutions
+- No solution
+- Rank-based solution conditions
+## Gaussian Elimination
+- Row operations
+- Row echelon form
+- Reduced row echelon form
+- Pivot variables
+- Free variables
+- Solving linear systems
+- Rank determination
+- Gaussian elimination-based inverse
+## Determinants
+- Determinant definition
+- Determinant calculation
+- Properties of determinants
+- Determinant under row operations
+- Determinant and invertibility
+- Determinant of products
+- Determinant of triangular matrices
+## Eigenvalues & Eigenvectors
+- Eigenvalues
+- Eigenvectors
+- Characteristic equation
+- Characteristic polynomial
+- Algebraic multiplicity
+- Geometric multiplicity
+- Eigenvalue properties
+- Eigenvector properties
+- Eigenvalues of special matrices
+- Diagonalization
+- Similarity
+- Trace / eigenvalue relationship
+- Determinant / eigenvalue relationship
+## Orthogonality
+- Inner product
+- Dot product
+- Norm
+- Orthogonal vectors
+- Orthonormal vectors
+- Orthogonal basis
+- Orthogonal matrices
+- Orthogonal complement
+## Projections
+- Projection onto a vector
+- Projection onto a subspace
+- Projection matrices
+- Orthogonal projection
+- Properties of projection matrices
+- Least-squares interpretation
+## Quadratic Forms
+- Quadratic form
+- Matrix representation
+- Symmetric quadratic forms
+- Positive definite
+- Positive semidefinite
+- Negative definite
+- Negative semidefinite
+- Indefinite forms
+- Relationship to eigenvalues
+## LU Decomposition
+- LU factorization
+- Lower triangular matrix
+- Upper triangular matrix
+- Solving systems using LU
+- Pivoting / basic decomposition considerations
+## Singular Value Decomposition
+- SVD
+- Singular values
+- Left singular vectors
+- Right singular vectors
+- Relationship between SVD and eigenvalues
+- Rank through SVD
+- Low-rank representation
+- SVD-based decomposition
+
+# calculus | Calculus & Optimization
+## Functions of One Variable
+- Domain
+- Range
+- Function composition
+- Algebraic functions
+- Polynomial functions
+- Rational functions
+- Exponential functions
+- Logarithmic functions
+- Trigonometric functions
+- Inverse functions
+## Limits
+- Limit definition
+- One-sided limits
+- Two-sided limits
+- Algebraic evaluation of limits
+- Standard limits
+- Limits involving infinity
+- Indeterminate forms
+- Continuity through limits
+## Continuity
+- Continuity at a point
+- Continuity on an interval
+- Discontinuities
+- Removable discontinuity
+- Basic continuity properties
+## Differentiability
+- Derivative
+- Geometric interpretation
+- Derivative rules
+- Product rule
+- Quotient rule
+- Chain rule
+- Derivatives of standard functions
+- Higher-order derivatives
+- Relationship between differentiability and continuity
+## Taylor Series
+- Taylor series
+- Maclaurin series
+- Taylor expansion
+- Standard expansions
+- Approximation using Taylor series
+- Error / order intuition
+## Maxima & Minima
+- Critical points
+- First derivative test
+- Second derivative test
+- Local maxima
+- Local minima
+- Global maxima / minima
+- Stationary points
+- Inflection points
+## Single-variable Optimization
+- Objective functions
+- Unconstrained optimization
+- Finding stationary points
+- First-order conditions
+- Second-order conditions
+- Convex / concave function intuition
+- Optimization using derivatives
+- Boundary / end-point analysis
+
+# dsa | Programming, DS & Algorithms
+## Python Programming
+### Python fundamentals
+- Variables
+- Data types: int, float, bool, str
+- Type conversion
+- Operators: arithmetic, relational, logical, assignment
+- Operators: membership (in), identity (is)
+### Control flow
+- if / elif / else
+- for loops
+- while loops
+- break / continue
+- Nested loops
+### Functions
+- Function definition
+- Parameters & arguments
+- Return values
+- Local / global scope
+- Recursion
+- Function calls
+### Python data structures
+- Lists
+- Tuples
+- Dictionaries
+- Sets
+- Strings
+- Indexing
+- Slicing
+- Iteration
+- Mutability
+- Aliasing / references
+- Nested structures
+### Execution & tracing
+- Expression evaluation
+- Loop tracing
+- Function tracing
+- Recursive execution
+- List mutation
+- Dictionary operations
+- Set operations
+- Output prediction
+### Complexity of Python operations
+- List access
+- List insertion / deletion
+- Membership
+- Dictionary lookup
+- Set lookup
+- Sorting
+## Complexity Analysis
+- Time complexity
+- Space complexity
+- Input-size dependence
+- Best case
+- Worst case
+- Average case where relevant
+- Big-O
+- Basic asymptotic comparison
+- Complexity of loops
+- Nested loops
+- Recursive algorithms
+- Sorting complexity
+- Searching complexity
+- Graph algorithm complexity
+## Stacks
+- Stack ADT
+- Push
+- Pop
+- Peek
+- LIFO
+- Stack implementation
+- Stack operations
+- Applications of stacks
+## Queues
+- Queue ADT
+- Enqueue
+- Dequeue
+- Peek
+- FIFO
+- Queue implementation
+- Applications
+## Linked Lists
+- Nodes
+- Singly linked lists
+- Traversal
+- Insertion
+- Deletion
+- Search
+- Pointer / reference manipulation
+- Complexity of operations
+## Trees
+### Terminology
+- Root
+- Parent / child
+- Leaf
+- Depth
+- Height
+### Binary trees & traversal
+- Binary trees
+- Preorder
+- Inorder
+- Postorder
+### Binary search trees
+- Search
+- Insertion
+- Deletion
+- Tree complexity
+## Hash Tables
+- Hash functions
+- Hashing
+- Hash table
+- Collision
+- Collision handling
+- Chaining
+- Open addressing / basic probing
+- Average / worst-case lookup intuition
+## Searching
+### Linear search
+- Algorithm
+- Best case
+- Worst case
+- Complexity
+### Binary search
+- Sorted-array requirement
+- Algorithm
+- Iterative binary search
+- Recursive binary search
+- Complexity
+- Tracing binary search
+## Sorting
+### Selection sort
+- Algorithm
+- Trace
+- Complexity
+### Bubble sort
+- Algorithm
+- Trace
+- Complexity
+- Best / worst cases
+### Insertion sort
+- Algorithm
+- Trace
+- Complexity
+- Best / worst cases
+### Merge sort
+- Divide-and-conquer structure
+- Merge operation
+- Recurrence
+- Complexity
+- Trace
+### Quick sort
+- Partitioning
+- Pivot
+- Recursive decomposition
+- Best / average / worst complexity
+- Trace
+## Graph Fundamentals
+- Vertices
+- Edges
+- Directed graphs
+- Undirected graphs
+- Weighted graphs
+- Unweighted graphs
+- Degree
+- Paths
+- Cycles
+- Connectivity
+- Adjacency matrix
+- Adjacency list
+## Graph Traversal
+- Breadth-first search
+- Depth-first search
+- BFS queue behavior
+- DFS stack / recursion behavior
+- Traversal order
+- Reachability
+- Complexity
+## Shortest Paths
+- Shortest-path concept
+- Weighted shortest path
+- Unweighted shortest path
+- Dijkstra's algorithm
+- Relaxation
+- Priority queue intuition
+- Trace of shortest-path algorithm
+- Complexity
+- Negative-edge limitation
+
+# dbms | DBMS & Data Warehousing
+## ER Model
+- Entities
+- Entity sets
+- Attributes
+- Keys
+- Candidate keys
+- Primary keys
+- Relationships
+- Relationship sets
+- Cardinality
+- Participation constraints
+- Weak entities
+- ER diagrams
+- ER-to-relational mapping
+## Relational Model
+- Relations
+- Tuples
+- Attributes
+- Domains
+- Schemas
+- Keys: primary, candidate, foreign
+- Relational integrity
+## Relational Algebra
+- Selection
+- Projection
+- Union
+- Intersection
+- Difference
+- Cartesian product
+- Rename
+- Join
+- Natural join
+- Outer joins / basic join concepts
+- Relational-algebra expression evaluation
+## Tuple Relational Calculus
+- Tuple variables
+- Predicates
+- Quantifiers
+- Existential quantification
+- Universal quantification
+- Query formulation
+- Relational calculus ↔ relational algebra concepts
+## SQL
+### Basic SQL
+- SELECT / FROM / WHERE
+- DISTINCT
+- ORDER BY
+- Filtering: comparison & logical operators
+- NULL handling
+### Aggregation
+- COUNT / SUM / AVG / MIN / MAX
+- GROUP BY
+- HAVING
+### Joins
+- Inner join
+- Left / right outer join
+- Self join
+- Multiple-table joins
+### Subqueries
+- Nested queries
+- Correlated / basic subqueries
+- IN
+- EXISTS
+- ANY / ALL concepts
+### Set operations
+- UNION
+- INTERSECT
+- EXCEPT / minus-style operations
+### Query reasoning
+- Query output
+- Duplicate handling
+- NULL semantics
+- Join cardinality
+## Integrity Constraints
+- Domain constraints
+- Key constraints
+- Entity integrity
+- Referential integrity
+- Foreign-key constraints
+- Constraint enforcement
+## Normalization
+- Functional dependencies
+- Closure of attribute sets
+- Candidate keys
+- Superkeys
+- Prime / non-prime attributes
+- Partial dependency
+- Transitive dependency
+- 1NF
+- 2NF
+- 3NF
+- BCNF
+- Decomposition
+- Lossless decomposition
+- Dependency preservation
+## File Organization
+- Records
+- Files
+- File organization
+- Sequential organization
+- Basic storage organization concepts
+- Access efficiency
+## Indexing
+- Index
+- Primary index
+- Secondary index
+- Dense index
+- Sparse index
+- Multilevel indexing
+- Tree-based indexing
+- B-tree / B+ tree concepts where relevant
+- Search using indexes
+- Index organization
+## Data Types
+- Numerical
+- Categorical
+- Ordinal
+- Continuous
+- Discrete
+- Nominal
+- Data representation
+- Appropriate data types
+## Data Transformation
+- Normalization as data preprocessing
+- Min-max normalization
+- Standardization / z-score
+- Discretization
+- Binning
+- Sampling
+- Sampling methods / basic sampling concepts
+- Compression
+- Data reduction
+- Transformation of raw data
+## Data Warehousing
+### Concepts
+- Data warehouse concept
+- Multidimensional data model
+- Facts
+- Dimensions
+- Measures
+- Dimensions vs measures
+- Fact tables
+- Dimension tables
+- Data cubes
+- Cuboids
+### Hierarchies
+- Concept hierarchies
+### Warehouse schemas
+- Star schema
+- Snowflake schema
+- Multidimensional schema design
+### Measures
+- Additive measures
+- Semi-additive measures
+- Non-additive measures
+- Measure categorization
+- Measure computation
+### OLAP operations
+- Aggregation
+- Roll-up
+- Drill-down
+- Slice
+- Dice
+- Dimension-based analysis
+
+# ml | Machine Learning
+## Supervised Learning Foundations
+- Supervised learning
+- Training data
+- Features
+- Labels / targets
+- Regression
+- Classification
+- Training / validation / test set
+- Prediction
+- Model parameters
+- Hyperparameters
+- Loss / objective function
+- Empirical risk / basic risk concepts
+- Overfitting
+- Underfitting
+## Linear Regression
+### Simple linear regression
+- Model equation
+- Intercept
+- Slope
+- Prediction
+- Residuals
+- Least squares
+- Squared-error objective
+- Normal equation
+- Parameter estimation
+- Geometric interpretation
+### Multiple linear regression
+- Multiple features
+- Matrix formulation
+- Design matrix
+- Normal equations
+- Least-squares solution
+- Rank-deficient case / basic interpretation
+### Ridge regression
+- L2 regularization
+- Ridge objective
+- Regularization parameter
+- Bias / variance effect
+- Shrinkage
+- Closed-form ridge solution
+- Effect of λ
+## Logistic Regression
+- Binary classification
+- Linear score
+- Sigmoid / logistic function
+- Probability interpretation
+- Decision boundary
+- Log-likelihood
+- Logistic / cross-entropy loss
+- Classification threshold
+- Parameter interpretation
+- Gradient-based optimization
+## k-Nearest Neighbour
+- Distance metrics
+- Nearest neighbours
+- Choice of k
+- Classification
+- Regression
+- Voting
+- Weighted voting / basic idea
+- Effect of k
+- Decision boundaries
+- Feature scaling implications
+## Naive Bayes
+- Bayes theorem
+- Conditional independence assumption
+- Prior
+- Likelihood
+- Posterior
+- Evidence
+- Classification rule
+- Probability calculation
+- Gaussian / discrete variants at the level required by questions
+- Numerical underflow / log-probability intuition
+## Linear Discriminant Analysis
+- Class means
+- Within-class scatter
+- Between-class scatter
+- Discriminant direction
+- Projection
+- Class separation
+- Linear decision boundary
+- Connection to dimensionality reduction / classification
+## Support Vector Machine
+- Linear classifier
+- Hyperplane
+- Margin
+- Maximum-margin classifier
+- Support vectors
+- Decision boundary
+- Hard-margin intuition
+- Soft-margin intuition
+- Slack variables / basic interpretation
+- Regularization parameter
+- Kernel idea
+- Kernel trick / basic concept
+- Classification using SVM
+## Decision Trees
+- Decision tree structure
+- Root / internal / leaf nodes
+- Splits
+- Classification tree
+- Regression tree
+- Entropy
+- Information gain
+- Gini impurity
+- Split selection
+- Tree depth
+- Overfitting
+- Pruning / basic concept
+- Prediction by tree traversal
+## Bias–Variance Trade-off
+- Bias
+- Variance
+- Training error
+- Test error
+- Underfitting
+- Overfitting
+- Model complexity
+- Bias–variance relationship
+## Cross-Validation
+### k-fold cross-validation
+- Fold construction
+- Training / validation split
+- k-fold procedure
+- Validation error
+- Average validation performance
+- Choice of k
+### Leave-one-out
+- LOOCV procedure
+- Number of fits
+- Relationship to k-fold
+- Computational cost
+- Bias / variance intuition
+### General validation concepts
+- Hyperparameter selection
+- Model selection
+- Data leakage
+- Train / validation / test separation
+## Multi-layer Perceptron
+- Neurons
+- Weights
+- Bias
+- Layers: input, hidden, output
+- Activation functions
+- Forward pass
+- Feed-forward architecture
+- Output computation
+- Basic loss calculation
+- Parameter count
+## Feed-forward Neural Networks
+- Network architecture
+- Forward propagation
+- Layer composition
+- Activation functions
+- Model parameters
+- Output computation
+- Basic training / optimization concepts
+- Backpropagation / basic gradient propagation
+## Clustering: k-means & k-medoids
+### General
+- Clustering objective
+- Similarity / distance
+- Cluster assignment
+- Cluster centres / representatives
+### k-means
+- Initialization
+- Assignment step
+- Centroid update
+- Objective function
+- Within-cluster sum of squares
+- Iteration
+- Convergence
+- Effect of initialization
+- Number of clusters
+### k-medoids
+- Medoid
+- Assignment
+- Medoid update
+- Difference from k-means
+- Objective
+- Robustness / basic comparison
+## Hierarchical Clustering
+### General
+- Hierarchical clustering
+- Dendrogram
+- Cluster merging / splitting
+### Bottom-up / agglomerative
+- Initial singleton clusters
+- Merge process
+- Distance between clusters
+### Top-down / divisive
+- Starting from one cluster
+- Recursive splitting
+### Linkage
+- Single linkage
+- Multiple / complete / average linkage
+- Cluster-distance computation
+- Dendrogram interpretation
+- Cutting dendrogram
+## Dimensionality Reduction & PCA
+### Concepts
+- Dimensionality reduction concept
+- Feature-space representation
+- Projection
+- Variance preservation
+- Reconstruction intuition
+### Principal Component Analysis
+- Centering
+- Covariance matrix
+- Eigenvalues
+- Eigenvectors
+- Principal directions
+- Principal components
+- Explained variance
+- Component ordering
+- Projection onto components
+- Relationship between PCA and SVD
+
+# ai | Artificial Intelligence
+## Search Fundamentals
+- State
+- State space
+- Initial state
+- Goal state
+- Actions / operators
+- Path
+- Path cost
+- Search tree
+- Search graph
+- Frontier / open list
+- Explored / closed set
+- Goal test
+## Uninformed Search
+- Breadth-first search
+- Depth-first search
+- Uniform-cost search
+- Depth-limited search
+- Iterative deepening search
+- Completeness
+- Optimality
+- Time complexity
+- Space complexity
+- Search-tree traversal
+- Duplicate states / basic graph-search considerations
+## Informed Search
+- Heuristic function
+- Greedy best-first search
+- A* search
+- g(n), h(n), f(n) = g(n) + h(n)
+- Admissible heuristic
+- Consistent heuristic
+- Completeness
+- Optimality
+- Heuristic comparison
+- Search tracing
+## Adversarial Search
+- Game states
+- Two-player zero-sum games
+- Utility
+- Minimax
+- MAX nodes / MIN nodes
+- Game tree evaluation
+- Terminal utilities
+- Alpha-beta pruning
+- Alpha cutoff
+- Beta cutoff
+- Search-tree pruning
+## Propositional Logic
+- Propositions
+- Boolean variables
+- Truth values
+- Logical operators: NOT, AND, OR
+- Implication
+- Biconditional
+- Compound propositions
+- Truth tables
+- Logical equivalence
+- Tautology
+- Contradiction
+- Satisfiability
+- Entailment
+- Logical inference
+- Conjunctive / disjunctive normal forms
+- Implication transformations
+- Negation transformations
+## Predicate / First-Order Logic
+- Predicates
+- Constants
+- Variables
+- Terms
+- Functions
+- Quantifiers: universal, existential
+- Free variables
+- Bound variables
+- Atomic formulas
+- Compound formulas
+- Logical implication
+- Logical equivalence
+- Negation of quantified statements
+- Predicate inference
+- First-order statements
+- Translation from natural language to predicate logic
+- Entailment / basic reasoning
+## Conditional Independence & Bayesian Networks
+### Probability basics
+- Independence
+- Conditional independence
+- Conditional probability
+- Joint probability
+- Marginal probability
+- Factorization
+### Representation
+- Bayesian-network style representation
+- Random variables as nodes
+- Directed dependencies
+- Conditional probability relationships
+- Joint-distribution representation
+- Conditional probability tables
+- Graph-based representation of dependencies
+## Exact Inference: Variable Elimination
+- Query variables
+- Evidence variables
+- Hidden variables
+- Marginalization
+- Conditioning
+- Factorization
+- Variable elimination
+- Elimination order
+- Intermediate factors
+- Exact posterior calculation
+## Approximate Inference: Sampling
+- Sampling-based inference
+- Prior sampling
+- Rejection sampling
+- Evidence filtering
+- Approximate probability estimation
+- Sampling error / basic intuition
+- Number of samples
+- Empirical probability

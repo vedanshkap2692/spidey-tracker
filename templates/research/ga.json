@@ -1,0 +1,178 @@
+{
+  "id": "ga",
+  "title": "General Aptitude",
+  "weightage": "15 marks",
+  "summary": "Common section in every GATE paper: 10 questions (5 x 1-mark + 5 x 2-mark) = 15 marks, MCQ/MSQ/NAT, 1/3 or 2/3 negative marking on wrong MCQs only. The GATE 2027 GA syllabus (IIT Madras) has four sections: Verbal Aptitude (grammar, vocabulary, reading comprehension, narrative sequencing), Quantitative Aptitude (data interpretation, numerical computation & estimation, mensuration & geometry, elementary statistics & probability), Analytical Aptitude (deduction/induction, analogy, numerical relations & reasoning) and Spatial Aptitude (translation, rotation, scaling, mirroring, assembling, grouping, paper folding/cutting, 2D/3D patterns). Questions are school-level but tricky; toppers score 12-15/15. Best ROI: ~40-60 hours spread over the prep period, mostly solving PYQs from all GATE branches (GA questions are identical in style across papers, so 100+ sets of PYQs exist).",
+  "notesGuide": "Keep ONE slim GA notebook (or a single digital doc) with 4 tabs = the 4 syllabus sections. (1) Quant: a one-page formula sheet per topic (percent/ratio shortcuts, log & exponent rules, nPr/nCr + circular/identical-object cases, AP/GP sums, areas/volumes/surface areas, triangle & circle theorems, mean/median/mode/SD, basic probability rules) - write each formula with ONE worked PYQ beside it. (2) Verbal: a running 'error log' of grammar rules you got wrong (article/preposition/tense/subject-verb agreement) with the exact sentence, plus a vocabulary list of words/idioms from GATE PYQs (word, meaning, the PYQ sentence). (3) Analytical: a 'pattern bank' - for each PYQ type (syllogism/deduction, seating/arrangement, analogy, number relations) write the solving template in 3-5 steps and draw the diagram/table you used. (4) Spatial: sketch every paper-folding/cutting, cube-net, mirror/rotation PYQ by hand with the answer figure - redrawing builds the visual skill. Maintain a 'mistake log' table (date, source/PYQ id, topic, why wrong: concept/calculation/misread, fix) and revisit it weekly. Before each mock, re-read only the formula sheet + mistake log (15 min).",
+  "resources": [
+    {"title": "GATE 2027 General Aptitude syllabus (official PDF)", "url": "https://gate2027.iitm.ac.in/static/doc/GATE2027_Syllabus/GA_GATE2027_Syllabus.pdf", "type": "pdf", "source": "IIT Madras (GATE 2027)", "note": "Authoritative 1-page GA syllabus for GATE 2027; use it as the checklist.", "free": true},
+    {"title": "GATE Overflow - General Aptitude category (all GA questions with discussions)", "url": "https://gateoverflow.in/general-aptitude", "type": "practice", "source": "GATE Overflow", "note": "Thousands of GA questions with community solutions, sub-categorised into Verbal, Quantitative, Analytical and Spatial Aptitude.", "free": true},
+    {"title": "GATE Overflow - Previous GATE questions in General Aptitude", "url": "https://gateoverflow.in/questions/general-aptitude?sort=gate", "type": "practice", "source": "GATE Overflow", "note": "GA filtered to actual GATE PYQs (all branches) - the single best practice source.", "free": true},
+    {"title": "GATE Overflow - Engineering Mathematics & General Aptitude PDF (GATE 2026 edition)", "url": "https://github.com/GATEOverflow/GO-PDFs/releases/tag/gate-2026-common", "type": "pdf", "source": "GATE Overflow (GitHub)", "note": "Free compiled PDF of GA (and EM) PYQs with answer keys / QR links to solutions; good for offline topic-wise practice.", "free": true},
+    {"title": "GATE General Aptitude playlist - Dr. Gajendra Purohit", "url": "https://www.youtube.com/playlist?list=PLIU86IV5HmhT3F57speqW03YRJ087tyrx", "type": "video", "source": "YouTube - Dr. Gajendra Purohit", "note": "Popular full GA lecture series covering quant, reasoning and verbal.", "free": true},
+    {"title": "General Aptitude | GATE 2026 - Ankit Goyal", "url": "https://www.youtube.com/playlist?list=PLR7krO3VHssT4ZZ1AagIAkeONUGUv6Rjz", "type": "video", "source": "YouTube - EXAM DOST (Ankit Goyal)", "note": "Recent GATE-focused GA course aligned to the current 4-section syllabus.", "free": true},
+    {"title": "GATE GENERAL APTITUDE - Christy's Classes", "url": "https://www.youtube.com/playlist?list=PLmJ0TJrONG1zHZfHUZzNMdrSETnw4Pzh1", "type": "video", "source": "YouTube - Christy's Classes", "note": "GATE GA course playlist; good alternative explanations.", "free": true},
+    {"title": "General Aptitude by Avinash Sir (GATE)", "url": "https://www.youtube.com/playlist?list=PLEBuowGoCtr2Guxf8EN7cY8NqLtW8lSJm", "type": "video", "source": "YouTube - GeeksforGeeks GATE", "note": "GATE GA crash-course style playlist; useful for quick revision.", "free": true},
+    {"title": "GATE/PSU General Aptitude Lectures (incl. Spatial Aptitude)", "url": "https://www.youtube.com/playlist?list=PLvMOQ5JLTIeYCvm2-YzpwNvQv-p6qXDpL", "type": "video", "source": "YouTube - IITians GATE CLASSES (IGC)", "note": "Includes dedicated spatial aptitude lectures, which most GA courses cover thinly.", "free": true},
+    {"title": "IndiaBix - Aptitude questions and answers", "url": "https://www.indiabix.com/aptitude/questions-and-answers/", "type": "practice", "source": "IndiaBix", "note": "Topic-wise quant drill (percentages, ratios, P&C, probability, logs, mensuration) with explanations. Easier than GATE; use for speed building.", "free": true},
+    {"title": "IndiaBix - Verbal Ability", "url": "https://www.indiabix.com/verbal-ability/questions-and-answers/", "type": "practice", "source": "IndiaBix", "note": "Spotting errors, sentence correction, ordering of sentences, idioms, comprehension.", "free": true},
+    {"title": "IndiaBix - Logical Reasoning", "url": "https://www.indiabix.com/logical-reasoning/questions-and-answers/", "type": "practice", "source": "IndiaBix", "note": "Number series, logical deduction, statement & conclusion.", "free": true},
+    {"title": "IndiaBix - Non Verbal Reasoning", "url": "https://www.indiabix.com/non-verbal-reasoning/questions-and-answers/", "type": "practice", "source": "IndiaBix", "note": "Paper folding/cutting, mirror images, cubes & dice - direct match for spatial aptitude.", "free": true},
+    {"title": "IndiaBix - Data Interpretation", "url": "https://www.indiabix.com/data-interpretation/questions-and-answers/", "type": "practice", "source": "IndiaBix", "note": "Bar, pie, line and table chart sets for DI speed.", "free": true}
+  ],
+  "pyqs": [
+    {"title": "GATE Overflow - Previous GATE questions in General Aptitude (all branches)", "url": "https://gateoverflow.in/questions/general-aptitude?sort=gate", "source": "GATE Overflow", "note": "Primary PYQ bank; solve year-wise, then topic-wise."},
+    {"title": "GATE DA 2026 question paper (official)", "url": "https://gate2027.iitm.ac.in/static/doc/download/2026/QPs/DA.pdf", "source": "GATE 2027 official site (IIT Madras)", "note": "Q1-Q10 are the GA section of the DA paper; answer key: https://gate2027.iitm.ac.in/static/doc/download/2026/Keys/DA_Keys.pdf"},
+    {"title": "GATE DA 2025 question paper (official)", "url": "https://gate2027.iitm.ac.in/static/doc/download/2025/DA2025.pdf", "source": "GATE 2027 official site (IIT Madras)", "note": "GA section Q1-Q10; answer key: https://gate2027.iitm.ac.in/static/doc/download/2025_Key/DA_Keys.pdf"},
+    {"title": "GATE DA 2024 question paper (official)", "url": "https://gate2027.iitm.ac.in/static/doc/download/2024/DA24S1.pdf", "source": "GATE 2027 official site (IIT Madras)", "note": "GA section Q1-Q10; answer key: https://gate2027.iitm.ac.in/static/doc/download/2024/DAFinalAnswerKey.pdf"},
+    {"title": "All GATE question papers 2021-2026 (every branch) - official download page", "url": "https://gate2027.iitm.ac.in/download", "source": "GATE 2027 official site (IIT Madras)", "note": "Every branch paper has a 15-mark GA section - ~30 papers/year = a huge free GA PYQ pool for full-length GA timed sets."},
+    {"title": "GATE Overflow GA + Engineering Maths PYQ PDF", "url": "https://github.com/GATEOverflow/GO-PDFs/releases/tag/gate-2026-common", "source": "GATE Overflow (GitHub)", "note": "Compiled multi-branch GA PYQs for offline practice."}
+  ],
+  "topics": [
+    {
+      "id": "ga-verbal-grammar",
+      "title": "Verbal: Grammar & Vocabulary",
+      "subtopics": ["Tenses", "Articles", "Adjectives & adverbs", "Prepositions", "Conjunctions", "Subject-verb (verb-noun) agreement", "Other parts of speech", "Word meaning in context", "Idioms & phrases", "Sentence completion / most appropriate word"],
+      "estHours": 8,
+      "priority": "high",
+      "tips": "Usually 2-3 one-mark questions per paper - near-guaranteed marks. Read the whole sentence, identify the grammatical slot (tense/article/preposition) before reading options. Keep a PYQ vocabulary list; GATE reuses word families. Don't overthink: pick the most natural, formal English.",
+      "resources": [
+        {"title": "GATE Overflow - Verbal Aptitude", "url": "https://gateoverflow.in/general-aptitude/verbal-aptitude", "type": "practice", "source": "GATE Overflow", "note": "All verbal questions with discussions.", "free": true},
+        {"title": "IndiaBix - Spotting Errors", "url": "https://www.indiabix.com/verbal-ability/spotting-errors/", "type": "practice", "source": "IndiaBix", "note": "Grammar error drills.", "free": true},
+        {"title": "IndiaBix - Sentence Correction", "url": "https://www.indiabix.com/verbal-ability/sentence-correction/", "type": "practice", "source": "IndiaBix", "note": "Tense/agreement practice.", "free": true},
+        {"title": "IndiaBix - Idioms and Phrases", "url": "https://www.indiabix.com/verbal-ability/idioms-and-phrases/", "type": "practice", "source": "IndiaBix", "note": "Idioms in context.", "free": true},
+        {"title": "IndiaBix - Synonyms", "url": "https://www.indiabix.com/verbal-ability/synonyms/", "type": "practice", "source": "IndiaBix", "note": "Vocabulary building.", "free": true}
+      ],
+      "pyqs": [
+        {"title": "GATE Overflow - Previous GATE questions in Verbal Aptitude", "url": "https://gateoverflow.in/questions/general-aptitude/verbal-aptitude?sort=gate", "source": "GATE Overflow", "note": "Filter: GATE PYQs only."},
+        {"title": "GATE Overflow - Most answered Verbal Aptitude questions", "url": "https://gateoverflow.in/questions/general-aptitude/verbal-aptitude?sort=answers", "source": "GATE Overflow", "note": "Most-discussed (often trickiest) verbal questions."}
+      ]
+    },
+    {
+      "id": "ga-verbal-rc",
+      "title": "Verbal: Reading Comprehension & Narrative Sequencing",
+      "subtopics": ["Short passage inference", "Main idea / which statement is supported", "Assumption & conclusion from a passage", "Narrative sequencing (para-jumbles / sentence ordering)"],
+      "estHours": 5,
+      "priority": "medium",
+      "tips": "GATE RC passages are 4-8 lines; answers are 'what can be inferred' - choose the option that is strictly supported, never the one that is merely true in the real world. For sequencing, find the opening sentence (introduces a noun) and pronoun/connector links (however, this, thus) to chain sentences.",
+      "resources": [
+        {"title": "IndiaBix - Comprehension", "url": "https://www.indiabix.com/verbal-ability/comprehension/", "type": "practice", "source": "IndiaBix", "note": "Passage practice.", "free": true},
+        {"title": "IndiaBix - Ordering of Sentences", "url": "https://www.indiabix.com/verbal-ability/ordering-of-sentences/", "type": "practice", "source": "IndiaBix", "note": "Narrative sequencing drills.", "free": true},
+        {"title": "IndiaBix - Statement and Conclusion", "url": "https://www.indiabix.com/logical-reasoning/statement-and-conclusion/", "type": "practice", "source": "IndiaBix", "note": "Inference-style questions similar to GATE 'which can be inferred'.", "free": true}
+      ],
+      "pyqs": [
+        {"title": "GATE Overflow - Previous GATE questions in Verbal Aptitude", "url": "https://gateoverflow.in/questions/general-aptitude/verbal-aptitude?sort=gate", "source": "GATE Overflow", "note": "Contains RC/inference and sequencing PYQs."}
+      ]
+    },
+    {
+      "id": "ga-quant-numerical",
+      "title": "Quant: Numerical Computation & Estimation",
+      "subtopics": ["Ratios & proportion", "Percentages (profit/loss, successive change)", "Powers & exponents, surds", "Logarithms", "Permutations & combinations", "Series (AP, GP, number series)", "Averages, mixtures, time & work, speed-distance", "Estimation / approximation"],
+      "estHours": 10,
+      "priority": "high",
+      "tips": "Largest share of GA marks. Memorise percent-fraction equivalents (1/8 = 12.5%, etc.), successive change formula a+b+ab/100, log rules, and nCr identities. Many are NAT - compute carefully and re-check units. For P&C, decide first: order matters? repetition allowed? identical objects? circular?",
+      "resources": [
+        {"title": "GATE Overflow - Quantitative Aptitude (previous GATE questions)", "url": "https://gateoverflow.in/questions/general-aptitude/quantitative-aptitude?sort=gate", "type": "practice", "source": "GATE Overflow", "note": "All quant PYQs.", "free": true},
+        {"title": "IndiaBix - Percentage", "url": "https://www.indiabix.com/aptitude/percentage/", "type": "practice", "source": "IndiaBix", "note": "", "free": true},
+        {"title": "IndiaBix - Ratio and Proportion", "url": "https://www.indiabix.com/aptitude/ratio-and-proportion/", "type": "practice", "source": "IndiaBix", "note": "", "free": true},
+        {"title": "IndiaBix - Logarithm", "url": "https://www.indiabix.com/aptitude/logarithm/", "type": "practice", "source": "IndiaBix", "note": "", "free": true},
+        {"title": "IndiaBix - Permutation and Combination", "url": "https://www.indiabix.com/aptitude/permutation-and-combination/", "type": "practice", "source": "IndiaBix", "note": "Overlaps with DA Probability & Statistics counting.", "free": true}
+      ],
+      "pyqs": [
+        {"title": "GATE Overflow - tag: ratio-proportion", "url": "https://gateoverflow.in/tag/ratio-proportion", "source": "GATE Overflow", "note": ""},
+        {"title": "GATE Overflow - tag: percentage", "url": "https://gateoverflow.in/tag/percentage", "source": "GATE Overflow", "note": ""},
+        {"title": "GATE Overflow - tag: logarithms", "url": "https://gateoverflow.in/tag/logarithms", "source": "GATE Overflow", "note": ""},
+        {"title": "GATE Overflow - tag: number-series", "url": "https://gateoverflow.in/tag/number-series", "source": "GATE Overflow", "note": ""}
+      ]
+    },
+    {
+      "id": "ga-quant-di",
+      "title": "Quant: Data Interpretation",
+      "subtopics": ["Bar graphs", "Pie charts", "Line graphs", "Tables", "2D & 3D plots", "Maps", "Percentage-change / ratio questions on charts"],
+      "estHours": 5,
+      "priority": "high",
+      "tips": "Typically one 2-mark question. Read axis labels/units and the exact question (percentage of what?). Approximate first, then compute only if options are close. Practice with a timer: 3 minutes per DI question.",
+      "resources": [
+        {"title": "IndiaBix - Bar Charts", "url": "https://www.indiabix.com/data-interpretation/bar-charts/", "type": "practice", "source": "IndiaBix", "note": "", "free": true},
+        {"title": "IndiaBix - Pie Charts", "url": "https://www.indiabix.com/data-interpretation/pie-charts/", "type": "practice", "source": "IndiaBix", "note": "", "free": true},
+        {"title": "IndiaBix - Line Charts", "url": "https://www.indiabix.com/data-interpretation/line-charts/", "type": "practice", "source": "IndiaBix", "note": "", "free": true},
+        {"title": "IndiaBix - Table Charts", "url": "https://www.indiabix.com/data-interpretation/table-charts/", "type": "practice", "source": "IndiaBix", "note": "", "free": true}
+      ],
+      "pyqs": [
+        {"title": "GATE Overflow - tag: data-interpretation", "url": "https://gateoverflow.in/tag/data-interpretation", "source": "GATE Overflow", "note": "Mix of GATE and UGC-NET DI; prioritise GATE-tagged ones."},
+        {"title": "GATE Overflow - Previous GATE questions in Quantitative Aptitude", "url": "https://gateoverflow.in/questions/general-aptitude/quantitative-aptitude?sort=gate", "source": "GATE Overflow", "note": ""}
+      ]
+    },
+    {
+      "id": "ga-quant-geometry",
+      "title": "Quant: Mensuration & Geometry",
+      "subtopics": ["Triangles (similarity, Pythagoras, area)", "Circles (chords, tangents, inscribed angles, sectors)", "Polygons & quadrilaterals", "Areas & perimeters of composite/shaded regions", "Volumes & surface areas (cube, cuboid, cylinder, cone, sphere)", "Coordinate geometry basics"],
+      "estHours": 6,
+      "priority": "medium",
+      "tips": "Recent DA papers (2025, 2026) had shaded-area circle questions. Draw the figure, mark all known lengths/angles, decompose into standard shapes. Memorise sector area = (theta/360)*pi*r^2 and inscribed-angle theorem.",
+      "resources": [
+        {"title": "IndiaBix - Area", "url": "https://www.indiabix.com/aptitude/area/", "type": "practice", "source": "IndiaBix", "note": "", "free": true},
+        {"title": "IndiaBix - Volume and Surface Area", "url": "https://www.indiabix.com/aptitude/volume-and-surface-area/", "type": "practice", "source": "IndiaBix", "note": "", "free": true},
+        {"title": "GATE General Aptitude playlist - Dr. Gajendra Purohit", "url": "https://www.youtube.com/playlist?list=PLIU86IV5HmhT3F57speqW03YRJ087tyrx", "type": "video", "source": "YouTube", "note": "Geometry/mensuration lectures within the GA series.", "free": true}
+      ],
+      "pyqs": [
+        {"title": "GATE Overflow - tag: geometry", "url": "https://gateoverflow.in/tag/geometry", "source": "GATE Overflow", "note": "Includes GATE DA 2025/2026 geometry questions."},
+        {"title": "GATE Overflow - tag: mensuration", "url": "https://gateoverflow.in/tag/mensuration", "source": "GATE Overflow", "note": ""}
+      ]
+    },
+    {
+      "id": "ga-quant-stats-prob",
+      "title": "Quant: Elementary Statistics & Probability",
+      "subtopics": ["Mean, median, mode", "Range, variance, standard deviation", "Basic probability (dice, coins, cards, balls)", "Conditional probability basics", "Averages & weighted averages"],
+      "estHours": 3,
+      "priority": "medium",
+      "tips": "Low effort for DA aspirants - fully covered by your Probability & Statistics subject. Just practice GA-style wording and do 20-30 PYQs.",
+      "resources": [
+        {"title": "IndiaBix - Probability", "url": "https://www.indiabix.com/aptitude/probability/", "type": "practice", "source": "IndiaBix", "note": "", "free": true},
+        {"title": "IndiaBix - Average", "url": "https://www.indiabix.com/aptitude/average/", "type": "practice", "source": "IndiaBix", "note": "", "free": true}
+      ],
+      "pyqs": [
+        {"title": "GATE Overflow - Previous GATE questions in Quantitative Aptitude", "url": "https://gateoverflow.in/questions/general-aptitude/quantitative-aptitude?sort=gate", "source": "GATE Overflow", "note": "Filter for statistics/probability tags within."}
+      ]
+    },
+    {
+      "id": "ga-analytical",
+      "title": "Analytical Aptitude: Logic, Analogy & Numerical Reasoning",
+      "subtopics": ["Deduction (syllogisms, if-then statements, necessary/sufficient)", "Induction (patterns, generalisation)", "Analogy (word & number)", "Numerical relations & reasoning (puzzles, arrangements, ordering, ages)", "Blood relations, direction sense", "Clocks & calendars"],
+      "estHours": 8,
+      "priority": "high",
+      "tips": "Usually 2-3 questions, often 2-mark MSQ/MCQ puzzles. Always tabulate or draw (Venn diagram for syllogisms, grid for arrangements). For 'which must be true' check every option against the constraints; for MSQ there is no partial credit, so verify each option independently.",
+      "resources": [
+        {"title": "GATE Overflow - Analytical Aptitude", "url": "https://gateoverflow.in/general-aptitude/analytical-aptitude", "type": "practice", "source": "GATE Overflow", "note": "All analytical questions with discussions.", "free": true},
+        {"title": "IndiaBix - Logical Deduction", "url": "https://www.indiabix.com/logical-reasoning/logical-deduction/", "type": "practice", "source": "IndiaBix", "note": "", "free": true},
+        {"title": "IndiaBix - Syllogism", "url": "https://www.indiabix.com/verbal-reasoning/syllogism/", "type": "practice", "source": "IndiaBix", "note": "", "free": true},
+        {"title": "IndiaBix - Analogy (verbal reasoning)", "url": "https://www.indiabix.com/verbal-reasoning/analogy/", "type": "practice", "source": "IndiaBix", "note": "", "free": true},
+        {"title": "IndiaBix - Logical Problems", "url": "https://www.indiabix.com/logical-reasoning/logical-problems/", "type": "practice", "source": "IndiaBix", "note": "", "free": true}
+      ],
+      "pyqs": [
+        {"title": "GATE Overflow - Previous GATE questions in Analytical Aptitude", "url": "https://gateoverflow.in/questions/general-aptitude/analytical-aptitude?sort=gate", "source": "GATE Overflow", "note": ""},
+        {"title": "GATE Overflow - Recent Analytical Aptitude questions", "url": "https://gateoverflow.in/questions/general-aptitude/analytical-aptitude", "source": "GATE Overflow", "note": "Includes latest (2025/2026) GA questions."}
+      ]
+    },
+    {
+      "id": "ga-spatial",
+      "title": "Spatial Aptitude: Transformations, Folding & Patterns",
+      "subtopics": ["Translation, rotation, scaling of shapes", "Mirror images / reflection", "Assembling & grouping of pieces", "Paper folding & cutting (hole-punch patterns)", "Cube nets, dice, cube painting/cutting", "2D and 3D pattern completion, counting figures"],
+      "estHours": 6,
+      "priority": "high",
+      "tips": "Added to the syllabus from GATE 2024 and now appears every year (often 1-2 questions). Practice by physically folding/cutting paper and sketching. For cube nets: opposite faces are never adjacent in the net (skip one). For rotation, track one distinctive corner/marker instead of the whole figure.",
+      "resources": [
+        {"title": "GATE Overflow - Spatial Aptitude", "url": "https://gateoverflow.in/general-aptitude/spatial-aptitude", "type": "practice", "source": "GATE Overflow", "note": "All spatial questions with discussions.", "free": true},
+        {"title": "IndiaBix - Paper Folding", "url": "https://www.indiabix.com/non-verbal-reasoning/paper-folding/", "type": "practice", "source": "IndiaBix", "note": "", "free": true},
+        {"title": "IndiaBix - Paper Cutting", "url": "https://www.indiabix.com/non-verbal-reasoning/paper-cutting/", "type": "practice", "source": "IndiaBix", "note": "", "free": true},
+        {"title": "IndiaBix - Mirror Images", "url": "https://www.indiabix.com/non-verbal-reasoning/mirror-images/", "type": "practice", "source": "IndiaBix", "note": "", "free": true},
+        {"title": "IndiaBix - Cubes and Dice", "url": "https://www.indiabix.com/non-verbal-reasoning/cubes-and-dice/", "type": "practice", "source": "IndiaBix", "note": "", "free": true}
+      ],
+      "pyqs": [
+        {"title": "GATE Overflow - Previous GATE questions in Spatial Aptitude", "url": "https://gateoverflow.in/questions/general-aptitude/spatial-aptitude?sort=gate", "source": "GATE Overflow", "note": "~170 spatial questions; GATE-filtered view."},
+        {"title": "GATE Overflow - tag: paper-folding", "url": "https://gateoverflow.in/tag/paper-folding", "source": "GATE Overflow", "note": "Includes GATE CSE 2025 cube-folding question."},
+        {"title": "GATE Overflow - Most viewed Spatial Aptitude questions", "url": "https://gateoverflow.in/questions/general-aptitude/spatial-aptitude?sort=views", "source": "GATE Overflow", "note": ""}
+      ]
+    }
+  ]
+}

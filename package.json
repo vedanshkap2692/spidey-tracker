@@ -1,0 +1,41 @@
+{
+  "name": "spidey-tracker",
+  "productName": "Spidey Tracker",
+  "version": "1.0.0",
+  "description": "Your friendly neighbourhood progress tracker \u2014 GATE 2027 DA edition",
+  "type": "module",
+  "main": "electron/main.js",
+  "private": true,
+  "scripts": {
+    "dev": "concurrently -k \"node server/index.js --dev\" \"vite\"",
+    "build": "tsc --noEmit && vite build",
+    "seed": "node scripts/build-seed.js",
+    "serve": "node server/index.js",
+    "app": "electron .",
+    "package": "npm run build && node scripts/package.js",
+    "dist": "npm run build && node scripts/dist.js"
+  },
+  "devDependencies": {
+    "@electron/packager": "^20.3.0",
+    "@fontsource-variable/inter": "^5.3.0",
+    "@fontsource-variable/jetbrains-mono": "^5.3.0",
+    "@fontsource/bangers": "^5.3.0",
+    "@tailwindcss/vite": "^4.3.3",
+    "@types/node": "^26.6.4",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@vitejs/plugin-react": "^6.1.1",
+    "concurrently": "^10.0.5",
+    "electron": "^44.5.1",
+    "framer-motion": "^14.0.0",
+    "immer": "^11.1.21",
+    "lucide-react": "^1.51.0",
+    "marked": "^18.0.14",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0",
+    "tailwindcss": "^4.3.3",
+    "typescript": "^7.0.2",
+    "vite": "^8.3.2",
+    "zustand": "^5.0.15"
+  }
+}

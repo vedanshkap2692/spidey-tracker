@@ -1,0 +1,852 @@
+{
+  "id": "dbms",
+  "title": "DBMS & Data Warehousing",
+  "weightage": "~9-16 marks per paper (2024-2026 DA papers; trending upward - DA 2026 had ~10 DB/warehousing questions incl. SQL, RA, FDs, B+ tree, ER and data cube)",
+  "summary": "Classic GATE DBMS core (ER, relational algebra/calculus, SQL output, FDs & normal forms, B+ tree indexing) plus DA-specific data preprocessing (min-max/z-score normalization, discretization, sampling) and warehouse modelling (star/snowflake schemas, data cubes, OLAP measures). Questions are mostly computational: evaluate a query on given tables, find keys/normal form, count B+ tree nodes, compute a cube aggregate.",
+  "notesGuide": "1) Core DBMS: download the db-book.com 7th-edition slide PDFs ch2 (relational model), ch3-4 (SQL, integrity constraints, data types), ch6 (ER), ch7 (normalization), ch13 (file organization), ch14 (indexing), ch27 (relational algebra & tuple calculus) and annotate them while watching Gate Smashers or NPTEL IIT-KGP lectures. 2) Keep CMU 15-445 lecture-note PDFs 01, 02, 05 (compression), 08-09 (B+ trees) as crisp secondary notes. 3) Warehousing/preprocessing: download Han-Kamber-Pei slides 03Preprocessing.ppt and 04OLAP.ppt from hanj.cs.illinois.edu and db-book ch11 (Data Analytics); condense into a 2-page sheet of formulas (min-max, z-score, decimal scaling, equal-width/equal-frequency binning, sampling types) and schema diagrams (star, snowflake, fact constellation), plus the distributive/algebraic/holistic measures table. 4) Make your own one-page cheat sheets: RA operator -> SQL equivalent; SQL NULL/aggregate/duplicate rules; closure/candidate-key algorithm + 1NF->BCNF test checklist + lossless/dependency-preserving tests; B/B+ tree order & fan-out formulas. 5) Practise SQL hands-on (SQLBolt, pgexercises) and evaluate every PYQ query on its sample tables by hand, recording mistakes in an error log.",
+  "resources": [
+    {
+      "title": "Gate Smashers - DBMS Complete Playlist",
+      "url": "https://www.youtube.com/playlist?list=PLxCzCOWd7aiFAN6I8CuViBuCdJgiOkT2Y",
+      "type": "video",
+      "source": "YouTube (Gate Smashers)",
+      "note": "140 short GATE-oriented videos; fastest way to cover keys, normal forms, RA, SQL, indexing with solved PYQs.",
+      "free": true
+    },
+    {
+      "title": "NPTEL: Data Base Management System (IIT Kharagpur - P. P. Das, S. Chattopadhyay)",
+      "url": "https://nptel.ac.in/courses/106105175",
+      "type": "course",
+      "source": "NPTEL",
+      "note": "Full GATE-aligned DBMS course: relational model, RA/RC, SQL, ER, FDs & normalization, file organization, indexing, B+ trees.",
+      "free": true
+    },
+    {
+      "title": "Database System Concepts 7e - all chapter slides",
+      "url": "https://www.db-book.com/slides-dir/index.html",
+      "type": "pdf",
+      "source": "db-book.com",
+      "note": "Official textbook slides (PDF/PPTX). Use ch2-7, 11, 13, 14, 27 for the DA syllabus.",
+      "free": true
+    },
+    {
+      "title": "CMU 15-445/645 Fall 2024 course site (slides + notes)",
+      "url": "https://15445.courses.cs.cmu.edu/fall2024/",
+      "type": "course",
+      "source": "Carnegie Mellon University",
+      "note": "Download slides and concise lecture-note PDFs for each lecture.",
+      "free": true
+    },
+    {
+      "title": "CMU 15-445/645 Intro to Database Systems (Fall 2024) - lectures",
+      "url": "https://www.youtube.com/playlist?list=PLSE8ODhjZXjYDBpQnSymaectKjxCy6BYq",
+      "type": "video",
+      "source": "YouTube (CMU Database Group)",
+      "note": "Lectures 1-2 (relational model, SQL), 3-5 (storage, compression), 7-9 (hashing, B+ trees). Skip concurrency/recovery (not in DA syllabus).",
+      "free": true
+    },
+    {
+      "title": "Stanford 'Databases: Relational Databases and SQL' (Jennifer Widom)",
+      "url": "https://www.edx.org/learn/relational-databases/stanford-university-databases-relational-databases-and-sql",
+      "type": "course",
+      "source": "StanfordOnline / edX",
+      "note": "Classic Stanford DB course: relational model, relational algebra, SQL with hands-on exercises (free to audit).",
+      "free": true
+    },
+    {
+      "title": "Han, Kamber & Pei - Data Mining: Concepts and Techniques 3e, official slides index",
+      "url": "https://hanj.cs.illinois.edu/bk3/bk3_slidesindex.htm",
+      "type": "pdf",
+      "source": "Jiawei Han (UIUC)",
+      "note": "Author's slides; Ch.3 (Data Preprocessing) and Ch.4 (Data Warehousing & OLAP) cover the DA warehousing syllabus almost verbatim.",
+      "free": true
+    },
+    {
+      "title": "Han/Kamber/Pei Ch.3 slides - Data Preprocessing (PPT)",
+      "url": "https://hanj.cs.illinois.edu/bk3/bk3_slides/03Preprocessing.ppt",
+      "type": "pdf",
+      "source": "Jiawei Han (UIUC)",
+      "note": "Min-max/z-score/decimal-scaling normalization, discretization (binning, histogram, concept hierarchy generation), sampling, data reduction/compression.",
+      "free": true
+    },
+    {
+      "title": "Han/Kamber/Pei Ch.4 slides - Data Warehousing & OLAP (PPT)",
+      "url": "https://hanj.cs.illinois.edu/bk3/bk3_slides/04OLAP.ppt",
+      "type": "pdf",
+      "source": "Jiawei Han (UIUC)",
+      "note": "Data cube, star/snowflake/fact-constellation schemas, concept hierarchies, distributive/algebraic/holistic measures, OLAP operations.",
+      "free": true
+    },
+    {
+      "title": "Database System Concepts 7e - Ch.11 slides: Data Analytics (warehousing, OLAP, cubes) (PDF)",
+      "url": "https://www.db-book.com/slides-dir/PDF-dir/ch11.pdf",
+      "type": "pdf",
+      "source": "Silberschatz, Korth, Sudarshan (db-book.com)",
+      "note": "Textbook view of warehouses, star schema, cubes, OLAP operations.",
+      "free": true
+    },
+    {
+      "title": "SQLBolt - interactive SQL lessons",
+      "url": "https://sqlbolt.com/",
+      "type": "practice",
+      "source": "SQLBolt",
+      "note": "Short interactive lessons from SELECT to joins, aggregates and subqueries.",
+      "free": true
+    },
+    {
+      "title": "PostgreSQL Exercises",
+      "url": "https://pgexercises.com/",
+      "type": "practice",
+      "source": "pgexercises.com",
+      "note": "Well-designed exercises on joins, aggregates, subqueries on one schema.",
+      "free": true
+    },
+    {
+      "title": "HackerRank - SQL practice",
+      "url": "https://www.hackerrank.com/domains/sql",
+      "type": "practice",
+      "source": "HackerRank",
+      "note": "Graded SQL problems (aggregation, joins, subqueries).",
+      "free": true
+    },
+    {
+      "title": "sql-practice.com",
+      "url": "https://www.sql-practice.com/",
+      "type": "practice",
+      "source": "sql-practice.com",
+      "note": "Browser-based SQL exercises from easy to hard; good for GROUP BY/HAVING and nested queries.",
+      "free": true
+    }
+  ],
+  "pyqs": [
+    {
+      "title": "GATE DA 2024 - all questions (tag gate-ds-ai-2024)",
+      "url": "https://gateoverflow.in/tag/gate-ds-ai-2024",
+      "source": "GATE Overflow",
+      "note": "Full DA 2024 paper with solutions."
+    },
+    {
+      "title": "GATE DA 2025 - all questions (tag gateda-2025)",
+      "url": "https://gateoverflow.in/tag/gateda-2025",
+      "source": "GATE Overflow",
+      "note": "Full DA 2025 paper with discussion."
+    },
+    {
+      "title": "GATE DA 2026 - all questions (tag gateda-2026)",
+      "url": "https://gateoverflow.in/tag/gateda-2026",
+      "source": "GATE Overflow",
+      "note": "Full DA 2026 paper with discussion."
+    },
+    {
+      "title": "GATE DA 2026 official question paper (PDF)",
+      "url": "https://gate2027.iitm.ac.in/static/doc/download/2026/QPs/DA.pdf",
+      "source": "IIT Madras (GATE 2027 site)",
+      "note": "Official paper; key at /static/doc/download/2026/Keys/DA_Keys.pdf."
+    },
+    {
+      "title": "GATE DA 2025 official question paper (PDF)",
+      "url": "https://gate2027.iitm.ac.in/static/doc/download/2025/DA2025.pdf",
+      "source": "IIT Madras (GATE 2027 site)",
+      "note": "Official paper."
+    },
+    {
+      "title": "GATE DA 2024 official question paper (PDF)",
+      "url": "https://gate2027.iitm.ac.in/static/doc/download/2024/DA24S1.pdf",
+      "source": "IIT Madras (GATE 2027 site)",
+      "note": "Official paper."
+    },
+    {
+      "title": "ExamSIDE - GATE DA DBMS & Warehousing PYQs (all chapters)",
+      "url": "https://questions.examside.com/past-years/gate/gate-da/database-management-system-and-warehousing",
+      "source": "ExamSIDE",
+      "note": "DA-only PYQs organised by chapter with solutions."
+    },
+    {
+      "title": "Databases (category)",
+      "url": "https://gateoverflow.in/questions/databases",
+      "source": "GATE Overflow",
+      "note": "Entire GATE CSE (1987-2026) + DA DBMS bank - huge extra practice for SQL/RA/normalization/indexing."
+    },
+    {
+      "title": "Data Mining & Warehousing (category)",
+      "url": "https://gateoverflow.in/questions/data-mining-and-warehousing",
+      "source": "GATE Overflow",
+      "note": "Category for DA warehousing / data mining questions."
+    },
+    {
+      "title": "AspirantMitraa - GATE DA DBMS important PYQs",
+      "url": "https://www.aspirantmitraa.com/pyq/gate-da-database-management-systems-important-questions",
+      "source": "AspirantMitraa",
+      "note": "Curated DA DBMS PYQs with solutions."
+    }
+  ],
+  "topics": [
+    {
+      "id": "er-model",
+      "title": "ER Model",
+      "subtopics": [
+        "Entities, attributes (simple/composite/multivalued/derived), relationships",
+        "Cardinality and participation constraints",
+        "Weak entities, identifying relationships",
+        "Specialization/generalization",
+        "ER-to-relational mapping and minimum number of tables"
+      ],
+      "estHours": 4,
+      "priority": "medium",
+      "tips": "DA 2026 asked an ER-to-relations question - practise counting the minimum tables for 1:1, 1:N, M:N with total/partial participation.",
+      "resources": [
+        {
+          "title": "Database System Concepts 7e - Ch.6 slides: Database Design Using the E-R Model (PDF)",
+          "url": "https://www.db-book.com/slides-dir/PDF-dir/ch6.pdf",
+          "type": "pdf",
+          "source": "Silberschatz, Korth, Sudarshan (db-book.com)",
+          "note": "Full ER notation and reduction to relational schemas.",
+          "free": true
+        },
+        {
+          "title": "Gate Smashers - DBMS Complete Playlist",
+          "url": "https://www.youtube.com/playlist?list=PLxCzCOWd7aiFAN6I8CuViBuCdJgiOkT2Y",
+          "type": "video",
+          "source": "YouTube (Gate Smashers)",
+          "note": "140 short GATE-oriented videos; fastest way to cover keys, normal forms, RA, SQL, indexing with solved PYQs.",
+          "free": true
+        },
+        {
+          "title": "NPTEL: Data Base Management System (IIT Kharagpur - P. P. Das, S. Chattopadhyay)",
+          "url": "https://nptel.ac.in/courses/106105175",
+          "type": "course",
+          "source": "NPTEL",
+          "note": "Full GATE-aligned DBMS course: relational model, RA/RC, SQL, ER, FDs & normalization, file organization, indexing, B+ trees.",
+          "free": true
+        }
+      ],
+      "pyqs": [
+        {
+          "title": "ExamSIDE - DA ER Diagram PYQs",
+          "url": "https://questions.examside.com/past-years/gate/gate-da/database-management-system-and-warehousing/er-diagrams",
+          "source": "ExamSIDE",
+          "note": "DA-specific."
+        },
+        {
+          "title": "Tag: er-diagram",
+          "url": "https://gateoverflow.in/tag/er-diagram",
+          "source": "GATE Overflow",
+          "note": "GATE Overflow tag page (CSE + DA questions with community solutions). Cloudflare-protected: opens fine in a browser."
+        },
+        {
+          "title": "Tag: er-model",
+          "url": "https://gateoverflow.in/tag/er-model",
+          "source": "GATE Overflow",
+          "note": "GATE Overflow tag page (CSE + DA questions with community solutions). Cloudflare-protected: opens fine in a browser."
+        }
+      ]
+    },
+    {
+      "id": "relational-model-constraints",
+      "title": "Relational Model, Keys, Integrity Constraints & Data Types",
+      "subtopics": [
+        "Relations, tuples, attributes, domains, NULLs",
+        "Super/candidate/primary/foreign keys",
+        "Domain, entity integrity, referential integrity (ON DELETE CASCADE/SET NULL)",
+        "SQL data types, CHECK/UNIQUE/NOT NULL constraints"
+      ],
+      "estHours": 4,
+      "priority": "medium",
+      "tips": "Expect questions on what happens to referencing tuples on delete/update with cascading constraints and on whether a NULL foreign key is allowed.",
+      "resources": [
+        {
+          "title": "Database System Concepts 7e - Ch.2 slides: Intro to Relational Model (PDF)",
+          "url": "https://www.db-book.com/slides-dir/PDF-dir/ch2.pdf",
+          "type": "pdf",
+          "source": "Silberschatz, Korth, Sudarshan (db-book.com)",
+          "note": "Keys, schema diagrams, relational operations.",
+          "free": true
+        },
+        {
+          "title": "Database System Concepts 7e - Ch.4 slides: Intermediate SQL (constraints, data types) (PDF)",
+          "url": "https://www.db-book.com/slides-dir/PDF-dir/ch4.pdf",
+          "type": "pdf",
+          "source": "Silberschatz, Korth, Sudarshan (db-book.com)",
+          "note": "Integrity constraints, referential actions, built-in data types.",
+          "free": true
+        },
+        {
+          "title": "CMU 15-445 (Fall 2024) notes - Relational Model & Algebra",
+          "url": "https://15445.courses.cs.cmu.edu/fall2024/notes/01-relationalmodel.pdf",
+          "type": "notes",
+          "source": "Carnegie Mellon University (Andy Pavlo)",
+          "note": "Concise notes on the relational model and RA operators.",
+          "free": true
+        },
+        {
+          "title": "Gate Smashers - DBMS Complete Playlist",
+          "url": "https://www.youtube.com/playlist?list=PLxCzCOWd7aiFAN6I8CuViBuCdJgiOkT2Y",
+          "type": "video",
+          "source": "YouTube (Gate Smashers)",
+          "note": "140 short GATE-oriented videos; fastest way to cover keys, normal forms, RA, SQL, indexing with solved PYQs.",
+          "free": true
+        }
+      ],
+      "pyqs": [
+        {
+          "title": "Tag: referential-integrity",
+          "url": "https://gateoverflow.in/tag/referential-integrity",
+          "source": "GATE Overflow",
+          "note": "GATE Overflow tag page (CSE + DA questions with community solutions). Cloudflare-protected: opens fine in a browser."
+        },
+        {
+          "title": "Tag: candidate-key",
+          "url": "https://gateoverflow.in/tag/candidate-key",
+          "source": "GATE Overflow",
+          "note": "GATE Overflow tag page (CSE + DA questions with community solutions). Cloudflare-protected: opens fine in a browser."
+        },
+        {
+          "title": "Tag: data-types",
+          "url": "https://gateoverflow.in/tag/data-types",
+          "source": "GATE Overflow",
+          "note": "GATE Overflow tag page (CSE + DA questions with community solutions). Cloudflare-protected: opens fine in a browser."
+        }
+      ]
+    },
+    {
+      "id": "relational-algebra",
+      "title": "Relational Algebra",
+      "subtopics": [
+        "Selection, projection, union, set difference, Cartesian product, rename",
+        "Joins: theta, equi, natural, outer joins; division",
+        "Query output cardinality on given instances",
+        "Equivalence of RA expressions"
+      ],
+      "estHours": 6,
+      "priority": "high",
+      "tips": "Asked in every DA paper (2024: relations on players/teams; 2025: equivalence of expressions; 2026: X, Y, Z table evaluation). Always evaluate on the given instance step by step and watch duplicate elimination in projection.",
+      "resources": [
+        {
+          "title": "Database System Concepts 7e - Ch.2 slides: Intro to Relational Model (RA) (PDF)",
+          "url": "https://www.db-book.com/slides-dir/PDF-dir/ch2.pdf",
+          "type": "pdf",
+          "source": "Silberschatz, Korth, Sudarshan (db-book.com)",
+          "note": "RA operators with examples.",
+          "free": true
+        },
+        {
+          "title": "CMU 15-445 (Fall 2024) notes - Relational Model & Algebra",
+          "url": "https://15445.courses.cs.cmu.edu/fall2024/notes/01-relationalmodel.pdf",
+          "type": "notes",
+          "source": "Carnegie Mellon University (Andy Pavlo)",
+          "note": "Operator definitions.",
+          "free": true
+        },
+        {
+          "title": "Stanford 'Databases: Relational Databases and SQL' (Jennifer Widom)",
+          "url": "https://www.edx.org/learn/relational-databases/stanford-university-databases-relational-databases-and-sql",
+          "type": "course",
+          "source": "StanfordOnline / edX",
+          "note": "Classic Stanford DB course: relational model, relational algebra, SQL with hands-on exercises (free to audit).",
+          "free": true
+        },
+        {
+          "title": "Gate Smashers - DBMS Complete Playlist",
+          "url": "https://www.youtube.com/playlist?list=PLxCzCOWd7aiFAN6I8CuViBuCdJgiOkT2Y",
+          "type": "video",
+          "source": "YouTube (Gate Smashers)",
+          "note": "140 short GATE-oriented videos; fastest way to cover keys, normal forms, RA, SQL, indexing with solved PYQs.",
+          "free": true
+        }
+      ],
+      "pyqs": [
+        {
+          "title": "ExamSIDE - DA Relational Algebra PYQs",
+          "url": "https://questions.examside.com/past-years/gate/gate-da/database-management-system-and-warehousing/relational-algebra",
+          "source": "ExamSIDE",
+          "note": "DA-specific."
+        },
+        {
+          "title": "Tag: relational-algebra",
+          "url": "https://gateoverflow.in/tag/relational-algebra",
+          "source": "GATE Overflow",
+          "note": "GATE Overflow tag page (CSE + DA questions with community solutions). Cloudflare-protected: opens fine in a browser."
+        },
+        {
+          "title": "Tag: natural-join",
+          "url": "https://gateoverflow.in/tag/natural-join",
+          "source": "GATE Overflow",
+          "note": "GATE Overflow tag page (CSE + DA questions with community solutions). Cloudflare-protected: opens fine in a browser."
+        }
+      ]
+    },
+    {
+      "id": "tuple-calculus",
+      "title": "Tuple Relational Calculus",
+      "subtopics": [
+        "TRC syntax, free/bound variables, quantifiers",
+        "Translating TRC <-> RA <-> SQL",
+        "Safe expressions",
+        "Expressing 'for all' (division) queries"
+      ],
+      "estHours": 3,
+      "priority": "medium",
+      "tips": "Translate each TRC expression into plain English first; 'for all' with implication usually corresponds to RA division or NOT EXISTS in SQL.",
+      "resources": [
+        {
+          "title": "Database System Concepts 7e - Ch.27 slides: Formal-Relational Query Languages (RA, TRC, DRC) (PDF)",
+          "url": "https://www.db-book.com/slides-dir/PDF-dir/ch27.pdf",
+          "type": "pdf",
+          "source": "Silberschatz, Korth, Sudarshan (db-book.com)",
+          "note": "Official chapter covering tuple relational calculus with examples.",
+          "free": true
+        },
+        {
+          "title": "NPTEL: Data Base Management System (IIT Kharagpur - P. P. Das, S. Chattopadhyay)",
+          "url": "https://nptel.ac.in/courses/106105175",
+          "type": "course",
+          "source": "NPTEL",
+          "note": "Full GATE-aligned DBMS course: relational model, RA/RC, SQL, ER, FDs & normalization, file organization, indexing, B+ trees.",
+          "free": true
+        },
+        {
+          "title": "Gate Smashers - DBMS Complete Playlist",
+          "url": "https://www.youtube.com/playlist?list=PLxCzCOWd7aiFAN6I8CuViBuCdJgiOkT2Y",
+          "type": "video",
+          "source": "YouTube (Gate Smashers)",
+          "note": "140 short GATE-oriented videos; fastest way to cover keys, normal forms, RA, SQL, indexing with solved PYQs.",
+          "free": true
+        }
+      ],
+      "pyqs": [
+        {
+          "title": "Tag: tuple-relational-calculus",
+          "url": "https://gateoverflow.in/tag/tuple-relational-calculus",
+          "source": "GATE Overflow",
+          "note": "GATE Overflow tag page (CSE + DA questions with community solutions). Cloudflare-protected: opens fine in a browser."
+        },
+        {
+          "title": "Tag: relational-calculus",
+          "url": "https://gateoverflow.in/tag/relational-calculus",
+          "source": "GATE Overflow",
+          "note": "GATE Overflow tag page (CSE + DA questions with community solutions). Cloudflare-protected: opens fine in a browser."
+        }
+      ]
+    },
+    {
+      "id": "sql",
+      "title": "SQL",
+      "subtopics": [
+        "SELECT-FROM-WHERE, DISTINCT, ORDER BY",
+        "Joins (inner/outer/natural), set operations",
+        "Aggregates, GROUP BY, HAVING; NULL semantics in aggregates and comparisons",
+        "Nested/correlated subqueries, IN/EXISTS/ANY/ALL",
+        "DDL/DML, views"
+      ],
+      "estHours": 8,
+      "priority": "high",
+      "tips": "Highest-frequency DB topic: DA 2024, 2025 (Loan/Borrower) and 2026 (Employee/TeamID, Account balance) all had 'output of this query' questions. Memorise NULL rules (COUNT(*) vs COUNT(col), comparisons with NULL yield UNKNOWN) and correlated-subquery evaluation.",
+      "resources": [
+        {
+          "title": "Database System Concepts 7e - Ch.3 slides: Introduction to SQL (PDF)",
+          "url": "https://www.db-book.com/slides-dir/PDF-dir/ch3.pdf",
+          "type": "pdf",
+          "source": "Silberschatz, Korth, Sudarshan (db-book.com)",
+          "note": "Core SQL.",
+          "free": true
+        },
+        {
+          "title": "Database System Concepts 7e - Ch.5 slides: Advanced SQL (PDF)",
+          "url": "https://www.db-book.com/slides-dir/PDF-dir/ch5.pdf",
+          "type": "pdf",
+          "source": "Silberschatz, Korth, Sudarshan (db-book.com)",
+          "note": "Functions, triggers, recursive queries - skim.",
+          "free": true
+        },
+        {
+          "title": "CMU 15-445 (Fall 2024) notes - Modern SQL",
+          "url": "https://15445.courses.cs.cmu.edu/fall2024/notes/02-modernsql.pdf",
+          "type": "notes",
+          "source": "Carnegie Mellon University (Andy Pavlo)",
+          "note": "Aggregates, GROUP BY, nested queries, window functions.",
+          "free": true
+        },
+        {
+          "title": "SQLBolt - interactive SQL lessons",
+          "url": "https://sqlbolt.com/",
+          "type": "practice",
+          "source": "SQLBolt",
+          "note": "Short interactive lessons from SELECT to joins, aggregates and subqueries.",
+          "free": true
+        },
+        {
+          "title": "PostgreSQL Exercises",
+          "url": "https://pgexercises.com/",
+          "type": "practice",
+          "source": "pgexercises.com",
+          "note": "Well-designed exercises on joins, aggregates, subqueries on one schema.",
+          "free": true
+        }
+      ],
+      "pyqs": [
+        {
+          "title": "ExamSIDE - DA SQL PYQs",
+          "url": "https://questions.examside.com/past-years/gate/gate-da/database-management-system-and-warehousing/structured-query-language",
+          "source": "ExamSIDE",
+          "note": "DA-specific SQL questions."
+        },
+        {
+          "title": "Tag: sql",
+          "url": "https://gateoverflow.in/tag/sql",
+          "source": "GATE Overflow",
+          "note": "GATE Overflow tag page (CSE + DA questions with community solutions). Cloudflare-protected: opens fine in a browser."
+        },
+        {
+          "title": "Tag: joins",
+          "url": "https://gateoverflow.in/tag/joins",
+          "source": "GATE Overflow",
+          "note": "GATE Overflow tag page (CSE + DA questions with community solutions). Cloudflare-protected: opens fine in a browser."
+        }
+      ]
+    },
+    {
+      "id": "normalization",
+      "title": "Functional Dependencies & Normal Forms",
+      "subtopics": [
+        "FDs, Armstrong's axioms, attribute closure, minimal cover",
+        "Finding all candidate keys",
+        "1NF, 2NF, 3NF, BCNF (and 4NF awareness)",
+        "Lossless-join and dependency-preserving decomposition",
+        "Decomposition algorithms (3NF synthesis, BCNF)"
+      ],
+      "estHours": 8,
+      "priority": "high",
+      "tips": "Asked every year (2024: FD set on R(U..Z); 2025: lossless decomposition and candidate keys; 2026: highest normal form of R(A..E)). Drill closure computation until it takes under a minute.",
+      "resources": [
+        {
+          "title": "Database System Concepts 7e - Ch.7 slides: Normalization (Relational Database Design) (PDF)",
+          "url": "https://www.db-book.com/slides-dir/PDF-dir/ch7.pdf",
+          "type": "pdf",
+          "source": "Silberschatz, Korth, Sudarshan (db-book.com)",
+          "note": "FDs, closures, normal forms, decompositions.",
+          "free": true
+        },
+        {
+          "title": "Gate Smashers - DBMS Complete Playlist",
+          "url": "https://www.youtube.com/playlist?list=PLxCzCOWd7aiFAN6I8CuViBuCdJgiOkT2Y",
+          "type": "video",
+          "source": "YouTube (Gate Smashers)",
+          "note": "140 short GATE-oriented videos; fastest way to cover keys, normal forms, RA, SQL, indexing with solved PYQs.",
+          "free": true
+        },
+        {
+          "title": "NPTEL: Data Base Management System (IIT Kharagpur - P. P. Das, S. Chattopadhyay)",
+          "url": "https://nptel.ac.in/courses/106105175",
+          "type": "course",
+          "source": "NPTEL",
+          "note": "Full GATE-aligned DBMS course: relational model, RA/RC, SQL, ER, FDs & normalization, file organization, indexing, B+ trees.",
+          "free": true
+        }
+      ],
+      "pyqs": [
+        {
+          "title": "ExamSIDE - DA FDs and Normalization PYQs",
+          "url": "https://questions.examside.com/past-years/gate/gate-da/database-management-system-and-warehousing/functional-dependencies-and-normalization",
+          "source": "ExamSIDE",
+          "note": "DA-specific."
+        },
+        {
+          "title": "Tag: database-normalization",
+          "url": "https://gateoverflow.in/tag/database-normalization",
+          "source": "GATE Overflow",
+          "note": "GATE Overflow tag page (CSE + DA questions with community solutions). Cloudflare-protected: opens fine in a browser."
+        },
+        {
+          "title": "Tag: functional-dependency",
+          "url": "https://gateoverflow.in/tag/functional-dependency",
+          "source": "GATE Overflow",
+          "note": "GATE Overflow tag page (CSE + DA questions with community solutions). Cloudflare-protected: opens fine in a browser."
+        },
+        {
+          "title": "Tag: lossless-join",
+          "url": "https://gateoverflow.in/tag/lossless-join",
+          "source": "GATE Overflow",
+          "note": "GATE Overflow tag page (CSE + DA questions with community solutions). Cloudflare-protected: opens fine in a browser."
+        }
+      ]
+    },
+    {
+      "id": "file-org-indexing",
+      "title": "File Organization & Indexing (B/B+ Trees, Hash Indexes)",
+      "subtopics": [
+        "Records, blocks, blocking factor; heap, sorted, hashed files",
+        "Primary, clustering, secondary, dense vs sparse indexes; multilevel indexes",
+        "B-tree and B+ tree: order, fan-out, insertion/splitting, number of nodes/levels",
+        "Static and dynamic (extendible) hashing",
+        "Block-access cost calculations"
+      ],
+      "estHours": 7,
+      "priority": "high",
+      "tips": "DA 2026 had two B+ tree questions (order from block size; node count after insertions) and DA 2024 had a disk-based index question - practise order formulas and insertion with splits.",
+      "resources": [
+        {
+          "title": "Database System Concepts 7e - Ch.13 slides: Data Storage Structures (file organization) (PDF)",
+          "url": "https://www.db-book.com/slides-dir/PDF-dir/ch13.pdf",
+          "type": "pdf",
+          "source": "Silberschatz, Korth, Sudarshan (db-book.com)",
+          "note": "Record/file organization.",
+          "free": true
+        },
+        {
+          "title": "Database System Concepts 7e - Ch.14 slides: Indexing (PDF)",
+          "url": "https://www.db-book.com/slides-dir/PDF-dir/ch14.pdf",
+          "type": "pdf",
+          "source": "Silberschatz, Korth, Sudarshan (db-book.com)",
+          "note": "Ordered indices, B+ trees, hashing indices.",
+          "free": true
+        },
+        {
+          "title": "CMU 15-445 (Fall 2024) notes - Indexes I (B+ Trees)",
+          "url": "https://15445.courses.cs.cmu.edu/fall2024/notes/08-indexes1.pdf",
+          "type": "notes",
+          "source": "Carnegie Mellon University (Andy Pavlo)",
+          "note": "Clear B+ tree insert/delete notes.",
+          "free": true
+        },
+        {
+          "title": "CMU 15-445 (Fall 2024) notes - Indexes II",
+          "url": "https://15445.courses.cs.cmu.edu/fall2024/notes/09-indexes2.pdf",
+          "type": "notes",
+          "source": "Carnegie Mellon University (Andy Pavlo)",
+          "note": "More B+ tree design details.",
+          "free": true
+        },
+        {
+          "title": "USFCA B+ Tree visualization",
+          "url": "https://www.cs.usfca.edu/~galles/visualization/Algorithms.html",
+          "type": "practice",
+          "source": "University of San Francisco",
+          "note": "Choose 'B+ Trees' and replay insertions from PYQs.",
+          "free": true
+        }
+      ],
+      "pyqs": [
+        {
+          "title": "ExamSIDE - DA File Structures and Indexing PYQs",
+          "url": "https://questions.examside.com/past-years/gate/gate-da/database-management-system-and-warehousing/file-structures-and-indexing",
+          "source": "ExamSIDE",
+          "note": "DA-specific."
+        },
+        {
+          "title": "AspirantMitraa - DA Indexing, B and B+ Trees PYQs",
+          "url": "https://www.aspirantmitraa.com/pyq/gate-da-database-management-systems-indexing-b-trees-and-b-plus-trees-questions",
+          "source": "AspirantMitraa",
+          "note": "DA indexing questions with solutions."
+        },
+        {
+          "title": "Tag: b-tree",
+          "url": "https://gateoverflow.in/tag/b-tree",
+          "source": "GATE Overflow",
+          "note": "GATE Overflow tag page (CSE + DA questions with community solutions). Cloudflare-protected: opens fine in a browser."
+        },
+        {
+          "title": "Tag: indexing",
+          "url": "https://gateoverflow.in/tag/indexing",
+          "source": "GATE Overflow",
+          "note": "GATE Overflow tag page (CSE + DA questions with community solutions). Cloudflare-protected: opens fine in a browser."
+        }
+      ]
+    },
+    {
+      "id": "data-transformation",
+      "title": "Data Transformation: Normalization, Discretization, Sampling, Compression",
+      "subtopics": [
+        "Min-max, z-score and decimal-scaling normalization",
+        "Discretization: equal-width/equal-frequency binning, smoothing by bin means/boundaries, histogram, entropy-based",
+        "Sampling: SRSWOR, SRSWR, cluster, stratified",
+        "Data reduction & compression: dimensionality/numerosity reduction, lossless vs lossy, columnar compression (RLE, dictionary, bit-packing)"
+      ],
+      "estHours": 5,
+      "priority": "medium",
+      "tips": "DA 2024 asked a numeric min-max/z-score normalization question - memorise the formulas (v' = (v-min)/(max-min)*(new_max-new_min)+new_min, z = (v-mean)/sd) and do 5 numeric examples.",
+      "resources": [
+        {
+          "title": "Han/Kamber/Pei Ch.3 slides - Data Preprocessing (PPT)",
+          "url": "https://hanj.cs.illinois.edu/bk3/bk3_slides/03Preprocessing.ppt",
+          "type": "pdf",
+          "source": "Jiawei Han (UIUC)",
+          "note": "Min-max/z-score/decimal-scaling normalization, discretization (binning, histogram, concept hierarchy generation), sampling, data reduction/compression.",
+          "free": true
+        },
+        {
+          "title": "Data Normalization in Data Mining",
+          "url": "https://www.geeksforgeeks.org/data-science/data-normalization-in-data-mining/",
+          "type": "website",
+          "source": "GeeksforGeeks",
+          "note": "Min-max, z-score, decimal scaling with worked numbers.",
+          "free": true
+        },
+        {
+          "title": "Data Preprocessing in Data Mining",
+          "url": "https://www.geeksforgeeks.org/data-analysis/data-preprocessing-in-data-mining/",
+          "type": "website",
+          "source": "GeeksforGeeks",
+          "note": "Overview of cleaning, integration, reduction, transformation.",
+          "free": true
+        },
+        {
+          "title": "CMU 15-445 (Fall 2024) notes - Storage Models & Compression",
+          "url": "https://15445.courses.cs.cmu.edu/fall2024/notes/05-storage3.pdf",
+          "type": "notes",
+          "source": "Carnegie Mellon University (Andy Pavlo)",
+          "note": "Database compression schemes (RLE, dictionary, delta, bitmap).",
+          "free": true
+        }
+      ],
+      "pyqs": [
+        {
+          "title": "GATE DA 2024 - all questions (tag gate-ds-ai-2024)",
+          "url": "https://gateoverflow.in/tag/gate-ds-ai-2024",
+          "source": "GATE Overflow",
+          "note": "Contains the 2024 normalization (min/max/mean/sd of income) question."
+        },
+        {
+          "title": "Tag: data-mining",
+          "url": "https://gateoverflow.in/tag/data-mining",
+          "source": "GATE Overflow",
+          "note": "GATE Overflow tag page (CSE + DA questions with community solutions). Cloudflare-protected: opens fine in a browser."
+        }
+      ]
+    },
+    {
+      "id": "warehouse-modelling",
+      "title": "Data Warehouse Modelling: Multidimensional Schemas, Cubes & OLAP",
+      "subtopics": [
+        "Data warehouse vs OLTP; fact and dimension tables",
+        "Star, snowflake and fact-constellation schemas",
+        "Data cube, cuboids, lattice of cuboids (2^n), apex/base cuboid",
+        "OLAP operations: roll-up, drill-down, slice, dice, pivot",
+        "Concept hierarchies (schema and set-grouping)"
+      ],
+      "estHours": 5,
+      "priority": "medium",
+      "tips": "DA 2025 (fact table in an OLAP application) and DA 2026 (3-D sales data cube) both asked computational cube questions - practise computing roll-up aggregates and counting cuboids including concept-hierarchy levels: prod(L_i + 1).",
+      "resources": [
+        {
+          "title": "Han/Kamber/Pei Ch.4 slides - Data Warehousing & OLAP (PPT)",
+          "url": "https://hanj.cs.illinois.edu/bk3/bk3_slides/04OLAP.ppt",
+          "type": "pdf",
+          "source": "Jiawei Han (UIUC)",
+          "note": "Data cube, star/snowflake/fact-constellation schemas, concept hierarchies, distributive/algebraic/holistic measures, OLAP operations.",
+          "free": true
+        },
+        {
+          "title": "Database System Concepts 7e - Ch.11 slides: Data Analytics (warehousing, OLAP) (PDF)",
+          "url": "https://www.db-book.com/slides-dir/PDF-dir/ch11.pdf",
+          "type": "pdf",
+          "source": "Silberschatz, Korth, Sudarshan (db-book.com)",
+          "note": "Warehouse architecture, star schema, cubes, OLAP operations.",
+          "free": true
+        },
+        {
+          "title": "Star Schema in Data Warehouse Modeling",
+          "url": "https://www.geeksforgeeks.org/dbms/star-schema-in-data-warehouse-modeling/",
+          "type": "website",
+          "source": "GeeksforGeeks",
+          "note": "Fact vs dimension tables with examples.",
+          "free": true
+        },
+        {
+          "title": "Snowflake Schema in Data Warehouse Model",
+          "url": "https://www.geeksforgeeks.org/dbms/snowflake-schema-in-data-warehouse-model/",
+          "type": "website",
+          "source": "GeeksforGeeks",
+          "note": "Normalized dimensions; contrast with star schema.",
+          "free": true
+        },
+        {
+          "title": "Concept Hierarchy in Data Mining",
+          "url": "https://www.geeksforgeeks.org/dbms/concept-hierarchy-in-data-mining/",
+          "type": "website",
+          "source": "GeeksforGeeks",
+          "note": "Schema vs set-grouping hierarchies with examples.",
+          "free": true
+        }
+      ],
+      "pyqs": [
+        {
+          "title": "Data Mining & Warehousing (category)",
+          "url": "https://gateoverflow.in/questions/data-mining-and-warehousing",
+          "source": "GATE Overflow",
+          "note": "DA warehousing questions."
+        },
+        {
+          "title": "Tag: data-warehousing",
+          "url": "https://gateoverflow.in/tag/data-warehousing",
+          "source": "GATE Overflow",
+          "note": "GATE Overflow tag page (CSE + DA questions with community solutions). Cloudflare-protected: opens fine in a browser."
+        },
+        {
+          "title": "Tag: olap",
+          "url": "https://gateoverflow.in/tag/olap",
+          "source": "GATE Overflow",
+          "note": "GATE Overflow tag page (CSE + DA questions with community solutions). Cloudflare-protected: opens fine in a browser."
+        },
+        {
+          "title": "Tag: data-cube",
+          "url": "https://gateoverflow.in/tag/data-cube",
+          "source": "GATE Overflow",
+          "note": "GATE Overflow tag page (CSE + DA questions with community solutions). Cloudflare-protected: opens fine in a browser."
+        }
+      ]
+    },
+    {
+      "id": "measures",
+      "title": "Measures: Categorization & Computation",
+      "subtopics": [
+        "Distributive measures (count, sum, min, max)",
+        "Algebraic measures (avg, std-dev, min_N) computed from distributive ones",
+        "Holistic measures (median, mode, rank)",
+        "Efficient computation of measures across cuboids / roll-ups"
+      ],
+      "estHours": 2,
+      "priority": "low",
+      "tips": "Know the classic table: avg is algebraic (sum/count), median is holistic - and be able to compute a measure at a higher cuboid from lower-level partial aggregates.",
+      "resources": [
+        {
+          "title": "Han/Kamber/Pei Ch.4 slides - Data Warehousing & OLAP (PPT)",
+          "url": "https://hanj.cs.illinois.edu/bk3/bk3_slides/04OLAP.ppt",
+          "type": "pdf",
+          "source": "Jiawei Han (UIUC)",
+          "note": "Data cube, star/snowflake/fact-constellation schemas, concept hierarchies, distributive/algebraic/holistic measures, OLAP operations.",
+          "free": true
+        },
+        {
+          "title": "Database System Concepts 7e - Ch.11 slides: Data Analytics (PDF)",
+          "url": "https://www.db-book.com/slides-dir/PDF-dir/ch11.pdf",
+          "type": "pdf",
+          "source": "Silberschatz, Korth, Sudarshan (db-book.com)",
+          "note": "Aggregation over cubes.",
+          "free": true
+        },
+        {
+          "title": "Data Warehouse Modeling",
+          "url": "https://www.geeksforgeeks.org/dbms/data-warehouse-modeling/",
+          "type": "website",
+          "source": "GeeksforGeeks",
+          "note": "Short overview of multidimensional modelling.",
+          "free": true
+        }
+      ],
+      "pyqs": [
+        {
+          "title": "ExamSIDE - DA DBMS & Warehousing PYQs",
+          "url": "https://questions.examside.com/past-years/gate/gate-da/database-management-system-and-warehousing",
+          "source": "ExamSIDE",
+          "note": "Includes the DA warehousing/cube questions."
+        },
+        {
+          "title": "Tag: olap",
+          "url": "https://gateoverflow.in/tag/olap",
+          "source": "GATE Overflow",
+          "note": "GATE Overflow tag page (CSE + DA questions with community solutions). Cloudflare-protected: opens fine in a browser."
+        }
+      ]
+    }
+  ]
+}

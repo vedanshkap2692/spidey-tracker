@@ -1,0 +1,811 @@
+{
+  "id": "ai",
+  "title": "Artificial Intelligence",
+  "weightage": "~6–10 marks (roughly 3–6 questions) per GATE DA paper (2024–2026)",
+  "summary": "Highly scorable, algorithm-tracing section: expect BFS/DFS/UCS/A* node-expansion order and heuristic admissibility/consistency, minimax values and alpha-beta pruned nodes, propositional/first-order logic validity and translations, and Bayesian-network questions on conditional independence, variable elimination and sampling.",
+  "notesGuide": "1) Use the free Berkeley CS188 online textbook (inst.eecs.berkeley.edu/~cs188/textbook) as the main notes - read Search (state spaces, uninformed, informed), Games (minimax), Logic (propositional, FOL, inference) and Bayes Nets (representation, d-separation, elimination, approximate) sections; these map exactly to the syllabus. 2) Keep AIMA's free pseudocode PDF (aima.cs.berkeley.edu/algorithms.pdf) for exact algorithm definitions (graph vs tree search, alpha-beta, resolution, enumeration, rejection/likelihood weighting). 3) Watch MIT 6.034 Lectures 4-6 (search & games) and 21-22 (probabilistic inference) and the NPTEL Mausam course for depth. 4) Make short notes as tables: for each search algorithm -> fringe data structure, complete?, optimal?, time/space, tie-breaking convention; for heuristics -> admissible/consistent definitions + dominance; for games -> alpha/beta update rules and pruning condition with one fully worked tree. 5) For logic, keep a 1-page sheet of equivalences (De Morgan, implication, contrapositive), CNF conversion, resolution, quantifier negation and common English->FOL patterns; reuse your Discrete Maths logic notes. 6) For Bayes nets, write the factorization rule, the three d-separation triples (causal chain, common cause, common effect) and a worked variable-elimination example, plus prior/rejection/likelihood-weighting/Gibbs sampling steps. 7) Practise with CS188 Fall 2024 exam-prep worksheets (with solutions), then GATE DA PYQs and the old GATE CSE AI questions on GATE Overflow.",
+  "resources": [
+    {
+      "title": "Berkeley CS188 online textbook (Introduction to AI notes)",
+      "url": "https://inst.eecs.berkeley.edu/~cs188/textbook/",
+      "type": "notes",
+      "source": "UC Berkeley CS188",
+      "note": "Primary notes - concise chapters on search, games, logic, Bayes nets",
+      "free": true
+    },
+    {
+      "title": "UC Berkeley CS188 Fall 2024 course site (discussions + solutions)",
+      "url": "https://inst.eecs.berkeley.edu/~cs188/fa24/",
+      "type": "course",
+      "source": "UC Berkeley",
+      "note": "Exam-prep worksheets with solutions for search, games, probability, VE, sampling",
+      "free": true
+    },
+    {
+      "title": "UC Berkeley CS188 Fall 2018 lecture videos",
+      "url": "https://www.youtube.com/playlist?list=PLsOUugYMBBJENfZ3XAToMsg44W7LeUVhF",
+      "type": "video",
+      "source": "UC Berkeley (YouTube)",
+      "note": "Full lecture series matching the notes",
+      "free": true
+    },
+    {
+      "title": "AIMA (Russell & Norvig) official site",
+      "url": "https://aima.cs.berkeley.edu/",
+      "type": "book",
+      "source": "Russell & Norvig",
+      "note": "Standard textbook; Ch 3-5 search/games, Ch 7-9 logic, Ch 12-13 uncertainty & Bayes nets",
+      "free": true
+    },
+    {
+      "title": "AIMA algorithms pseudocode (PDF)",
+      "url": "https://aima.cs.berkeley.edu/algorithms.pdf",
+      "type": "pdf",
+      "source": "Russell & Norvig",
+      "note": "Exact pseudocode for BFS/UCS/A*/alpha-beta/resolution/elimination/sampling",
+      "free": true
+    },
+    {
+      "title": "MIT 6.034 Artificial Intelligence, Fall 2010 (Patrick Winston) - videos",
+      "url": "https://www.youtube.com/playlist?list=PLUl4u3cNGP63gFHB6xb-kVBiQHYe_4hSi",
+      "type": "video",
+      "source": "MIT OpenCourseWare",
+      "note": "Legendary lectures; lectures 4-6 search/games, 21-22 probabilistic inference",
+      "free": true
+    },
+    {
+      "title": "MIT 6.034 OCW course page",
+      "url": "https://ocw.mit.edu/courses/6-034-artificial-intelligence-fall-2010/",
+      "type": "course",
+      "source": "MIT OpenCourseWare",
+      "note": "Recitations, quizzes with solutions",
+      "free": true
+    },
+    {
+      "title": "NPTEL An Introduction to Artificial Intelligence - IIT Delhi (Prof. Mausam)",
+      "url": "https://nptel.ac.in/courses/106102220",
+      "type": "course",
+      "source": "NPTEL",
+      "note": "Covers uninformed/heuristic/adversarial search, propositional logic, Bayes nets - well aligned to syllabus",
+      "free": true
+    },
+    {
+      "title": "Stanford CS221: AI Principles and Techniques (Autumn 2023)",
+      "url": "https://stanford-cs221.github.io/autumn2023/",
+      "type": "course",
+      "source": "Stanford",
+      "note": "Search, games, Bayesian networks, logic modules",
+      "free": true
+    },
+    {
+      "title": "GO Classes for GATE DA - Propositional Logic playlist",
+      "url": "https://www.youtube.com/playlist?list=PLgjejdknTfWNwpjPp4nYfxPbj5fqMeOsR",
+      "type": "video",
+      "source": "GO Classes (YouTube)",
+      "note": "Complete summary course + GATE PYQs on propositional logic",
+      "free": true
+    },
+    {
+      "title": "Piyush Wairale - Artificial Intelligence for GATE DA (syllabus & topic priority)",
+      "url": "https://www.piyushwairale.com/blog/gate-da-artificial-intelligence",
+      "type": "website",
+      "source": "Piyush Wairale",
+      "note": "Topic importance table (course itself is paid)",
+      "free": true
+    }
+  ],
+  "pyqs": [
+    {
+      "title": "GATE DA 2026 official question paper (PDF)",
+      "url": "https://gate2026.iitg.ac.in/doc/download/2026/QPs/DA.pdf",
+      "source": "IIT Guwahati (official)",
+      "note": "Most recent paper - best indicator of current difficulty"
+    },
+    {
+      "title": "GATE DA 2026 official answer key (PDF)",
+      "url": "https://gate2026.iitg.ac.in/doc/download/2026/Keys/DA_Keys.pdf",
+      "source": "IIT Guwahati (official)",
+      "note": "Answer key for the 2026 paper"
+    },
+    {
+      "title": "GATE DA 2025 official question paper (PDF)",
+      "url": "https://gate2025.iitr.ac.in/doc/2025/2025_QP/DA.pdf",
+      "source": "IIT Roorkee (official)",
+      "note": "Full DA 2025 paper; pick out the ML/AI questions and attempt timed"
+    },
+    {
+      "title": "GATE DA 2025 official answer key (PDF)",
+      "url": "https://gate2025.iitr.ac.in/doc/2025/2025_Key/DA_Keys.pdf",
+      "source": "IIT Roorkee (official)",
+      "note": "Answer key for the 2025 paper"
+    },
+    {
+      "title": "GATE Overflow - GATE DS&AI 2024 questions (tag gate-ds-ai-2024)",
+      "url": "https://gateoverflow.in/tag/gate-ds-ai-2024",
+      "source": "GATE Overflow",
+      "note": "All 2024 DA questions with community solutions"
+    },
+    {
+      "title": "GATE Overflow - GATE DA 2025 questions (tag gateda-2025)",
+      "url": "https://gateoverflow.in/tag/gateda-2025",
+      "source": "GATE Overflow",
+      "note": "All 2025 DA questions with discussions"
+    },
+    {
+      "title": "GATE Overflow - GATE DA 2026 questions (tag gateda-2026)",
+      "url": "https://gateoverflow.in/tag/gateda-2026",
+      "source": "GATE Overflow",
+      "note": "All 2026 DA questions with discussions"
+    },
+    {
+      "title": "GATE Overflow - GATE DA 2024 official sample paper (tag gateda-sample-paper-2024)",
+      "url": "https://gateoverflow.in/tag/gateda-sample-paper-2024",
+      "source": "GATE Overflow",
+      "note": "IISc's official DA sample paper questions with solutions (has regression, decision-tree, etc.)"
+    },
+    {
+      "title": "GATE Overflow - artificial-intelligence tag",
+      "url": "https://gateoverflow.in/tag/artificial-intelligence",
+      "source": "GATE Overflow",
+      "note": "Old GATE CSE AI questions (search, heuristics, games) + DA practice"
+    },
+    {
+      "title": "GATE Overflow - bayesian-network tag",
+      "url": "https://gateoverflow.in/tag/bayesian-network",
+      "source": "GATE Overflow",
+      "note": "DA 2024/2025 Bayes net / variable elimination questions"
+    },
+    {
+      "title": "GATE Overflow - propositional-logic tag",
+      "url": "https://gateoverflow.in/tag/propositional-logic",
+      "source": "GATE Overflow",
+      "note": "Large bank of GATE CSE logic PYQs"
+    },
+    {
+      "title": "GATE Overflow - first-order-logic tag",
+      "url": "https://gateoverflow.in/tag/first-order-logic",
+      "source": "GATE Overflow",
+      "note": "GATE CSE FOL PYQs"
+    },
+    {
+      "title": "Piyush Wairale - GATE DA 2025 PYQs solutions (playlist)",
+      "url": "https://www.youtube.com/playlist?list=PLNxx5gyq8aLC_7CQa6T9vZxh2sNRZj5OF",
+      "source": "Piyush Wairale (YouTube)",
+      "note": "Video solutions to 2025 DA PYQs"
+    },
+    {
+      "title": "Piyush Wairale - GATE DA 2026 video solutions (playlist)",
+      "url": "https://www.youtube.com/playlist?list=PLNxx5gyq8aLBHCEuaRyLcy3pW2_45U2D8",
+      "source": "Piyush Wairale (YouTube)",
+      "note": "Video solutions to the 2026 DA paper"
+    }
+  ],
+  "topics": [
+    {
+      "id": "uninformed-search",
+      "title": "Problem Formulation & Uninformed Search",
+      "subtopics": [
+        "State space, successor function, goal test, path cost",
+        "Tree search vs graph search",
+        "BFS, DFS, depth-limited, iterative deepening",
+        "Uniform-cost search",
+        "Completeness, optimality, time/space complexity",
+        "Node expansion order and tie-breaking"
+      ],
+      "estHours": 5,
+      "priority": "high",
+      "tips": "GATE asks exact expansion order - always fix the tie-breaking rule (alphabetical) and whether it's graph or tree search before tracing.",
+      "resources": [
+        {
+          "title": "CS188 textbook: State Spaces and Search Problems",
+          "url": "https://inst.eecs.berkeley.edu/~cs188/textbook/search/state.html",
+          "type": "notes",
+          "source": "UC Berkeley CS188",
+          "note": "Problem formulation",
+          "free": true
+        },
+        {
+          "title": "CS188 textbook: Uninformed Search",
+          "url": "https://inst.eecs.berkeley.edu/~cs188/textbook/search/uninformed.html",
+          "type": "notes",
+          "source": "UC Berkeley CS188",
+          "note": "BFS/DFS/UCS properties",
+          "free": true
+        },
+        {
+          "title": "MIT 6.034 Lecture 4: Search - Depth-First, Hill Climbing, Beam",
+          "url": "https://www.youtube.com/watch?v=j1H3jAAGlEA",
+          "type": "video",
+          "source": "MIT OCW",
+          "note": "Hand-traced search",
+          "free": true
+        },
+        {
+          "title": "NPTEL Intro to AI (Mausam) - Week 2 Uninformed Search",
+          "url": "https://nptel.ac.in/courses/106102220",
+          "type": "course",
+          "source": "NPTEL",
+          "note": "Lecture videos",
+          "free": true
+        },
+        {
+          "title": "CS188 Fa24 Discussion 1 (regular) with solutions - search algorithms in action",
+          "url": "https://inst.eecs.berkeley.edu/~cs188/fa24/assets/discussions/disc01-regular-sols.pdf",
+          "type": "practice",
+          "source": "UC Berkeley CS188",
+          "note": "Expansion-order exercises",
+          "free": true
+        }
+      ],
+      "pyqs": [
+        {
+          "title": "CS188 Fa24 Discussion 1 solutions",
+          "url": "https://inst.eecs.berkeley.edu/~cs188/fa24/assets/discussions/disc01-regular-sols.pdf",
+          "source": "UC Berkeley CS188",
+          "note": "Graph search traces like GATE"
+        },
+        {
+          "title": "GATE Overflow - GATE DS&AI 2024 questions (tag gate-ds-ai-2024)",
+          "url": "https://gateoverflow.in/tag/gate-ds-ai-2024",
+          "source": "GATE Overflow",
+          "note": "All 2024 DA questions with community solutions"
+        },
+        {
+          "title": "GATE Overflow - GATE DA 2025 questions (tag gateda-2025)",
+          "url": "https://gateoverflow.in/tag/gateda-2025",
+          "source": "GATE Overflow",
+          "note": "All 2025 DA questions with discussions"
+        },
+        {
+          "title": "GATE Overflow - artificial-intelligence tag",
+          "url": "https://gateoverflow.in/tag/artificial-intelligence",
+          "source": "GATE Overflow",
+          "note": "Old GATE CSE search questions"
+        }
+      ]
+    },
+    {
+      "id": "informed-search",
+      "title": "Informed (Heuristic) Search: Greedy, A*, Heuristics",
+      "subtopics": [
+        "Greedy best-first search",
+        "A* search, f = g + h",
+        "Admissible and consistent heuristics",
+        "Optimality of A* (tree vs graph search)",
+        "Heuristic dominance, relaxed problems",
+        "Local search: hill climbing (basics)"
+      ],
+      "estHours": 5,
+      "priority": "high",
+      "tips": "Check admissibility (h <= h*) and consistency (h(n) <= c(n,n') + h(n')) on every edge; A* with h=0 is UCS - a favourite trick.",
+      "resources": [
+        {
+          "title": "CS188 textbook: Informed Search",
+          "url": "https://inst.eecs.berkeley.edu/~cs188/textbook/search/informed.html",
+          "type": "notes",
+          "source": "UC Berkeley CS188",
+          "note": "A*, admissibility, consistency",
+          "free": true
+        },
+        {
+          "title": "MIT 6.034 Lecture 5: Search - Optimal, Branch and Bound, A*",
+          "url": "https://www.youtube.com/watch?v=gGQ-vAmdAOI",
+          "type": "video",
+          "source": "MIT OCW",
+          "note": "A* built up step by step",
+          "free": true
+        },
+        {
+          "title": "MIT 6.034 Mega-Recitation 2: Basic Search, Optimal Search",
+          "url": "https://www.youtube.com/watch?v=Tl_p5pgBsyM",
+          "type": "video",
+          "source": "MIT OCW",
+          "note": "Worked problems",
+          "free": true
+        },
+        {
+          "title": "CS188 Fa24 Exam Prep 1 with solutions - Searching with Heuristics",
+          "url": "https://inst.eecs.berkeley.edu/~cs188/fa24/assets/discussions/disc01-examprep-sols.pdf",
+          "type": "practice",
+          "source": "UC Berkeley CS188",
+          "note": "A* exam-style problems",
+          "free": true
+        },
+        {
+          "title": "AIMA algorithms pseudocode",
+          "url": "https://aima.cs.berkeley.edu/algorithms.pdf",
+          "type": "pdf",
+          "source": "Russell & Norvig",
+          "note": "Best-first / A* pseudocode",
+          "free": true
+        }
+      ],
+      "pyqs": [
+        {
+          "title": "CS188 Fa24 Exam Prep 1 solutions",
+          "url": "https://inst.eecs.berkeley.edu/~cs188/fa24/assets/discussions/disc01-examprep-sols.pdf",
+          "source": "UC Berkeley CS188",
+          "note": "Heuristic/A* questions"
+        },
+        {
+          "title": "GATE Overflow - artificial-intelligence tag",
+          "url": "https://gateoverflow.in/tag/artificial-intelligence",
+          "source": "GATE Overflow",
+          "note": "Admissibility/A* questions"
+        },
+        {
+          "title": "GATE Overflow - GATE DA 2025 questions (tag gateda-2025)",
+          "url": "https://gateoverflow.in/tag/gateda-2025",
+          "source": "GATE Overflow",
+          "note": "All 2025 DA questions with discussions"
+        },
+        {
+          "title": "GATE DA 2026 official question paper (PDF)",
+          "url": "https://gate2026.iitg.ac.in/doc/download/2026/QPs/DA.pdf",
+          "source": "IIT Guwahati (official)",
+          "note": "Most recent paper - best indicator of current difficulty"
+        }
+      ]
+    },
+    {
+      "id": "adversarial-search",
+      "title": "Adversarial Search: Minimax, Alpha-Beta Pruning, Expectimax",
+      "subtopics": [
+        "Game trees, MAX/MIN nodes, utilities",
+        "Minimax value computation",
+        "Alpha-beta pruning and which nodes get pruned",
+        "Move ordering and best-case O(b^(m/2))",
+        "Expectimax / chance nodes",
+        "Depth-limited search with evaluation functions"
+      ],
+      "estHours": 5,
+      "priority": "high",
+      "tips": "Trace alpha-beta left-to-right carrying (alpha, beta) explicitly; questions ask the root value and the number/identity of pruned leaves.",
+      "resources": [
+        {
+          "title": "CS188 textbook: Minimax (and alpha-beta)",
+          "url": "https://inst.eecs.berkeley.edu/~cs188/textbook/games/minimax.html",
+          "type": "notes",
+          "source": "UC Berkeley CS188",
+          "note": "Core reading",
+          "free": true
+        },
+        {
+          "title": "CS188 textbook: Expectimax",
+          "url": "https://inst.eecs.berkeley.edu/~cs188/textbook/games/expectimax.html",
+          "type": "notes",
+          "source": "UC Berkeley CS188",
+          "note": "Chance nodes",
+          "free": true
+        },
+        {
+          "title": "MIT 6.034 Lecture 6: Search - Games, Minimax, and Alpha-Beta",
+          "url": "https://www.youtube.com/watch?v=STjW3eH0Cik",
+          "type": "video",
+          "source": "MIT OCW",
+          "note": "Classic alpha-beta lecture",
+          "free": true
+        },
+        {
+          "title": "MIT 6.034 Mega-Recitation 3: Games, Minimax, Alpha-Beta",
+          "url": "https://www.youtube.com/watch?v=hM2EAvMkhtk",
+          "type": "video",
+          "source": "MIT OCW",
+          "note": "Worked pruning examples",
+          "free": true
+        },
+        {
+          "title": "CS188 Fa24 Exam Prep 3 with solutions - Games",
+          "url": "https://inst.eecs.berkeley.edu/~cs188/fa24/assets/discussions/disc03-examprep-sols.pdf",
+          "type": "practice",
+          "source": "UC Berkeley CS188",
+          "note": "Exam-style game-tree problems",
+          "free": true
+        }
+      ],
+      "pyqs": [
+        {
+          "title": "CS188 Fa24 Discussion 3 (regular) solutions - games",
+          "url": "https://inst.eecs.berkeley.edu/~cs188/fa24/assets/discussions/disc03-regular-sols.pdf",
+          "source": "UC Berkeley CS188",
+          "note": "Minimax/alpha-beta traces"
+        },
+        {
+          "title": "GATE Overflow - artificial-intelligence tag",
+          "url": "https://gateoverflow.in/tag/artificial-intelligence",
+          "source": "GATE Overflow",
+          "note": "Includes older GATE CSE alpha-beta/minimax questions"
+        },
+        {
+          "title": "GATE Overflow - GATE DS&AI 2024 questions (tag gate-ds-ai-2024)",
+          "url": "https://gateoverflow.in/tag/gate-ds-ai-2024",
+          "source": "GATE Overflow",
+          "note": "All 2024 DA questions with community solutions"
+        },
+        {
+          "title": "GATE Overflow - GATE DA 2025 questions (tag gateda-2025)",
+          "url": "https://gateoverflow.in/tag/gateda-2025",
+          "source": "GATE Overflow",
+          "note": "All 2025 DA questions with discussions"
+        }
+      ]
+    },
+    {
+      "id": "propositional-logic",
+      "title": "Propositional Logic & Inference",
+      "subtopics": [
+        "Syntax and semantics, truth tables",
+        "Validity, satisfiability, entailment",
+        "Logical equivalences, CNF/DNF",
+        "Inference rules: modus ponens, resolution",
+        "Horn clauses, forward/backward chaining",
+        "Model checking"
+      ],
+      "estHours": 5,
+      "priority": "high",
+      "tips": "Reuse Discrete Maths: most questions are 'which is a tautology/valid/entailed' - use truth-table shortcuts and resolution refutation.",
+      "resources": [
+        {
+          "title": "CS188 textbook: Propositional Logic",
+          "url": "https://inst.eecs.berkeley.edu/~cs188/textbook/logic/propositional.html",
+          "type": "notes",
+          "source": "UC Berkeley CS188",
+          "note": "Syntax/semantics",
+          "free": true
+        },
+        {
+          "title": "CS188 textbook: Propositional Logical Inference",
+          "url": "https://inst.eecs.berkeley.edu/~cs188/textbook/logic/inference.html",
+          "type": "notes",
+          "source": "UC Berkeley CS188",
+          "note": "Entailment, resolution",
+          "free": true
+        },
+        {
+          "title": "CS188 textbook: Theorem Proving",
+          "url": "https://inst.eecs.berkeley.edu/~cs188/textbook/logic/theorem.html",
+          "type": "notes",
+          "source": "UC Berkeley CS188",
+          "note": "Resolution, forward chaining",
+          "free": true
+        },
+        {
+          "title": "GO Classes - Propositional Logic complete course & GATE PYQs",
+          "url": "https://www.youtube.com/playlist?list=PLgjejdknTfWNwpjPp4nYfxPbj5fqMeOsR",
+          "type": "video",
+          "source": "GO Classes for GATE DA",
+          "note": "GATE-focused",
+          "free": true
+        },
+        {
+          "title": "NPTEL Intro to AI (Mausam) - Week 7 Propositional Logic & SAT",
+          "url": "https://nptel.ac.in/courses/106102220",
+          "type": "course",
+          "source": "NPTEL",
+          "note": "Lecture videos",
+          "free": true
+        }
+      ],
+      "pyqs": [
+        {
+          "title": "GATE Overflow - propositional-logic tag",
+          "url": "https://gateoverflow.in/tag/propositional-logic",
+          "source": "GATE Overflow",
+          "note": "Large set of GATE CSE PYQs"
+        },
+        {
+          "title": "GATE Overflow - GO Classes propositional logic practice questions",
+          "url": "https://gateoverflow.in/tag/goclasses-propositional-logic-practice-questions",
+          "source": "GATE Overflow",
+          "note": "Extra practice"
+        },
+        {
+          "title": "GATE Overflow - GATE DS&AI 2024 questions (tag gate-ds-ai-2024)",
+          "url": "https://gateoverflow.in/tag/gate-ds-ai-2024",
+          "source": "GATE Overflow",
+          "note": "All 2024 DA questions with community solutions"
+        },
+        {
+          "title": "GATE Overflow - GATE DA 2025 questions (tag gateda-2025)",
+          "url": "https://gateoverflow.in/tag/gateda-2025",
+          "source": "GATE Overflow",
+          "note": "All 2025 DA questions with discussions"
+        }
+      ]
+    },
+    {
+      "id": "predicate-logic",
+      "title": "Predicate (First-Order) Logic",
+      "subtopics": [
+        "Predicates, quantifiers, functions",
+        "Translating English to FOL",
+        "Quantifier negation and scope",
+        "Validity of FOL formulas",
+        "Unification and resolution (basics)",
+        "Forward/backward chaining in FOL"
+      ],
+      "estHours": 4,
+      "priority": "medium",
+      "tips": "Typical question: pick the FOL formula equivalent to an English sentence - remember 'all' pairs with implication, 'some' pairs with conjunction.",
+      "resources": [
+        {
+          "title": "CS188 textbook: First-Order Logic",
+          "url": "https://inst.eecs.berkeley.edu/~cs188/textbook/logic/first-order-logic.html",
+          "type": "notes",
+          "source": "UC Berkeley CS188",
+          "note": "Syntax and semantics",
+          "free": true
+        },
+        {
+          "title": "CS188 textbook: First-Order Logical Inference",
+          "url": "https://inst.eecs.berkeley.edu/~cs188/textbook/logic/first-order-logical-inference.html",
+          "type": "notes",
+          "source": "UC Berkeley CS188",
+          "note": "Unification, resolution",
+          "free": true
+        },
+        {
+          "title": "AIMA official site (Ch 8-9: FOL & inference)",
+          "url": "https://aima.cs.berkeley.edu/",
+          "type": "book",
+          "source": "Russell & Norvig",
+          "note": "Deeper reference",
+          "free": true
+        },
+        {
+          "title": "Stanford CS221 Autumn 2023 (Logic module)",
+          "url": "https://stanford-cs221.github.io/autumn2023/",
+          "type": "course",
+          "source": "Stanford",
+          "note": "Logic lectures and slides",
+          "free": true
+        }
+      ],
+      "pyqs": [
+        {
+          "title": "GATE Overflow - first-order-logic tag",
+          "url": "https://gateoverflow.in/tag/first-order-logic",
+          "source": "GATE Overflow",
+          "note": "Many GATE CSE FOL PYQs"
+        },
+        {
+          "title": "GATE Overflow - GATE DS&AI 2024 questions (tag gate-ds-ai-2024)",
+          "url": "https://gateoverflow.in/tag/gate-ds-ai-2024",
+          "source": "GATE Overflow",
+          "note": "All 2024 DA questions with community solutions"
+        },
+        {
+          "title": "GATE Overflow - GATE DA 2026 questions (tag gateda-2026)",
+          "url": "https://gateoverflow.in/tag/gateda-2026",
+          "source": "GATE Overflow",
+          "note": "All 2026 DA questions with discussions"
+        }
+      ]
+    },
+    {
+      "id": "bayes-nets-conditional-independence",
+      "title": "Reasoning under Uncertainty: Bayesian Networks & Conditional Independence",
+      "subtopics": [
+        "Probability review: joint, marginal, conditional, Bayes rule",
+        "Conditional independence",
+        "Bayes net representation and factorization",
+        "Parameter counting in Bayes nets",
+        "D-separation (causal chain, common cause, common effect)",
+        "Markov blanket"
+      ],
+      "estHours": 5,
+      "priority": "high",
+      "tips": "Memorize the three triples: chain and common cause are blocked when the middle node is observed; v-structure is blocked unless the collider (or a descendant) is observed.",
+      "resources": [
+        {
+          "title": "CS188 textbook: Bayes Nets - Probability Rundown",
+          "url": "https://inst.eecs.berkeley.edu/~cs188/textbook/bayes-nets/probability.html",
+          "type": "notes",
+          "source": "UC Berkeley CS188",
+          "note": "Probability review",
+          "free": true
+        },
+        {
+          "title": "CS188 textbook: Bayesian Network Representation",
+          "url": "https://inst.eecs.berkeley.edu/~cs188/textbook/bayes-nets/representation.html",
+          "type": "notes",
+          "source": "UC Berkeley CS188",
+          "note": "Factorization",
+          "free": true
+        },
+        {
+          "title": "CS188 textbook: D-Separation",
+          "url": "https://inst.eecs.berkeley.edu/~cs188/textbook/bayes-nets/d-separation.html",
+          "type": "notes",
+          "source": "UC Berkeley CS188",
+          "note": "Conditional independence rules",
+          "free": true
+        },
+        {
+          "title": "MIT 6.034 Lecture 21: Probabilistic Inference I",
+          "url": "https://www.youtube.com/watch?v=A6Ud6oUCRak",
+          "type": "video",
+          "source": "MIT OCW",
+          "note": "Bayes nets intuition",
+          "free": true
+        },
+        {
+          "title": "CS188 Fa24 Exam Prep 6 with solutions - Probability",
+          "url": "https://inst.eecs.berkeley.edu/~cs188/fa24/assets/discussions/disc06-examprep-sols.pdf",
+          "type": "practice",
+          "source": "UC Berkeley CS188",
+          "note": "Practice",
+          "free": true
+        }
+      ],
+      "pyqs": [
+        {
+          "title": "GATE Overflow - bayesian-network tag",
+          "url": "https://gateoverflow.in/tag/bayesian-network",
+          "source": "GATE Overflow",
+          "note": "DA 2024/2025 Bayes net PYQs"
+        },
+        {
+          "title": "CS188 Fa24 Discussion 6 (regular) solutions",
+          "url": "https://inst.eecs.berkeley.edu/~cs188/fa24/assets/discussions/disc06-regular-sols.pdf",
+          "source": "UC Berkeley CS188",
+          "note": "Probability/Bayes net practice"
+        },
+        {
+          "title": "GATE Overflow - GATE DS&AI 2024 questions (tag gate-ds-ai-2024)",
+          "url": "https://gateoverflow.in/tag/gate-ds-ai-2024",
+          "source": "GATE Overflow",
+          "note": "All 2024 DA questions with community solutions"
+        },
+        {
+          "title": "GATE Overflow - GATE DA 2025 questions (tag gateda-2025)",
+          "url": "https://gateoverflow.in/tag/gateda-2025",
+          "source": "GATE Overflow",
+          "note": "All 2025 DA questions with discussions"
+        }
+      ]
+    },
+    {
+      "id": "exact-inference-variable-elimination",
+      "title": "Exact Inference: Enumeration & Variable Elimination",
+      "subtopics": [
+        "Inference by enumeration",
+        "Factors: join and sum-out (marginalize)",
+        "Variable elimination and elimination ordering",
+        "Size of intermediate factors",
+        "Normalization for P(Q|e)"
+      ],
+      "estHours": 4,
+      "priority": "high",
+      "tips": "Write each factor explicitly (variables in scope) and count the largest factor generated by an ordering - a common GATE question.",
+      "resources": [
+        {
+          "title": "CS188 textbook: Exact Inference in Bayes Nets",
+          "url": "https://inst.eecs.berkeley.edu/~cs188/textbook/bayes-nets/inference.html",
+          "type": "notes",
+          "source": "UC Berkeley CS188",
+          "note": "Enumeration",
+          "free": true
+        },
+        {
+          "title": "CS188 textbook: Variable Elimination",
+          "url": "https://inst.eecs.berkeley.edu/~cs188/textbook/bayes-nets/elimination.html",
+          "type": "notes",
+          "source": "UC Berkeley CS188",
+          "note": "VE with worked example",
+          "free": true
+        },
+        {
+          "title": "MIT 6.034 Lecture 22: Probabilistic Inference II",
+          "url": "https://www.youtube.com/watch?v=EC6bf8JCpDQ",
+          "type": "video",
+          "source": "MIT OCW",
+          "note": "Inference continued",
+          "free": true
+        },
+        {
+          "title": "CS188 Fa24 Exam Prep 7 with solutions - Variable Elimination",
+          "url": "https://inst.eecs.berkeley.edu/~cs188/fa24/assets/discussions/disc07-examprep-sols.pdf",
+          "type": "practice",
+          "source": "UC Berkeley CS188",
+          "note": "Exam-style VE problems",
+          "free": true
+        }
+      ],
+      "pyqs": [
+        {
+          "title": "CS188 Fa24 Discussion 7 (regular) solutions - VE & sampling",
+          "url": "https://inst.eecs.berkeley.edu/~cs188/fa24/assets/discussions/disc07-regular-sols.pdf",
+          "source": "UC Berkeley CS188",
+          "note": "Step-by-step VE"
+        },
+        {
+          "title": "GATE Overflow - bayesian-network tag",
+          "url": "https://gateoverflow.in/tag/bayesian-network",
+          "source": "GATE Overflow",
+          "note": "Variable elimination PYQs"
+        },
+        {
+          "title": "GATE Overflow - GATE DA 2025 questions (tag gateda-2025)",
+          "url": "https://gateoverflow.in/tag/gateda-2025",
+          "source": "GATE Overflow",
+          "note": "All 2025 DA questions with discussions"
+        },
+        {
+          "title": "GATE DA 2026 official question paper (PDF)",
+          "url": "https://gate2026.iitg.ac.in/doc/download/2026/QPs/DA.pdf",
+          "source": "IIT Guwahati (official)",
+          "note": "Most recent paper - best indicator of current difficulty"
+        }
+      ]
+    },
+    {
+      "id": "approximate-inference-sampling",
+      "title": "Approximate Inference: Sampling",
+      "subtopics": [
+        "Prior (direct) sampling",
+        "Rejection sampling",
+        "Likelihood weighting",
+        "Gibbs sampling",
+        "Consistency and efficiency comparison"
+      ],
+      "estHours": 3,
+      "priority": "medium",
+      "tips": "Know what each sampler does with evidence: rejection discards inconsistent samples, likelihood weighting fixes evidence and weights by P(e|parents), Gibbs resamples one non-evidence variable at a time.",
+      "resources": [
+        {
+          "title": "CS188 textbook: Approximate Inference in Bayes Nets: Sampling",
+          "url": "https://inst.eecs.berkeley.edu/~cs188/textbook/bayes-nets/approximate.html",
+          "type": "notes",
+          "source": "UC Berkeley CS188",
+          "note": "All four samplers",
+          "free": true
+        },
+        {
+          "title": "CS188 Fa24 Discussion 7 (regular) solutions - sampling summary",
+          "url": "https://inst.eecs.berkeley.edu/~cs188/fa24/assets/discussions/disc07-regular-sols.pdf",
+          "type": "practice",
+          "source": "UC Berkeley CS188",
+          "note": "Prior/rejection/LW/Gibbs practice",
+          "free": true
+        },
+        {
+          "title": "AIMA algorithms pseudocode",
+          "url": "https://aima.cs.berkeley.edu/algorithms.pdf",
+          "type": "pdf",
+          "source": "Russell & Norvig",
+          "note": "Rejection sampling, likelihood weighting, Gibbs pseudocode",
+          "free": true
+        },
+        {
+          "title": "NPTEL Intro to AI (Mausam) - Week 8 Uncertainty & Bayesian Networks",
+          "url": "https://nptel.ac.in/courses/106102220",
+          "type": "course",
+          "source": "NPTEL",
+          "note": "Lecture videos",
+          "free": true
+        }
+      ],
+      "pyqs": [
+        {
+          "title": "CS188 Fa24 Discussion 7 solutions",
+          "url": "https://inst.eecs.berkeley.edu/~cs188/fa24/assets/discussions/disc07-regular-sols.pdf",
+          "source": "UC Berkeley CS188",
+          "note": "Sampling exercises"
+        },
+        {
+          "title": "GATE Overflow - bayesian-network tag",
+          "url": "https://gateoverflow.in/tag/bayesian-network",
+          "source": "GATE Overflow",
+          "note": "Bayes net PYQs incl. sampling"
+        },
+        {
+          "title": "GATE Overflow - GATE DA 2026 questions (tag gateda-2026)",
+          "url": "https://gateoverflow.in/tag/gateda-2026",
+          "source": "GATE Overflow",
+          "note": "All 2026 DA questions with discussions"
+        }
+      ]
+    }
+  ]
+}

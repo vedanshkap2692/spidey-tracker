@@ -1,0 +1,752 @@
+{
+  "id": "linear-algebra",
+  "title": "Linear Algebra",
+  "weightage": "7–10 marks",
+  "summary": "The highest-yield maths area in GATE DA: expect 4–6 questions (many MSQ/NAT) on rank/nullity, eigenvalues, projection/rank-1 matrices (uu^T, I - 11^T/n) and singular values. Questions reward structural insight (eigenvalues of special matrices, rank arguments) far more than heavy computation.",
+  "notesGuide": "1) Download the free 'Mathematics for Machine Learning' PDF (mml-book.github.io/book/mml-book.pdf) and print Ch 2 (Linear Algebra), Ch 3 (Analytic Geometry: projections, orthogonality) and Ch 4 (Matrix Decompositions: det, eigen, Cholesky, SVD) - this matches the DA syllabus almost exactly. 2) Follow MIT 18.06 lectures and download the per-lecture summary + problem-set PDFs from the 18.06SC session pages (each session has a lecture summary, problems and solutions). 3) Keep Strang's free ILA 6th-edition chapter solutions (math.mit.edu/~gs/linearalgebra/ila6/ chXXasols.pdf) and SVD_Slides.pdf for revision. 4) Use Uday Khankhoje's IIT Madras EE5120 web notes (ee.iitm.ac.in/~uday/notes/linalg/) as a compact second reading. 5) Make your own 4–5 page 'formula + trap' sheet: rank-nullity, rank(AB)<=min, rank(A^TA)=rank(A), trace=sum eig, det=product eig, eigenvalues of A^k, A^-1, A+cI, uu^T (eigs: ||u||^2,0,...), projection P=A(A^TA)^-1A^T (P^2=P, P^T=P, eig 0/1), orthogonal Q (|eig|=1, det ±1), idempotent (rank=trace), block-matrix det/inverse rules, quadratic form definiteness tests, SVD (singular values = sqrt eig of A^TA). Add every PYQ you get wrong as a one-line trap to this sheet.",
+  "resources": [
+    {
+      "title": "MIT 18.06 Linear Algebra (Spring 2010) - Gilbert Strang",
+      "url": "https://ocw.mit.edu/courses/18-06-linear-algebra-spring-2010/",
+      "type": "course",
+      "source": "MIT OpenCourseWare",
+      "note": "The gold-standard course. Watch Lectures 1–22, 25, 27, 29 (skip graphs/FFT/Markov extras if short on time).",
+      "free": true
+    },
+    {
+      "title": "MIT 18.06 Video Lectures gallery",
+      "url": "https://ocw.mit.edu/courses/18-06-linear-algebra-spring-2010/video_galleries/video-lectures/",
+      "type": "video",
+      "source": "MIT OpenCourseWare",
+      "note": "All 34 Strang lectures in one place; watch at 1.25–1.5x.",
+      "free": true
+    },
+    {
+      "title": "MIT 18.06SC Linear Algebra (Fall 2011) - Scholar edition",
+      "url": "https://ocw.mit.edu/courses/18-06sc-linear-algebra-fall-2011/",
+      "type": "course",
+      "source": "MIT OpenCourseWare",
+      "note": "Same lectures, plus per-session summary notes, recitation videos, problem sets with solutions and exams. Use for practice after each Strang lecture.",
+      "free": true
+    },
+    {
+      "title": "3Blue1Brown - Essence of Linear Algebra (playlist)",
+      "url": "https://www.youtube.com/playlist?list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab",
+      "type": "video",
+      "source": "3Blue1Brown (YouTube)",
+      "note": "Watch first (~3 hrs total) for geometric intuition: span, transformations, determinant, null space, eigenvectors.",
+      "free": true
+    },
+    {
+      "title": "Mathematics for Machine Learning (free PDF)",
+      "url": "https://mml-book.github.io/book/mml-book.pdf",
+      "type": "book",
+      "source": "Deisenroth, Faisal & Ong (Cambridge UP)",
+      "note": "Chapters 2–4 cover the entire DA syllabus with an ML lens (projections, SVD, eigendecomposition). Best printable notes.",
+      "free": true
+    },
+    {
+      "title": "Strang - Introduction to Linear Algebra (6th ed.) resources",
+      "url": "https://math.mit.edu/~gs/linearalgebra/ila6/",
+      "type": "pdf",
+      "source": "Gilbert Strang (MIT)",
+      "note": "Free chapter solution PDFs (ch01asols–ch08asols), past exams, and SVD_Slides.pdf from the textbook author.",
+      "free": true
+    },
+    {
+      "title": "GO Classes - Linear Algebra for GATE DA | Complete Course",
+      "url": "https://www.youtube.com/playlist?list=PLgjejdknTfWP9cYIHjxBRRdtGcUBLmCQC",
+      "type": "video",
+      "source": "GO Classes (YouTube)",
+      "note": "Free GATE-DA-specific playlist: vector spaces, matrices, eigen, SVD. Use for exam-style problem solving and GATE traps.",
+      "free": true
+    },
+    {
+      "title": "GO Classes - Linear Algebra | GATE CSE Complete Course",
+      "url": "https://www.youtube.com/playlist?list=PLIPZ2_p3RNHhGLQ1ZT37KLpBMAD90CM4_",
+      "type": "video",
+      "source": "GO Classes (YouTube)",
+      "note": "CSE version; good extra coverage of rank, systems, eigenvalue PYQ patterns.",
+      "free": true
+    },
+    {
+      "title": "IIT Madras EE5120 Linear Algebra notes (Uday Khankhoje)",
+      "url": "https://ee.iitm.ac.in/~uday/notes/linalg/index.html",
+      "type": "notes",
+      "source": "IIT Madras",
+      "note": "Concise web notes: systems of equations, vector spaces, orthogonality, determinants, eigenvalues, plus ML-oriented sections.",
+      "free": true
+    },
+    {
+      "title": "NPTEL - Linear Algebra (IIT Madras, Dr. K.C. Sivakumar)",
+      "url": "https://nptel.ac.in/courses/111106051",
+      "type": "course",
+      "source": "NPTEL",
+      "note": "Rigorous treatment of vector spaces, linear independence, rank-nullity; downloadable transcripts/notes.",
+      "free": true
+    },
+    {
+      "title": "NPTEL - Essential Mathematics for Machine Learning (IIT Roorkee)",
+      "url": "https://nptel.ac.in/courses/111107137",
+      "type": "course",
+      "source": "NPTEL",
+      "note": "Weeks 1–3: vector spaces, projections, special matrices, spectral decomposition, SVD - closely aligned with DA syllabus.",
+      "free": true
+    },
+    {
+      "title": "MIT 18.065 Matrix Methods in Data Analysis, Signal Processing, and ML",
+      "url": "https://ocw.mit.edu/courses/18-065-matrix-methods-in-data-analysis-signal-processing-and-machine-learning-spring-2018/",
+      "type": "course",
+      "source": "MIT OpenCourseWare",
+      "note": "Optional: Strang's follow-up course; lectures on SVD, low-rank approximation for deeper SVD/PCA understanding.",
+      "free": true
+    },
+    {
+      "title": "Khan Academy - Linear Algebra",
+      "url": "https://www.khanacademy.org/math/linear-algebra",
+      "type": "website",
+      "source": "Khan Academy",
+      "note": "Use for remedial basics (vectors, spans, null space) if 18.06 feels fast.",
+      "free": true
+    }
+  ],
+  "pyqs": [
+    {
+      "title": "GATE Overflow - Previous GATE questions in Linear Algebra",
+      "url": "https://gateoverflow.in/questions/mathematics/linear-algebra?sort=gate",
+      "source": "GATE Overflow",
+      "note": "All GATE PYQs in the Linear Algebra category (CSE + DA), with solutions. Solve all."
+    },
+    {
+      "title": "GATE Overflow - linear-algebra tag",
+      "url": "https://gateoverflow.in/tag/linear-algebra",
+      "source": "GATE Overflow",
+      "note": "Tag page; includes GATE DA 2024/2025 questions."
+    },
+    {
+      "title": "GATE DS&AI 2024 original paper",
+      "url": "https://gateoverflow.in/exam/665/gate-ds&ai-2024-original-paper",
+      "source": "GATE Overflow",
+      "note": "Full DA 2024 paper as a timed test; LA Qs: 3, 25, 37, 38, 51."
+    },
+    {
+      "title": "GATE Overflow - gate-ds-ai-2024 tag",
+      "url": "https://gateoverflow.in/tag/gate-ds-ai-2024",
+      "source": "GATE Overflow",
+      "note": "All DA 2024 questions with discussion."
+    },
+    {
+      "title": "GATE Overflow - gateda-2026 tag",
+      "url": "https://gateoverflow.in/tag/gateda-2026",
+      "source": "GATE Overflow",
+      "note": "All DA 2026 questions (e.g., Q55 on max x^T A x for A = I - 11^T/n)."
+    },
+    {
+      "title": "GATE Overflow PDF for GATE DA 2025 (free download)",
+      "url": "https://gateoverflow.in/blog/16488/gate-overflow-gate-2025-previous-year-questions-free-download",
+      "source": "GATE Overflow",
+      "note": "Free PYQ PDF for DA; print the Linear Algebra chapter."
+    },
+    {
+      "title": "GATE Overflow - eigen-value tag",
+      "url": "https://gateoverflow.in/tag/eigen-value",
+      "source": "GATE Overflow",
+      "note": "Largest bank of eigenvalue PYQs (CSE + other branches)."
+    },
+    {
+      "title": "GATE Overflow - system-of-equations tag",
+      "url": "https://gateoverflow.in/tag/system-of-equations",
+      "source": "GATE Overflow",
+      "note": "Consistency/uniqueness via rank PYQs."
+    }
+  ],
+  "topics": [
+    {
+      "id": "vector-spaces-independence",
+      "title": "Vector Spaces, Subspaces & Linear Independence",
+      "subtopics": [
+        "Vector space axioms",
+        "Subspace test (closure, zero vector)",
+        "Span, basis, dimension",
+        "Linear dependence/independence",
+        "Column space, null space, row space, left null space (four fundamental subspaces)"
+      ],
+      "estHours": 7,
+      "priority": "high",
+      "tips": "For 'is this a subspace?' check the zero vector first and look for non-linear constraints (x^2, |x|, x+y=1). Independence of k vectors = rank of the matrix formed is k.",
+      "resources": [
+        {
+          "title": "MIT 18.06 Lecture 5: Transposes, Permutations, Spaces R^n",
+          "url": "https://ocw.mit.edu/courses/18-06-linear-algebra-spring-2010/resources/lecture-5-transposes-permutations-spaces-r-n/",
+          "type": "video",
+          "source": "MIT OCW (Gilbert Strang)",
+          "note": "Introduces vector spaces and subspaces.",
+          "free": true
+        },
+        {
+          "title": "MIT 18.06 Lecture 9: Independence, Basis, and Dimension",
+          "url": "https://ocw.mit.edu/courses/18-06-linear-algebra-spring-2010/resources/lecture-9-independence-basis-and-dimension/",
+          "type": "video",
+          "source": "MIT OCW (Gilbert Strang)",
+          "note": "Core lecture for independence questions.",
+          "free": true
+        },
+        {
+          "title": "MIT 18.06 Lecture 10: The Four Fundamental Subspaces",
+          "url": "https://ocw.mit.edu/courses/18-06-linear-algebra-spring-2010/resources/lecture-10-the-four-fundamental-subspaces/",
+          "type": "video",
+          "source": "MIT OCW (Gilbert Strang)",
+          "note": "Must-watch; dimension relations used in MSQs.",
+          "free": true
+        },
+        {
+          "title": "3Blue1Brown - Linear combinations, span, and basis vectors",
+          "url": "https://www.3blue1brown.com/lessons/span",
+          "type": "video",
+          "source": "3Blue1Brown",
+          "note": "Geometric intuition for span/independence.",
+          "free": true
+        },
+        {
+          "title": "IIT Madras EE5120 notes - Vector spaces",
+          "url": "https://ee.iitm.ac.in/~uday/notes/linalg/vs.html",
+          "type": "notes",
+          "source": "IIT Madras",
+          "note": "Concise written notes on subspaces, basis, dimension.",
+          "free": true
+        }
+      ],
+      "pyqs": [
+        {
+          "title": "GATE Overflow - vector-space tag",
+          "url": "https://gateoverflow.in/tag/vector-space",
+          "source": "GATE Overflow",
+          "note": "Subspace/basis PYQs."
+        },
+        {
+          "title": "GATE DA 2025 Q27 (linear algebra)",
+          "url": "https://gateoverflow.in/460995/gate-da-2025-question-27",
+          "source": "GATE Overflow",
+          "note": "DA 2025 LA question on GATE Overflow (indexed under Linear Algebra); practise alongside Q15/Q28 on linearly independent / orthonormal vectors."
+        }
+      ]
+    },
+    {
+      "id": "matrices-special",
+      "title": "Matrices & Special Matrices (Projection, Orthogonal, Idempotent, Partitioned)",
+      "subtopics": [
+        "Matrix algebra, transpose, inverse",
+        "Symmetric/skew-symmetric",
+        "Orthogonal matrix (Q^TQ=I)",
+        "Idempotent matrix (A^2=A)",
+        "Projection matrix properties",
+        "Partitioned/block matrices, block determinant & inverse",
+        "Rank-1 matrices uv^T"
+      ],
+      "estHours": 6,
+      "priority": "high",
+      "tips": "Memorise properties: idempotent => eigenvalues 0/1 and rank = trace; orthogonal => |det|=1, preserves norms; uu^T has one nonzero eigenvalue ||u||^2. DA loves sums of outer products of orthonormal vectors.",
+      "resources": [
+        {
+          "title": "MIT 18.06 Lecture 3: Multiplication and Inverse Matrices",
+          "url": "https://ocw.mit.edu/courses/18-06-linear-algebra-spring-2010/resources/lecture-3-multiplication-and-inverse-matrices/",
+          "type": "video",
+          "source": "MIT OCW (Gilbert Strang)",
+          "note": "Covers block multiplication too.",
+          "free": true
+        },
+        {
+          "title": "MIT 18.06 Lecture 17: Orthogonal Matrices and Gram-Schmidt",
+          "url": "https://ocw.mit.edu/courses/18-06-linear-algebra-spring-2010/resources/lecture-17-orthogonal-matrices-and-gram-schmidt/",
+          "type": "video",
+          "source": "MIT OCW (Gilbert Strang)",
+          "note": "Orthogonal matrix properties.",
+          "free": true
+        },
+        {
+          "title": "MIT 18.06 Lecture 11: Matrix Spaces; Rank 1",
+          "url": "https://ocw.mit.edu/courses/18-06-linear-algebra-spring-2010/resources/lecture-11-matrix-spaces-rank-1-small-world-graphs/",
+          "type": "video",
+          "source": "MIT OCW (Gilbert Strang)",
+          "note": "Rank-1 matrices uv^T - heavily tested in DA.",
+          "free": true
+        },
+        {
+          "title": "Mathematics for Machine Learning - Ch 2 & 3",
+          "url": "https://mml-book.github.io/",
+          "type": "book",
+          "source": "mml-book.github.io",
+          "note": "Ch 2.2 matrices, Ch 3.8 orthogonal projections.",
+          "free": true
+        }
+      ],
+      "pyqs": [
+        {
+          "title": "GATE DA 2025 Q40 (sum of outer products of orthonormal vectors)",
+          "url": "https://gateoverflow.in/460982/gate-da-2025-question-40",
+          "source": "GATE Overflow",
+          "note": "Projection/idempotent matrix: eigenvalues & singular values 0/1."
+        },
+        {
+          "title": "GATE DA 2025 Q18 (A = I + xx^T)",
+          "url": "https://gateoverflow.in/461004/gate-da-2025-question-18",
+          "source": "GATE Overflow",
+          "note": "Rank, invertibility, eigenvalues of rank-1 update."
+        }
+      ]
+    },
+    {
+      "id": "systems-gaussian-elimination",
+      "title": "Systems of Linear Equations & Gaussian Elimination",
+      "subtopics": [
+        "Ax=b consistency: rank(A)=rank([A|b])",
+        "Unique / infinite / no solution",
+        "Homogeneous systems, number of free variables",
+        "Gaussian elimination, row echelon & RREF",
+        "Pivot and special solutions"
+      ],
+      "estHours": 6,
+      "priority": "high",
+      "tips": "Unique iff rank = number of unknowns; infinite iff consistent and rank < n. If Ax=b has a unique solution for some b, A has full column rank, so Ax=c has at most one solution for every c.",
+      "resources": [
+        {
+          "title": "MIT 18.06 Lecture 1: The Geometry of Linear Equations",
+          "url": "https://ocw.mit.edu/courses/18-06-linear-algebra-spring-2010/resources/lecture-1-the-geometry-of-linear-equations/",
+          "type": "video",
+          "source": "MIT OCW (Gilbert Strang)",
+          "note": "Row/column picture.",
+          "free": true
+        },
+        {
+          "title": "MIT 18.06 Lecture 2: Elimination with Matrices",
+          "url": "https://ocw.mit.edu/courses/18-06-linear-algebra-spring-2010/resources/lecture-2-elimination-with-matrices/",
+          "type": "video",
+          "source": "MIT OCW (Gilbert Strang)",
+          "note": "Gaussian elimination mechanics.",
+          "free": true
+        },
+        {
+          "title": "MIT 18.06 Lecture 7: Solving Ax=0",
+          "url": "https://ocw.mit.edu/courses/18-06-linear-algebra-spring-2010/resources/lecture-7-solving-ax-0-pivot-variables-special-solutions/",
+          "type": "video",
+          "source": "MIT OCW (Gilbert Strang)",
+          "note": "Free variables, special solutions.",
+          "free": true
+        },
+        {
+          "title": "MIT 18.06 Lecture 8: Solving Ax=b: Row Reduced Form R",
+          "url": "https://ocw.mit.edu/courses/18-06-linear-algebra-spring-2010/resources/lecture-8-solving-ax-b-row-reduced-form-r/",
+          "type": "video",
+          "source": "MIT OCW (Gilbert Strang)",
+          "note": "Complete solution and solvability conditions.",
+          "free": true
+        },
+        {
+          "title": "IIT Madras EE5120 notes - Linear system of equations",
+          "url": "https://ee.iitm.ac.in/~uday/notes/linalg/lse.html",
+          "type": "notes",
+          "source": "IIT Madras",
+          "note": "Short written summary.",
+          "free": true
+        }
+      ],
+      "pyqs": [
+        {
+          "title": "GATE Overflow - system-of-equations tag",
+          "url": "https://gateoverflow.in/tag/system-of-equations",
+          "source": "GATE Overflow",
+          "note": "All system-of-equations PYQs."
+        },
+        {
+          "title": "GATE DS&AI 2024 Q38 (unique vs infinite solutions for p, q)",
+          "url": "https://gateoverflow.in/422924/gate-ds&ai-2024-question-38",
+          "source": "GATE Overflow",
+          "note": "Column-space reasoning question."
+        }
+      ]
+    },
+    {
+      "id": "rank-nullity-determinant",
+      "title": "Rank, Nullity & Determinant",
+      "subtopics": [
+        "Rank (row/column), rank of products and sums",
+        "Rank-nullity theorem",
+        "Determinant properties, cofactor expansion",
+        "det(AB), det(A^T), det(kA), det(A^-1)",
+        "Determinant of triangular/block matrices"
+      ],
+      "estHours": 5,
+      "priority": "high",
+      "tips": "rank(A^TA)=rank(A); rank(AB) <= min(rank A, rank B). det(kA)=k^n det(A) for n x n - a classic trap. Spot linearly dependent rows (row3=row1+row2) before computing.",
+      "resources": [
+        {
+          "title": "MIT 18.06 Lecture 18: Properties of Determinants",
+          "url": "https://ocw.mit.edu/courses/18-06-linear-algebra-spring-2010/resources/lecture-18-properties-of-determinants/",
+          "type": "video",
+          "source": "MIT OCW (Gilbert Strang)",
+          "note": "10 properties used in every det question.",
+          "free": true
+        },
+        {
+          "title": "MIT 18.06 Lecture 19: Determinant Formulas and Cofactors",
+          "url": "https://ocw.mit.edu/courses/18-06-linear-algebra-spring-2010/resources/lecture-19-determinant-formulas-and-cofactors/",
+          "type": "video",
+          "source": "MIT OCW (Gilbert Strang)",
+          "note": "Cofactor expansion.",
+          "free": true
+        },
+        {
+          "title": "3Blue1Brown - The determinant",
+          "url": "https://www.3blue1brown.com/lessons/determinant",
+          "type": "video",
+          "source": "3Blue1Brown",
+          "note": "Determinant as volume scaling.",
+          "free": true
+        },
+        {
+          "title": "3Blue1Brown - Inverse matrices, column space, and null space",
+          "url": "https://www.3blue1brown.com/lessons/inverse-matrices",
+          "type": "video",
+          "source": "3Blue1Brown",
+          "note": "Rank and null space intuition.",
+          "free": true
+        },
+        {
+          "title": "IIT Madras EE5120 notes - Determinants",
+          "url": "https://ee.iitm.ac.in/~uday/notes/linalg/det.html",
+          "type": "notes",
+          "source": "IIT Madras",
+          "note": "Compact determinant notes.",
+          "free": true
+        }
+      ],
+      "pyqs": [
+        {
+          "title": "GATE Overflow - determinant tag",
+          "url": "https://gateoverflow.in/tag/determinant",
+          "source": "GATE Overflow",
+          "note": "Determinant PYQs."
+        },
+        {
+          "title": "GATE DS&AI 2024 Q25 (determinant/rank with dependent rows)",
+          "url": "https://gateoverflow.in/422937/gate-ds&ai-2024-question-25",
+          "source": "GATE Overflow",
+          "note": "DA 2024."
+        },
+        {
+          "title": "GATE Overflow - Previous GATE questions in Linear Algebra",
+          "url": "https://gateoverflow.in/questions/mathematics/linear-algebra?sort=gate",
+          "source": "GATE Overflow",
+          "note": "Filter mentally for rank questions (rank-of-matrix tag page could not be confirmed)."
+        }
+      ]
+    },
+    {
+      "id": "eigenvalues-eigenvectors",
+      "title": "Eigenvalues & Eigenvectors",
+      "subtopics": [
+        "Characteristic equation",
+        "Trace = sum, det = product of eigenvalues",
+        "Eigenvalues of A^k, A^-1, A+cI, A^T, triangular matrices",
+        "Diagonalisation, algebraic vs geometric multiplicity",
+        "Symmetric matrices: real eigenvalues, orthogonal eigenvectors",
+        "Cayley-Hamilton"
+      ],
+      "estHours": 8,
+      "priority": "high",
+      "tips": "Never expand a 3x3 characteristic polynomial if trace/det/structure suffices. Real 2x2 matrices can have complex eigenvalues (check discriminant). Use Cayley-Hamilton for expressions like |M^2 + 12M|.",
+      "resources": [
+        {
+          "title": "MIT 18.06 Lecture 21: Eigenvalues and Eigenvectors",
+          "url": "https://ocw.mit.edu/courses/18-06-linear-algebra-spring-2010/resources/lecture-21-eigenvalues-and-eigenvectors/",
+          "type": "video",
+          "source": "MIT OCW (Gilbert Strang)",
+          "note": "Core lecture.",
+          "free": true
+        },
+        {
+          "title": "MIT 18.06 Lecture 22: Diagonalization and Powers of A",
+          "url": "https://ocw.mit.edu/courses/18-06-linear-algebra-spring-2010/resources/lecture-22-diagonalization-and-powers-of-a/",
+          "type": "video",
+          "source": "MIT OCW (Gilbert Strang)",
+          "note": "Diagonalisation and A^k.",
+          "free": true
+        },
+        {
+          "title": "MIT 18.06 Lecture 25: Symmetric Matrices and Positive Definiteness",
+          "url": "https://ocw.mit.edu/courses/18-06-linear-algebra-spring-2010/resources/lecture-25-symmetric-matrices-and-positive-definiteness/",
+          "type": "video",
+          "source": "MIT OCW (Gilbert Strang)",
+          "note": "Spectral theorem.",
+          "free": true
+        },
+        {
+          "title": "3Blue1Brown - Eigenvectors and eigenvalues",
+          "url": "https://www.3blue1brown.com/lessons/eigenvalues",
+          "type": "video",
+          "source": "3Blue1Brown",
+          "note": "Geometric meaning.",
+          "free": true
+        },
+        {
+          "title": "IIT Madras EE5120 notes - Eigenvalue problems",
+          "url": "https://ee.iitm.ac.in/~uday/notes/linalg/eig.html",
+          "type": "notes",
+          "source": "IIT Madras",
+          "note": "Written summary.",
+          "free": true
+        }
+      ],
+      "pyqs": [
+        {
+          "title": "GATE Overflow - eigen-value tag",
+          "url": "https://gateoverflow.in/tag/eigen-value",
+          "source": "GATE Overflow",
+          "note": "Large PYQ bank."
+        },
+        {
+          "title": "GATE DS&AI 2024 Q3 (nature of eigenvalues of 2x2)",
+          "url": "https://gateoverflow.in/422959/gate-ds&ai-2024-question-3",
+          "source": "GATE Overflow",
+          "note": "Complex eigenvalues trap."
+        },
+        {
+          "title": "GATE DS&AI 2024 Q37",
+          "url": "https://gateoverflow.in/422925/gate-ds&ai-2024-question-37",
+          "source": "GATE Overflow",
+          "note": "DA 2024 LA question."
+        }
+      ]
+    },
+    {
+      "id": "orthogonality-projections",
+      "title": "Orthogonality, Projections & Least Squares",
+      "subtopics": [
+        "Orthogonal vectors and subspaces",
+        "Projection onto a line and a subspace",
+        "Projection matrix P = A(A^TA)^-1A^T, P^2=P, P^T=P",
+        "Least squares (normal equations)",
+        "Gram-Schmidt, orthonormal bases"
+      ],
+      "estHours": 6,
+      "priority": "high",
+      "tips": "A projection onto a k-dim subspace of R^n has eigenvalues 1 (k times) and 0 (n-k times), rank k, trace k, and is singular unless k=n. I-P projects onto the orthogonal complement.",
+      "resources": [
+        {
+          "title": "MIT 18.06 Lecture 14: Orthogonal Vectors and Subspaces",
+          "url": "https://ocw.mit.edu/courses/18-06-linear-algebra-spring-2010/resources/lecture-14-orthogonal-vectors-and-subspaces/",
+          "type": "video",
+          "source": "MIT OCW (Gilbert Strang)",
+          "note": "",
+          "free": true
+        },
+        {
+          "title": "MIT 18.06 Lecture 15: Projections onto Subspaces",
+          "url": "https://ocw.mit.edu/courses/18-06-linear-algebra-spring-2010/resources/lecture-15-projections-onto-subspaces/",
+          "type": "video",
+          "source": "MIT OCW (Gilbert Strang)",
+          "note": "Must-watch for DA.",
+          "free": true
+        },
+        {
+          "title": "MIT 18.06 Lecture 16: Projection Matrices and Least Squares",
+          "url": "https://ocw.mit.edu/courses/18-06-linear-algebra-spring-2010/resources/lecture-16-projection-matrices-and-least-squares/",
+          "type": "video",
+          "source": "MIT OCW (Gilbert Strang)",
+          "note": "Links to linear regression.",
+          "free": true
+        },
+        {
+          "title": "18.06SC session - Projections onto Subspaces (notes + problems)",
+          "url": "https://ocw.mit.edu/courses/18-06sc-linear-algebra-fall-2011/pages/least-squares-determinants-and-eigenvalues/projections-onto-subspaces/",
+          "type": "notes",
+          "source": "MIT OpenCourseWare",
+          "note": "Download the lecture summary and problem-set PDFs.",
+          "free": true
+        },
+        {
+          "title": "IIT Madras EE5120 notes - Orthogonality",
+          "url": "https://ee.iitm.ac.in/~uday/notes/linalg/orth.html",
+          "type": "notes",
+          "source": "IIT Madras",
+          "note": "Orthogonality and projections.",
+          "free": true
+        }
+      ],
+      "pyqs": [
+        {
+          "title": "GATE DA 2025 Q40 (projection onto span of orthonormal vectors)",
+          "url": "https://gateoverflow.in/460982/gate-da-2025-question-40",
+          "source": "GATE Overflow",
+          "note": ""
+        },
+        {
+          "title": "GATE Overflow - linear-algebra tag",
+          "url": "https://gateoverflow.in/tag/linear-algebra",
+          "source": "GATE Overflow",
+          "note": "Includes DA 2024 projection question (M projects onto 2-D subspace)."
+        }
+      ]
+    },
+    {
+      "id": "quadratic-forms-definiteness",
+      "title": "Quadratic Forms & Positive Definiteness",
+      "subtopics": [
+        "x^T A x and symmetric representation",
+        "Positive/negative (semi)definite tests: eigenvalues, leading minors, pivots",
+        "Max/min of x^T A x on unit sphere (Rayleigh quotient)",
+        "Link to multivariable minima"
+      ],
+      "estHours": 4,
+      "priority": "medium",
+      "tips": "max x^TAx subject to ||x||=1 equals the largest eigenvalue of the symmetric part of A. Always symmetrise A first: x^TAx = x^T((A+A^T)/2)x.",
+      "resources": [
+        {
+          "title": "MIT 18.06 Lecture 27: Positive Definite Matrices and Minima",
+          "url": "https://ocw.mit.edu/courses/18-06-linear-algebra-spring-2010/resources/lecture-27-positive-definite-matrices-and-minima/",
+          "type": "video",
+          "source": "MIT OCW (Gilbert Strang)",
+          "note": "Definiteness tests and quadratic forms.",
+          "free": true
+        },
+        {
+          "title": "MIT 18.06 Lecture 25: Symmetric Matrices and Positive Definiteness",
+          "url": "https://ocw.mit.edu/courses/18-06-linear-algebra-spring-2010/resources/lecture-25-symmetric-matrices-and-positive-definiteness/",
+          "type": "video",
+          "source": "MIT OCW (Gilbert Strang)",
+          "note": "",
+          "free": true
+        },
+        {
+          "title": "18.06SC - Positive Definite Matrices and Minima (notes + problems)",
+          "url": "https://ocw.mit.edu/courses/18-06sc-linear-algebra-fall-2011/pages/positive-definite-matrices-and-applications/positive-definite-matrices-and-minima/",
+          "type": "notes",
+          "source": "MIT OpenCourseWare",
+          "note": "Problem set with solutions.",
+          "free": true
+        }
+      ],
+      "pyqs": [
+        {
+          "title": "GATE DA 2026 Q55 (max of x^T A x, A = I - 11^T/n)",
+          "url": "https://gateoverflow.in/523159/gate-da-2026-question-55",
+          "source": "GATE Overflow",
+          "note": "Rayleigh quotient / centering matrix."
+        },
+        {
+          "title": "GATE Overflow - gateda-2026 tag",
+          "url": "https://gateoverflow.in/tag/gateda-2026",
+          "source": "GATE Overflow",
+          "note": "Other DA 2026 questions."
+        }
+      ]
+    },
+    {
+      "id": "lu-decomposition",
+      "title": "LU Decomposition",
+      "subtopics": [
+        "A = LU via elimination multipliers",
+        "When LU exists (nonzero pivots) vs PA = LU",
+        "Solving Ax=b by forward/back substitution",
+        "det(A) = product of pivots"
+      ],
+      "estHours": 3,
+      "priority": "medium",
+      "tips": "Entries of L below the diagonal are the elimination multipliers; L has 1s on its diagonal (Doolittle). A zero pivot means row exchange is needed (PA=LU).",
+      "resources": [
+        {
+          "title": "MIT 18.06 Lecture 4: Factorization into A = LU",
+          "url": "https://ocw.mit.edu/courses/18-06-linear-algebra-spring-2010/resources/lecture-4-factorization-into-a-lu/",
+          "type": "video",
+          "source": "MIT OCW (Gilbert Strang)",
+          "note": "Core lecture.",
+          "free": true
+        },
+        {
+          "title": "18.06SC session - Factorization into A = LU",
+          "url": "https://ocw.mit.edu/courses/18-06sc-linear-algebra-fall-2011/pages/ax-b-and-the-four-subspaces/factorization-into-a-lu/",
+          "type": "notes",
+          "source": "MIT OpenCourseWare",
+          "note": "Summary + problems + recitation video.",
+          "free": true
+        }
+      ],
+      "pyqs": [
+        {
+          "title": "GATE Overflow - lu-decomposition tag",
+          "url": "https://gateoverflow.in/tag/lu-decomposition",
+          "source": "GATE Overflow",
+          "note": "LU PYQs incl. GATE CSE 2025 PX=Q with P=LU."
+        },
+        {
+          "title": "GATE CSE 2025 Set 2 Q34 (LU decomposition)",
+          "url": "https://gateoverflow.in/460801/gate-cse-2025-set-2-question-34",
+          "source": "GATE Overflow",
+          "note": "Recent LU question."
+        }
+      ]
+    },
+    {
+      "id": "svd",
+      "title": "Singular Value Decomposition (SVD)",
+      "subtopics": [
+        "A = U Σ V^T",
+        "Singular values = sqrt(eigenvalues of A^TA)",
+        "Rank = number of nonzero singular values",
+        "Singular values of symmetric/PSD matrices = |eigenvalues|",
+        "Low-rank approximation, link to PCA, pseudoinverse"
+      ],
+      "estHours": 5,
+      "priority": "high",
+      "tips": "For symmetric PSD matrices (e.g. uu^T, projections) singular values equal eigenvalues; for general symmetric matrices they are absolute eigenvalues. Sum of singular values of uu^T = ||u||^2.",
+      "resources": [
+        {
+          "title": "MIT 18.06 Lecture 29: Singular Value Decomposition",
+          "url": "https://ocw.mit.edu/courses/18-06-linear-algebra-spring-2010/resources/lecture-29-singular-value-decomposition/",
+          "type": "video",
+          "source": "MIT OCW (Gilbert Strang)",
+          "note": "Core lecture.",
+          "free": true
+        },
+        {
+          "title": "18.06SC session - Singular Value Decomposition",
+          "url": "https://ocw.mit.edu/courses/18-06sc-linear-algebra-fall-2011/pages/positive-definite-matrices-and-applications/singular-value-decomposition/",
+          "type": "notes",
+          "source": "MIT OpenCourseWare",
+          "note": "Summary + problem set.",
+          "free": true
+        },
+        {
+          "title": "Strang - SVD slides (PDF)",
+          "url": "https://math.mit.edu/~gs/linearalgebra/ila6/SVD_Slides.pdf",
+          "type": "pdf",
+          "source": "Gilbert Strang (MIT)",
+          "note": "Compact revision deck.",
+          "free": true
+        },
+        {
+          "title": "Mathematics for Machine Learning - Ch 4 (Matrix Decompositions)",
+          "url": "https://mml-book.github.io/book/mml-book.pdf",
+          "type": "book",
+          "source": "mml-book.github.io",
+          "note": "Sections 4.4–4.6: eigendecomposition, SVD, matrix approximation.",
+          "free": true
+        }
+      ],
+      "pyqs": [
+        {
+          "title": "GATE DS&AI 2024 Q51 (sum of singular values of uu^T)",
+          "url": "https://gateoverflow.in/422911/gate-ds&ai-2024-question-51",
+          "source": "GATE Overflow",
+          "note": "Answer 55."
+        },
+        {
+          "title": "GATE DA 2025 Q40 (singular values of a projection)",
+          "url": "https://gateoverflow.in/460982/gate-da-2025-question-40",
+          "source": "GATE Overflow",
+          "note": ""
+        }
+      ]
+    }
+  ]
+}

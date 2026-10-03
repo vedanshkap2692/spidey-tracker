@@ -1,0 +1,910 @@
+{
+  "id": "prob-stats",
+  "title": "Probability & Statistics",
+  "weightage": "11–18 marks (≈18 in 2025 with 12 Qs, 11 in 2026 with 7 Qs); highest-weight maths subject in DA",
+  "summary": "The single biggest maths block in GATE DA: expect NAT-heavy questions on conditional probability/Bayes, expectation & variance, named distributions (normal, exponential, uniform, Poisson, binomial), conditional expectation from joint PDFs, plus a few inferential-stats questions (CLT, confidence intervals, z/t/chi-squared tests). Speed with standard results (memoryless property, E/Var tables, standard-normal symmetry) decides marks.",
+  "notesGuide": "1) Download the MIT 18.05 (Spring 2022) class reading PDFs from the 'Classes, Reading and In-Class Materials' page: Class 1b, 2, 3, 4a, 4b, 5a–5d, 6a, 6b, 7a, 7b, 17b, 18, 19, 22 cover essentially the whole GATE DA syllabus — print these, they are short (5–15 pages each) and exam-aligned. 2) Keep the free Blitzstein & Hwang 'Introduction to Probability' PDF (probabilitybook.net) as the reference book for harder problems (Ch 1–7, 9, 10). 3) For inferential statistics (CI, z/t/chi-squared tests, sampling distributions) use OpenIntro Statistics (free PDF) Ch 5–7 or NPTEL Somesh Kumar weeks 8–12. 4) Make your own short notes as a 2–3 page formula sheet: one table of every distribution (PMF/PDF, CDF, mean, variance, MGF-free key property such as memorylessness), one page of identities (total probability, Bayes, law of total expectation/variance, Var(aX+bY), Cov/Corr properties), and one page of test-selection rules (z vs t vs chi-squared, df, one/two-tailed, CI formulas). 5) While solving PYQs on GATE Overflow, log every trap you fall into (e.g. confusing independence with mutual exclusion, mean vs rate parametrisation of exponential) in an 'error log' at the end of the notes and revise it weekly.",
+  "resources": [
+    {
+      "title": "GO Classes – Probability for GATE DA/CS (Complete Lecture Series)",
+      "url": "https://www.youtube.com/playlist?list=PLgjejdknTfWMQ-IofDV-3jwQkoVNTOLch",
+      "type": "video",
+      "source": "YouTube – GO Classes for GATE DA",
+      "note": "51-video free playlist made specifically for GATE DA/CS; primary video course for the probability half of the syllabus. Follow in order and pause to solve the in-lecture questions.",
+      "free": true
+    },
+    {
+      "title": "NPTEL – Probability and Statistics (Prof. Somesh Kumar, IIT Kharagpur)",
+      "url": "https://nptel.ac.in/courses/111105090",
+      "type": "course",
+      "source": "NPTEL",
+      "note": "Complete 12-week course (75 lectures) covering probability, distributions, joint distributions, chi-square/t/F, descriptive stats, confidence intervals and hypothesis testing (z, t, chi-square, paired t). Use weeks 8–12 for the statistics part of the syllabus; Downloads tab has transcripts/notes.",
+      "free": true
+    },
+    {
+      "title": "NPTEL course syllabus PDF (lecture-by-lecture plan)",
+      "url": "https://archive.nptel.ac.in/content/syllabus_pdf/111105090.pdf",
+      "type": "pdf",
+      "source": "NPTEL",
+      "note": "Lecture list for the Somesh Kumar course – use it to jump straight to e.g. L46–47 (chi-square & t distributions), L61–64 (confidence intervals), L70–75 (tests).",
+      "free": true
+    },
+    {
+      "title": "MIT 18.05 Introduction to Probability and Statistics (Spring 2022)",
+      "url": "https://ocw.mit.edu/courses/18-05-introduction-to-probability-and-statistics-spring-2022/pages/classes-reading-and-in-class-materials/",
+      "type": "notes",
+      "source": "MIT OCW",
+      "note": "Best free printable class notes; each class has a short reading PDF plus problem sets with solutions. Covers counting through NHST and confidence intervals.",
+      "free": true
+    },
+    {
+      "title": "Blitzstein & Hwang – Introduction to Probability (free PDF)",
+      "url": "https://probabilitybook.net/",
+      "type": "book",
+      "source": "Harvard Stat 110 (probabilitybook.net → Google Drive PDF)",
+      "note": "Gold-standard probability text, free PDF. Ch 1 (counting), 2 (conditional prob/Bayes), 3–5 (RVs, expectation, continuous), 7 (joint), 9 (conditional expectation), 10 (CLT). Use end-of-chapter exercises for tough practice.",
+      "free": true
+    },
+    {
+      "title": "Harvard Statistics 110: Probability – lecture videos",
+      "url": "https://www.youtube.com/playlist?list=PL2SOU6wwxB0uwwH80KTQ6ht66KWxbzTIo",
+      "type": "video",
+      "source": "YouTube – Harvard University (Joe Blitzstein)",
+      "note": "35 lectures; excellent intuition for conditioning, expectation and conditional expectation (Lectures 1–30 relevant). Watch selectively for weak areas.",
+      "free": true
+    },
+    {
+      "title": "Stat 110 handouts & practice problems",
+      "url": "https://stat110.hsites.harvard.edu/handouts",
+      "type": "practice",
+      "source": "Harvard Stat 110",
+      "note": "Strategic practice problems with solutions and the famous probability cheatsheet – great revision material.",
+      "free": true
+    },
+    {
+      "title": "Stanford CS109 – Probability for Computer Scientists (course reader)",
+      "url": "https://chrispiech.github.io/probabilityForComputerScientists/en/",
+      "type": "notes",
+      "source": "Stanford CS109 (Chris Piech)",
+      "note": "Free online textbook with short, CS/ML-oriented chapters on counting, Bayes, distributions, joint RVs, CLT. Ideal quick-read companion.",
+      "free": true
+    },
+    {
+      "title": "StatQuest – Statistics Fundamentals",
+      "url": "https://www.youtube.com/playlist?list=PLblh5JKOoLUK0FLuzwntyYI10UQFUhsY9",
+      "type": "video",
+      "source": "YouTube – StatQuest with Josh Starmer",
+      "note": "Short visual explanations of mean/variance, normal distribution, p-values, confidence intervals, t-tests, CLT. Use for the inferential-statistics part.",
+      "free": true
+    },
+    {
+      "title": "OpenIntro Statistics (free textbook)",
+      "url": "https://www.openintro.org/book/os/",
+      "type": "book",
+      "source": "OpenIntro",
+      "note": "Free PDF; Ch 2 (summarising data), Ch 5 (foundations of inference, CI), Ch 6 (chi-squared tests), Ch 7 (t-tests). Good worked examples for z/t/chi-square.",
+      "free": true
+    },
+    {
+      "title": "Seeing Theory – visual introduction to probability & statistics",
+      "url": "https://seeing-theory.brown.edu/",
+      "type": "website",
+      "source": "Brown University",
+      "note": "Interactive visualisations of probability, distributions, CLT, confidence intervals and hypothesis tests; 1–2 hours to build intuition.",
+      "free": true
+    },
+    {
+      "title": "Khan Academy – Statistics and Probability",
+      "url": "https://www.khanacademy.org/math/statistics-probability",
+      "type": "course",
+      "source": "Khan Academy",
+      "note": "Use the units on counting, random variables, sampling distributions, confidence intervals, significance tests and chi-square tests to fill basic gaps with practice exercises.",
+      "free": true
+    }
+  ],
+  "pyqs": [
+    {
+      "title": "GATE DA 2024 official question paper (PDF)",
+      "url": "https://gate2026.iitg.ac.in/doc/download/2024/DA24S1.pdf",
+      "source": "GATE 2026 (IIT Guwahati) official site",
+      "note": "Original DA 2024 paper; answer key at https://gate2026.iitg.ac.in/doc/download/2024/DAFinalAnswerKey.pdf"
+    },
+    {
+      "title": "GATE DA 2025 official question paper (PDF)",
+      "url": "https://gate2026.iitg.ac.in/doc/download/2025/DA2025.pdf",
+      "source": "GATE 2026 (IIT Guwahati) official site",
+      "note": "Original DA 2025 paper (P&S ≈18 marks); answer key at https://gate2026.iitg.ac.in/doc/download/2025_Key/DA_Keys.pdf"
+    },
+    {
+      "title": "GATE Overflow – GATE DA 2026 questions (tag gateda-2026)",
+      "url": "https://gateoverflow.in/tag/gateda-2026",
+      "source": "GATE Overflow",
+      "note": "All DA 2026 questions with discussion; P&S questions include Q9, Q10 (counting), Q18 (normal), Q24 (exponential), Q53 (conditional uniform)."
+    },
+    {
+      "title": "GATE Overflow – GATE DS&AI 2024 questions (tag gate-ds-ai-2024)",
+      "url": "https://db.gateoverflow.in/tag/gate-ds-ai-2024",
+      "source": "GATE Overflow (db subsite)",
+      "note": "DA 2024 questions with solutions; P&S items include Q2, Q26, Q46–Q49."
+    },
+    {
+      "title": "GATE Overflow – Probability (all tagged questions)",
+      "url": "https://gateoverflow.in/tag/probability",
+      "source": "GATE Overflow",
+      "note": "Large bank of GATE CSE + DA probability PYQs plus GO Classes DPP/quiz questions for DA."
+    },
+    {
+      "title": "GATE Overflow – Probability subject page",
+      "url": "https://gateoverflow.in/subject/mathematics/probability",
+      "source": "GATE Overflow",
+      "note": "Subject hub linking all probability sub-tags and questions."
+    },
+    {
+      "title": "AspirantMitraa – GATE DA Probability & Statistics PYQs (2024–2026)",
+      "url": "https://www.aspirantmitraa.com/pyq/gate-da-probability-and-statistics-questions",
+      "source": "AspirantMitraa",
+      "note": "~33 DA-only P&S PYQs from 2024–2026 with solutions and difficulty tags – best DA-specific consolidated list."
+    },
+    {
+      "title": "GATE Statistics (ST) 2025 paper (PDF)",
+      "url": "https://gate2026.iitg.ac.in/doc/download/2025/ST2025.pdf",
+      "source": "GATE 2026 (IIT Guwahati) official site",
+      "note": "GATE ST paper – harder source of CI, t/chi-square test and distribution questions; use selectively for the inference topics."
+    }
+  ],
+  "topics": [
+    {
+      "id": "counting",
+      "title": "Counting: Permutations & Combinations",
+      "subtopics": [
+        "Multiplication & addition principles",
+        "Permutations (with/without repetition, identical objects)",
+        "Combinations and binomial coefficients",
+        "Stars and bars (non-negative integer solutions)",
+        "Inclusion–exclusion",
+        "Probability via equally likely outcomes"
+      ],
+      "estHours": 5,
+      "priority": "medium",
+      "tips": "Decide 'ordered vs unordered' and 'with vs without replacement' before writing any formula; stars-and-bars (n+k−1 choose k−1) appeared in DA 2026 Q10.",
+      "resources": [
+        {
+          "title": "MIT 18.05 Class 1b Reading: Counting and Sets",
+          "url": "https://ocw.mit.edu/courses/18-05-introduction-to-probability-and-statistics-spring-2022/resources/mit18_05_s22_class01-prep-b_pdf/",
+          "type": "pdf",
+          "source": "MIT OCW",
+          "note": "Short printable reading on rule of product, permutations, combinations.",
+          "free": true
+        },
+        {
+          "title": "CS109 Reader – Counting",
+          "url": "https://chrispiech.github.io/probabilityForComputerScientists/en/part1/counting/",
+          "type": "notes",
+          "source": "Stanford CS109",
+          "note": "Counting rules with CS-style examples.",
+          "free": true
+        },
+        {
+          "title": "CS109 Reader – Combinatorics",
+          "url": "https://chrispiech.github.io/probabilityForComputerScientists/en/part1/combinatorics/",
+          "type": "notes",
+          "source": "Stanford CS109",
+          "note": "Permutations/combinations, identical objects, buckets & dividers (stars and bars).",
+          "free": true
+        },
+        {
+          "title": "Blitzstein & Hwang Ch 1 (free PDF)",
+          "url": "https://probabilitybook.net/",
+          "type": "book",
+          "source": "Harvard Stat 110",
+          "note": "Ch 1.4 naive definition & counting, Bose–Einstein (stars and bars) – do the exercises.",
+          "free": true
+        }
+      ],
+      "pyqs": [
+        {
+          "title": "GATE Overflow (db) – counting tag",
+          "url": "https://db.gateoverflow.in/tag/counting",
+          "source": "GATE Overflow",
+          "note": "Counting questions incl. GATE CSE PYQs."
+        },
+        {
+          "title": "Aptitude Overflow – permutation-combination",
+          "url": "https://aptitude.gateoverflow.in/tag/permutation-combination",
+          "source": "GATE Overflow (aptitude)",
+          "note": "GATE GA / aptitude P&C questions – good speed practice."
+        },
+        {
+          "title": "GATE DA 2026 questions (Q9, Q10 counting-based probability)",
+          "url": "https://gateoverflow.in/tag/gateda-2026",
+          "source": "GATE Overflow",
+          "note": "Real DA counting questions."
+        }
+      ]
+    },
+    {
+      "id": "probability-basics",
+      "title": "Probability Axioms, Sample Spaces & Events",
+      "subtopics": [
+        "Sample space and events",
+        "Axioms of probability and consequences",
+        "Union/complement rules",
+        "Mutually exclusive events",
+        "Independent events (pairwise vs mutual)",
+        "Independence vs mutual exclusivity"
+      ],
+      "estHours": 4,
+      "priority": "high",
+      "tips": "Mutually exclusive events with non-zero probability are never independent — a favourite MSQ trap; for 'at least one' use the complement.",
+      "resources": [
+        {
+          "title": "MIT 18.05 Class 2 Reading: Probability – Terminology and Examples",
+          "url": "https://ocw.mit.edu/courses/18-05-introduction-to-probability-and-statistics-spring-2022/resources/mit18_05_s22_class02-prep_pdf/",
+          "type": "pdf",
+          "source": "MIT OCW",
+          "note": "Sample spaces, events, axioms, rules.",
+          "free": true
+        },
+        {
+          "title": "CS109 Reader – Probability / Probability of Or",
+          "url": "https://chrispiech.github.io/probabilityForComputerScientists/en/part1/probability/",
+          "type": "notes",
+          "source": "Stanford CS109",
+          "note": "Axioms and inclusion–exclusion; see also 'Probability of or' chapter.",
+          "free": true
+        },
+        {
+          "title": "CS109 Reader – Independence",
+          "url": "https://chrispiech.github.io/probabilityForComputerScientists/en/part1/independence/",
+          "type": "notes",
+          "source": "Stanford CS109",
+          "note": "Independence definitions with examples.",
+          "free": true
+        },
+        {
+          "title": "Seeing Theory – Basic Probability",
+          "url": "https://seeing-theory.brown.edu/basic-probability/index.html",
+          "type": "website",
+          "source": "Brown University",
+          "note": "Interactive intro to chance events and expectation.",
+          "free": true
+        },
+        {
+          "title": "GO Classes – Probability for GATE DA/CS (early lectures)",
+          "url": "https://www.youtube.com/playlist?list=PLgjejdknTfWMQ-IofDV-3jwQkoVNTOLch",
+          "type": "video",
+          "source": "YouTube – GO Classes",
+          "note": "Start of the playlist covers sample space, axioms, independence.",
+          "free": true
+        }
+      ],
+      "pyqs": [
+        {
+          "title": "GATE Overflow – probability tag",
+          "url": "https://gateoverflow.in/tag/probability",
+          "source": "GATE Overflow",
+          "note": "Filter for basic event/axiom questions."
+        },
+        {
+          "title": "GATE Overflow – independent-events tag",
+          "url": "https://gateoverflow.in/tag/independent-events",
+          "source": "GATE Overflow",
+          "note": "Independence vs mutual exclusion questions incl. GO Classes DA DPPs."
+        },
+        {
+          "title": "GATE DS&AI 2024 (Q2: coin-toss events T∩S)",
+          "url": "https://db.gateoverflow.in/tag/gate-ds-ai-2024",
+          "source": "GATE Overflow",
+          "note": "DA 2024 event-probability question."
+        }
+      ]
+    },
+    {
+      "id": "conditional-bayes",
+      "title": "Conditional, Joint & Marginal Probability; Bayes Theorem",
+      "subtopics": [
+        "Joint and marginal probability",
+        "Conditional probability",
+        "Multiplication rule",
+        "Law of total probability",
+        "Bayes theorem",
+        "Conditional independence"
+      ],
+      "estHours": 6,
+      "priority": "high",
+      "tips": "Draw a tree / 2×2 table for every Bayes question and write P(B) via total probability first; DA papers love NAT answers to 2–3 decimals, so keep fractions until the end.",
+      "resources": [
+        {
+          "title": "MIT 18.05 Class 3 Reading: Conditional Probability, Independence, Bayes' Theorem",
+          "url": "https://ocw.mit.edu/courses/18-05-introduction-to-probability-and-statistics-spring-2022/resources/mit18_05_s22_class03-prep_pdf/",
+          "type": "pdf",
+          "source": "MIT OCW",
+          "note": "Core reading; includes base-rate fallacy examples.",
+          "free": true
+        },
+        {
+          "title": "CS109 Reader – Conditional Probability",
+          "url": "https://chrispiech.github.io/probabilityForComputerScientists/en/part1/cond_prob/",
+          "type": "notes",
+          "source": "Stanford CS109",
+          "note": "Definitions and chain rule.",
+          "free": true
+        },
+        {
+          "title": "CS109 Reader – Law of Total Probability",
+          "url": "https://chrispiech.github.io/probabilityForComputerScientists/en/part1/law_total/",
+          "type": "notes",
+          "source": "Stanford CS109",
+          "note": "Partitioning technique used in nearly every Bayes question.",
+          "free": true
+        },
+        {
+          "title": "CS109 Reader – Bayes' Theorem",
+          "url": "https://chrispiech.github.io/probabilityForComputerScientists/en/part1/bayes_theorem/",
+          "type": "notes",
+          "source": "Stanford CS109",
+          "note": "Bayes with ML-flavoured examples.",
+          "free": true
+        },
+        {
+          "title": "Seeing Theory – Compound Probability & Bayesian Inference",
+          "url": "https://seeing-theory.brown.edu/compound-probability/index.html",
+          "type": "website",
+          "source": "Brown University",
+          "note": "Visual conditional probability; see also the Bayesian Inference chapter.",
+          "free": true
+        }
+      ],
+      "pyqs": [
+        {
+          "title": "GATE Overflow – conditional-probability tag",
+          "url": "https://gateoverflow.in/tag/conditional-probability",
+          "source": "GATE Overflow",
+          "note": "GATE CSE/DA conditional probability and Bayes questions (2004–2026)."
+        },
+        {
+          "title": "GATE DS&AI 2024 (Q48: P(T|S))",
+          "url": "https://db.gateoverflow.in/tag/gate-ds-ai-2024",
+          "source": "GATE Overflow",
+          "note": "DA 2024 conditional probability question."
+        },
+        {
+          "title": "AspirantMitraa – DA P&S PYQs",
+          "url": "https://www.aspirantmitraa.com/pyq/gate-da-probability-and-statistics-questions",
+          "source": "AspirantMitraa",
+          "note": "Filter for Bayes/conditional questions from 2024–2026."
+        }
+      ]
+    },
+    {
+      "id": "random-variables-expectation",
+      "title": "Random Variables, PMF/PDF/CDF, Expectation & Variance",
+      "subtopics": [
+        "Discrete random variables and PMF",
+        "Continuous random variables and PDF",
+        "Cumulative distribution function and its properties",
+        "Expectation, linearity of expectation",
+        "Variance and standard deviation of a RV",
+        "Functions of a random variable (E[g(X)], Var(aX+b))"
+      ],
+      "estHours": 7,
+      "priority": "high",
+      "tips": "Check CDF validity (non-decreasing, right-continuous, limits 0 and 1) — DA 2025 asked a CDF question; use Var(X)=E[X²]−(E[X])² and linearity of expectation even for dependent variables.",
+      "resources": [
+        {
+          "title": "MIT 18.05 Class 4a/4b Readings: Discrete RVs; Expected Value",
+          "url": "https://ocw.mit.edu/courses/18-05-introduction-to-probability-and-statistics-spring-2022/resources/mit18_05_s22_class04-prep-a_pdf/",
+          "type": "pdf",
+          "source": "MIT OCW",
+          "note": "PMF, CDF; 4b (expected value) at https://ocw.mit.edu/courses/18-05-introduction-to-probability-and-statistics-spring-2022/resources/mit18_05_s22_class04-prep-b_pdf/",
+          "free": true
+        },
+        {
+          "title": "MIT 18.05 Class 5a Reading: Variance of Discrete RVs",
+          "url": "https://ocw.mit.edu/courses/18-05-introduction-to-probability-and-statistics-spring-2022/resources/mit18_05_s22_class05-prep-a_pdf/",
+          "type": "pdf",
+          "source": "MIT OCW",
+          "note": "Variance, standard deviation, properties.",
+          "free": true
+        },
+        {
+          "title": "MIT 18.05 Class 5b Reading: Continuous Random Variables",
+          "url": "https://ocw.mit.edu/courses/18-05-introduction-to-probability-and-statistics-spring-2022/resources/mit18_05_s22_class05-prep-b_pdf/",
+          "type": "pdf",
+          "source": "MIT OCW",
+          "note": "PDF, CDF for continuous RVs; follow with Class 6a (E and Var for continuous).",
+          "free": true
+        },
+        {
+          "title": "CS109 Reader – Expectation & Variance",
+          "url": "https://chrispiech.github.io/probabilityForComputerScientists/en/part2/expectation/",
+          "type": "notes",
+          "source": "Stanford CS109",
+          "note": "Linearity of expectation tricks; Variance chapter at https://chrispiech.github.io/probabilityForComputerScientists/en/part2/variance/",
+          "free": true
+        },
+        {
+          "title": "NPTEL Somesh Kumar – Week 2–3 (L13–L18)",
+          "url": "https://nptel.ac.in/courses/111105090",
+          "type": "course",
+          "source": "NPTEL",
+          "note": "Random variables, distributions, moments, characteristics of distributions.",
+          "free": true
+        }
+      ],
+      "pyqs": [
+        {
+          "title": "GATE Overflow – random-variable tag",
+          "url": "https://gateoverflow.in/tag/random-variable",
+          "source": "GATE Overflow",
+          "note": "Many GATE CSE + DA 2025/2026 RV questions."
+        },
+        {
+          "title": "GATE Overflow (db) – expectation tag",
+          "url": "https://db.gateoverflow.in/tag/expectation",
+          "source": "GATE Overflow",
+          "note": "Expectation PYQs (e.g. GATE CSE 2017 E[(X+2)²])."
+        },
+        {
+          "title": "GATE Overflow – variance tag",
+          "url": "https://gateoverflow.in/tag/variance",
+          "source": "GATE Overflow",
+          "note": "Variance PYQs incl. DA 2025 Q26 (Var of Z²)."
+        }
+      ]
+    },
+    {
+      "id": "discrete-distributions",
+      "title": "Discrete Distributions: Uniform, Bernoulli, Binomial, Poisson",
+      "subtopics": [
+        "Discrete uniform",
+        "Bernoulli",
+        "Binomial (mean np, variance np(1−p))",
+        "Poisson (mean = variance = λ)",
+        "Poisson approximation to binomial",
+        "Geometric-style 'trials until success' reasoning"
+      ],
+      "estHours": 5,
+      "priority": "high",
+      "tips": "Memorise the mean/variance table cold; Poisson questions often hide behind 'rate per unit time' wording, and sums of independent Poissons are Poisson.",
+      "resources": [
+        {
+          "title": "MIT 18.05 Class 4a Reading: Discrete Random Variables",
+          "url": "https://ocw.mit.edu/courses/18-05-introduction-to-probability-and-statistics-spring-2022/resources/mit18_05_s22_class04-prep-a_pdf/",
+          "type": "pdf",
+          "source": "MIT OCW",
+          "note": "Bernoulli, binomial, geometric, uniform.",
+          "free": true
+        },
+        {
+          "title": "CS109 Reader – Bernoulli",
+          "url": "https://chrispiech.github.io/probabilityForComputerScientists/en/part2/bernoulli/",
+          "type": "notes",
+          "source": "Stanford CS109",
+          "note": "Indicator variables – key for expectation tricks.",
+          "free": true
+        },
+        {
+          "title": "CS109 Reader – Binomial",
+          "url": "https://chrispiech.github.io/probabilityForComputerScientists/en/part2/binomial/",
+          "type": "notes",
+          "source": "Stanford CS109",
+          "note": "Binomial PMF, mean, variance.",
+          "free": true
+        },
+        {
+          "title": "CS109 Reader – Poisson",
+          "url": "https://chrispiech.github.io/probabilityForComputerScientists/en/part2/poisson/",
+          "type": "notes",
+          "source": "Stanford CS109",
+          "note": "Poisson as limit of binomial; see also binomial approximation chapter.",
+          "free": true
+        },
+        {
+          "title": "NPTEL Somesh Kumar – Week 3–4 (L19–L23)",
+          "url": "https://nptel.ac.in/courses/111105090",
+          "type": "course",
+          "source": "NPTEL",
+          "note": "Special discrete distributions and Poisson process.",
+          "free": true
+        }
+      ],
+      "pyqs": [
+        {
+          "title": "GATE Overflow – binomial-distribution tag",
+          "url": "https://gateoverflow.in/tag/binomial-distribution",
+          "source": "GATE Overflow",
+          "note": "Binomial PYQs + GO Classes DA DPPs."
+        },
+        {
+          "title": "GATE Overflow – poisson-distribution tag",
+          "url": "https://gateoverflow.in/tag/poisson-distribution",
+          "source": "GATE Overflow",
+          "note": "Poisson PYQs incl. DA 2024 Q1 (Poisson & normal statements)."
+        },
+        {
+          "title": "AspirantMitraa – DA P&S PYQs",
+          "url": "https://www.aspirantmitraa.com/pyq/gate-da-probability-and-statistics-questions",
+          "source": "AspirantMitraa",
+          "note": "DA-only Bernoulli/binomial/Poisson questions."
+        }
+      ]
+    },
+    {
+      "id": "continuous-distributions",
+      "title": "Continuous Distributions: Uniform, Exponential, Normal, Standard Normal",
+      "subtopics": [
+        "Continuous uniform",
+        "Exponential and memoryless property",
+        "Normal distribution, standardisation (Z-scores)",
+        "Standard normal table / symmetry Φ(−z)=1−Φ(z)",
+        "Linear transforms and sums of normals",
+        "Probabilities like P(X ≥ Y) for independent uniforms (area method)"
+      ],
+      "estHours": 7,
+      "priority": "high",
+      "tips": "Check whether the exponential is given by rate λ or mean λ (DA 2026 Q24 used mean); P(X>s+t | X>s)=P(X>t). For two uniforms, compute probabilities geometrically as areas.",
+      "resources": [
+        {
+          "title": "MIT 18.05 Class 5c Reading: Gallery of Continuous Random Variables",
+          "url": "https://ocw.mit.edu/courses/18-05-introduction-to-probability-and-statistics-spring-2022/resources/mit18_05_s22_class05-prep-c_pdf/",
+          "type": "pdf",
+          "source": "MIT OCW",
+          "note": "Uniform, exponential, normal with pictures and properties.",
+          "free": true
+        },
+        {
+          "title": "MIT 18.05 Class 5d Reading: Manipulating Random Variables",
+          "url": "https://ocw.mit.edu/courses/18-05-introduction-to-probability-and-statistics-spring-2022/resources/mit18_05_s22_class05-prep-d_pdf/",
+          "type": "pdf",
+          "source": "MIT OCW",
+          "note": "Transformations, standardisation, quantiles.",
+          "free": true
+        },
+        {
+          "title": "CS109 Reader – Normal Distribution",
+          "url": "https://chrispiech.github.io/probabilityForComputerScientists/en/part2/normal/",
+          "type": "notes",
+          "source": "Stanford CS109",
+          "note": "Normal & standard normal, CDF usage.",
+          "free": true
+        },
+        {
+          "title": "CS109 Reader – Exponential Distribution",
+          "url": "https://chrispiech.github.io/probabilityForComputerScientists/en/part2/exponential/",
+          "type": "notes",
+          "source": "Stanford CS109",
+          "note": "Exponential & memorylessness; Uniform chapter at https://chrispiech.github.io/probabilityForComputerScientists/en/part2/uniform/",
+          "free": true
+        },
+        {
+          "title": "Seeing Theory – Probability Distributions",
+          "url": "https://seeing-theory.brown.edu/probability-distributions/index.html",
+          "type": "website",
+          "source": "Brown University",
+          "note": "Interactive PDFs/CDFs.",
+          "free": true
+        }
+      ],
+      "pyqs": [
+        {
+          "title": "GATE Overflow – normal-distribution tag",
+          "url": "https://gateoverflow.in/tag/normal-distribution",
+          "source": "GATE Overflow",
+          "note": "Includes DA 2025/2026 normal questions."
+        },
+        {
+          "title": "GATE Overflow – exponential-distribution tag",
+          "url": "https://gateoverflow.in/tag/exponential-distribution",
+          "source": "GATE Overflow",
+          "note": "DA 2024 Q47, DA 2025, DA 2026 Q24 exponential questions."
+        },
+        {
+          "title": "GATE Overflow – uniform-distribution tag",
+          "url": "https://gateoverflow.in/tag/uniform-distribution",
+          "source": "GATE Overflow",
+          "note": "DA 2024 Q46 (P(X≥Y)), DA 2026 Q53, CSE 2019/2025."
+        }
+      ]
+    },
+    {
+      "id": "joint-conditional-expectation",
+      "title": "Joint Distributions, Conditional PDF, Conditional Expectation & Variance, Covariance & Correlation",
+      "subtopics": [
+        "Joint PMF/PDF and marginals",
+        "Conditional PMF/PDF",
+        "Independence of random variables",
+        "Conditional expectation E[Y|X] and law of total expectation",
+        "Conditional variance and law of total variance",
+        "Covariance, correlation coefficient, Var(X+Y)"
+      ],
+      "estHours": 8,
+      "priority": "high",
+      "tips": "For E[Y|X=x], first get f(y|x)=f(x,y)/f_X(x) and integrate over the correct support (DA 2024 Q49); zero covariance does not imply independence except for jointly normal variables.",
+      "resources": [
+        {
+          "title": "MIT 18.05 Class 7a Reading: Joint Distributions, Independence",
+          "url": "https://ocw.mit.edu/courses/18-05-introduction-to-probability-and-statistics-spring-2022/resources/mit18_05_s22_class07-prep-a_pdf/",
+          "type": "pdf",
+          "source": "MIT OCW",
+          "note": "Joint/marginal PMFs & PDFs.",
+          "free": true
+        },
+        {
+          "title": "MIT 18.05 Class 7b Reading: Covariance and Correlation",
+          "url": "https://ocw.mit.edu/courses/18-05-introduction-to-probability-and-statistics-spring-2022/resources/mit18_05_s22_class07-prep-b_pdf/",
+          "type": "pdf",
+          "source": "MIT OCW",
+          "note": "Covariance/correlation properties with examples.",
+          "free": true
+        },
+        {
+          "title": "CS109 Reader – Joint Distributions & Continuous Joint",
+          "url": "https://chrispiech.github.io/probabilityForComputerScientists/en/part3/joint/",
+          "type": "notes",
+          "source": "Stanford CS109",
+          "note": "Joint and marginal; see also https://chrispiech.github.io/probabilityForComputerScientists/en/part3/continuous_joint/",
+          "free": true
+        },
+        {
+          "title": "CS109 Reader – Correlation",
+          "url": "https://chrispiech.github.io/probabilityForComputerScientists/en/part3/correlation/",
+          "type": "notes",
+          "source": "Stanford CS109",
+          "note": "Covariance and correlation.",
+          "free": true
+        },
+        {
+          "title": "Blitzstein & Hwang Ch 7 & 9 (free PDF)",
+          "url": "https://probabilitybook.net/",
+          "type": "book",
+          "source": "Harvard Stat 110",
+          "note": "Ch 7 joint distributions, Ch 9 conditional expectation (Adam's & Eve's laws) – exactly the syllabus item 'conditional expectation and variance'.",
+          "free": true
+        }
+      ],
+      "pyqs": [
+        {
+          "title": "GATE DS&AI 2024 (Q49: E[Y|X=1.5] from joint PDF)",
+          "url": "https://db.gateoverflow.in/tag/gate-ds-ai-2024",
+          "source": "GATE Overflow",
+          "note": "DA 2024 conditional-expectation question."
+        },
+        {
+          "title": "GATE DA 2026 (Q53: conditional uniform)",
+          "url": "https://gateoverflow.in/tag/gateda-2026",
+          "source": "GATE Overflow",
+          "note": "DA 2026 conditional distribution question."
+        },
+        {
+          "title": "GATE Overflow – random-variable tag",
+          "url": "https://gateoverflow.in/tag/random-variable",
+          "source": "GATE Overflow",
+          "note": "Includes joint/conditional RV questions."
+        }
+      ]
+    },
+    {
+      "id": "descriptive-statistics",
+      "title": "Descriptive Statistics: Mean, Median, Mode, Standard Deviation, Sample Covariance & Correlation",
+      "subtopics": [
+        "Mean, median, mode (raw & grouped data)",
+        "Variance and standard deviation (population vs sample, n vs n−1)",
+        "Effect of shifting/scaling data on measures",
+        "Sample covariance and Pearson correlation",
+        "Median/mode of continuous distributions"
+      ],
+      "estHours": 3,
+      "priority": "medium",
+      "tips": "Adding a constant changes mean/median/mode but not SD; scaling multiplies SD by |c|. Correlation is unchanged by positive linear rescaling.",
+      "resources": [
+        {
+          "title": "OpenIntro Statistics Ch 2 (Summarizing data)",
+          "url": "https://www.openintro.org/book/os/",
+          "type": "book",
+          "source": "OpenIntro",
+          "note": "Free PDF; descriptive statistics with worked examples.",
+          "free": true
+        },
+        {
+          "title": "MIT 18.05 Class 10a Reading: Introduction to Statistics",
+          "url": "https://ocw.mit.edu/courses/18-05-introduction-to-probability-and-statistics-spring-2022/resources/mit18_05_s22_class10-prep-a_pdf/",
+          "type": "pdf",
+          "source": "MIT OCW",
+          "note": "Sample statistics vs population parameters.",
+          "free": true
+        },
+        {
+          "title": "StatQuest – Statistics Fundamentals",
+          "url": "https://www.youtube.com/playlist?list=PLblh5JKOoLUK0FLuzwntyYI10UQFUhsY9",
+          "type": "video",
+          "source": "YouTube – StatQuest",
+          "note": "Videos on mean/variance/SD, sample vs population, covariance & correlation.",
+          "free": true
+        },
+        {
+          "title": "NPTEL Somesh Kumar – Descriptive Statistics I–IV (L49–L52)",
+          "url": "https://nptel.ac.in/courses/111105090",
+          "type": "course",
+          "source": "NPTEL",
+          "note": "Week 8–9 lectures on descriptive statistics.",
+          "free": true
+        }
+      ],
+      "pyqs": [
+        {
+          "title": "GATE Overflow (db) – statistics tag",
+          "url": "https://db.gateoverflow.in/tag/statistics",
+          "source": "GATE Overflow",
+          "note": "Mean/median/mode/SD PYQs from GATE CSE & GA."
+        },
+        {
+          "title": "AspirantMitraa – DA P&S PYQs",
+          "url": "https://www.aspirantmitraa.com/pyq/gate-da-probability-and-statistics-questions",
+          "source": "AspirantMitraa",
+          "note": "DA-only descriptive-stats/covariance items."
+        }
+      ]
+    },
+    {
+      "id": "sampling-clt-ci",
+      "title": "Sampling Distributions, CLT, t & Chi-squared Distributions, Confidence Intervals",
+      "subtopics": [
+        "Sample mean distribution, standard error",
+        "Central limit theorem",
+        "Chi-squared distribution (sum of squared standard normals, df)",
+        "Student's t-distribution",
+        "Confidence intervals for mean (σ known: z; σ unknown: t)",
+        "Confidence interval for variance (chi-squared)"
+      ],
+      "estHours": 6,
+      "priority": "high",
+      "tips": "Z² ~ χ²(1) so Var(Z²)=2 (DA 2025 Q26); use t with n−1 df when σ is unknown and n is small; CI width shrinks as 1/√n.",
+      "resources": [
+        {
+          "title": "MIT 18.05 Class 6b Reading: Central Limit Theorem",
+          "url": "https://ocw.mit.edu/courses/18-05-introduction-to-probability-and-statistics-spring-2022/resources/mit18_05_s22_class06-prep-b_pdf/",
+          "type": "pdf",
+          "source": "MIT OCW",
+          "note": "LLN and CLT with standardisation examples.",
+          "free": true
+        },
+        {
+          "title": "MIT 18.05 Class 22 Reading: Confidence Intervals Based on Normal Data",
+          "url": "https://ocw.mit.edu/courses/18-05-introduction-to-probability-and-statistics-spring-2022/resources/mit18_05_s22_class22-prep_pdf/",
+          "type": "pdf",
+          "source": "MIT OCW",
+          "note": "z-, t- and chi-square confidence intervals; see also Class 23b (non-normal data, CLT-based CIs).",
+          "free": true
+        },
+        {
+          "title": "CS109 Reader – Central Limit Theorem",
+          "url": "https://chrispiech.github.io/probabilityForComputerScientists/en/part4/clt/",
+          "type": "notes",
+          "source": "Stanford CS109",
+          "note": "CLT with worked examples; Samples chapter at https://chrispiech.github.io/probabilityForComputerScientists/en/part4/samples/",
+          "free": true
+        },
+        {
+          "title": "Seeing Theory – Frequentist Inference",
+          "url": "https://seeing-theory.brown.edu/frequentist-inference/index.html",
+          "type": "website",
+          "source": "Brown University",
+          "note": "Interactive CLT and confidence-interval simulations.",
+          "free": true
+        },
+        {
+          "title": "NPTEL Somesh Kumar – L45–L48 (chi-square, t, F) & L61–L64 (CIs)",
+          "url": "https://nptel.ac.in/courses/111105090",
+          "type": "course",
+          "source": "NPTEL",
+          "note": "Sampling distributions and confidence intervals.",
+          "free": true
+        }
+      ],
+      "pyqs": [
+        {
+          "title": "AspirantMitraa – DA CLT & Confidence Interval PYQs",
+          "url": "https://www.aspirantmitraa.com/pyq/gate-da-probability-and-statistics-central-limit-theorem-and-confidence-intervals-questions",
+          "source": "AspirantMitraa",
+          "note": "DA 2025 CLT/CI questions with solutions."
+        },
+        {
+          "title": "GATE Overflow – normal-distribution tag",
+          "url": "https://gateoverflow.in/tag/normal-distribution",
+          "source": "GATE Overflow",
+          "note": "CLT-adjacent normal questions incl. DA."
+        },
+        {
+          "title": "GATE Statistics (ST) 2025 paper",
+          "url": "https://gate2026.iitg.ac.in/doc/download/2025/ST2025.pdf",
+          "source": "GATE official",
+          "note": "Harder sampling-distribution and CI questions for extra practice."
+        }
+      ]
+    },
+    {
+      "id": "hypothesis-testing",
+      "title": "Hypothesis Testing: z-test, t-test, Chi-squared Test",
+      "subtopics": [
+        "Null/alternative hypotheses, significance level, p-value",
+        "Type I and Type II errors",
+        "One- and two-tailed z-test for mean/proportion",
+        "One-sample, two-sample and paired t-test",
+        "Chi-squared goodness-of-fit and independence tests",
+        "Chi-squared test for variance; choosing the right test"
+      ],
+      "estHours": 6,
+      "priority": "medium",
+      "tips": "Pick the test from what is known: σ known/large n → z; σ unknown small n → t (df n−1); categorical counts → chi-squared (df = k−1 or (r−1)(c−1)). Questions are typically conceptual or one-step numerical.",
+      "resources": [
+        {
+          "title": "MIT 18.05 Class 17b Reading: NHST I",
+          "url": "https://ocw.mit.edu/courses/18-05-introduction-to-probability-and-statistics-spring-2022/resources/mit18_05_s22_class17-prep-b_pdf/",
+          "type": "pdf",
+          "source": "MIT OCW",
+          "note": "Framework, z-test, p-values, chi-square goodness of fit.",
+          "free": true
+        },
+        {
+          "title": "MIT 18.05 Class 18 Reading: NHST II",
+          "url": "https://ocw.mit.edu/courses/18-05-introduction-to-probability-and-statistics-spring-2022/resources/mit18_05_s22_class18-prep_pdf/",
+          "type": "pdf",
+          "source": "MIT OCW",
+          "note": "t-tests (one-sample, two-sample), F-test.",
+          "free": true
+        },
+        {
+          "title": "MIT 18.05 Class 19 Reading: NHST III",
+          "url": "https://ocw.mit.edu/courses/18-05-introduction-to-probability-and-statistics-spring-2022/resources/mit18_05_s22_class19-prep_pdf/",
+          "type": "pdf",
+          "source": "MIT OCW",
+          "note": "Chi-square tests and degrees of freedom.",
+          "free": true
+        },
+        {
+          "title": "NPTEL Somesh Kumar – Week 11–12 (L65–L75)",
+          "url": "https://nptel.ac.in/courses/111105090",
+          "type": "course",
+          "source": "NPTEL",
+          "note": "Errors, testing normal mean/variance, two-sample, paired t-test, proportions.",
+          "free": true
+        },
+        {
+          "title": "StatQuest – Statistics Fundamentals",
+          "url": "https://www.youtube.com/playlist?list=PLblh5JKOoLUK0FLuzwntyYI10UQFUhsY9",
+          "type": "video",
+          "source": "YouTube – StatQuest",
+          "note": "p-values, hypothesis testing and t-test videos for intuition.",
+          "free": true
+        }
+      ],
+      "pyqs": [
+        {
+          "title": "GATE DA 2025 official paper",
+          "url": "https://gate2026.iitg.ac.in/doc/download/2025/DA2025.pdf",
+          "source": "GATE official",
+          "note": "Scan for inference/test questions; verify with official key."
+        },
+        {
+          "title": "GATE DA 2024 official paper",
+          "url": "https://gate2026.iitg.ac.in/doc/download/2024/DA24S1.pdf",
+          "source": "GATE official",
+          "note": "Includes statistics/inference items."
+        },
+        {
+          "title": "AspirantMitraa – DA P&S PYQs (2024–2026)",
+          "url": "https://www.aspirantmitraa.com/pyq/gate-da-probability-and-statistics-questions",
+          "source": "AspirantMitraa",
+          "note": "Filter for hypothesis-testing questions."
+        },
+        {
+          "title": "GATE Statistics (ST) 2025 paper",
+          "url": "https://gate2026.iitg.ac.in/doc/download/2025/ST2025.pdf",
+          "source": "GATE official",
+          "note": "Extra z/t/chi-square testing practice at a higher level."
+        }
+      ]
+    }
+  ]
+}
